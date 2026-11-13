@@ -47,6 +47,7 @@ public class PasswordService {
 
   @Transactional
   public void forgot(Forgot input) {
+    if ("disabled".equals(recovery.mode())) return;
     AppUser u = users.lockByEmail(normalize(input.email())).orElse(null);
     if (u == null || (u.getStatus() != UserStatus.ACTIVE && u.getStatus() != UserStatus.LOCKED))
       return;

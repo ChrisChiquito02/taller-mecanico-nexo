@@ -1,11 +1,14 @@
 **/.env
 **/.env.local
 **/.env.production
+**/.env.*.local
 **/node_modules/
 **/target/
 frontend/dist/
 work/
 seguridad/private/
+estabilizacion-nexo/tls/*.key
+estabilizacion-nexo/tls/*.p12
 __pycache__/
 *.pyc
 deploy/mysql/server/

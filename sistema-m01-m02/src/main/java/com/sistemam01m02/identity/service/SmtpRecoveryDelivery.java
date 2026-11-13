@@ -3,9 +3,11 @@ package com.sistemam01m02.identity.service;
 import com.sistemam01m02.config.RecoveryProperties;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConditionalOnExpression("'${app.recovery.mode:smtp}' != 'disabled'")
 public class SmtpRecoveryDelivery implements RecoveryDelivery {
   private final JavaMailSender mail;
   private final RecoveryProperties p;

@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: examenerik-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./deploy/Dockerfile.api
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: DB_URL
+        value: jdbc:mysql://gateway01.ap-northeast-1.prod.aws.tidbcloud.com:4000/identity?sslMode=VERIFY_IDENTITY&serverTimezone=UTC
+      - key: DB_USERNAME
+        value: 3UKryH6ponsVZQa.identity_app
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SIGNING_KEY
+        sync: false
+      - key: APP_ALLOWED_ORIGINS
+        sync: false
+      - key: APP_COOKIE_SECURE
+        value: "true"
+      - key: APP_COOKIE_SAME_SITE
+        value: None
+      - key: APP_RECOVERY_MODE
+        value: disabled
+      - key: APP_RECOVERY_BASE_URL
+        sync: false
+      - key: SMTP_HOST
+        value: localhost
+      - key: SMTP_PORT
+        value: "2525"
+      - key: SMTP_AUTH
+        value: "false"
+      - key: SMTP_STARTTLS
+        value: "true"
+      - key: SMTP_FROM
+        value: noreply@example.invalid
+      - key: APP_BOOTSTRAP_ENABLED
+        value: "false"
+      - key: DB_POOL_MAX_SIZE
+        value: "5"
+      - key: DB_POOL_MIN_IDLE
+        value: "1"
+      - key: NEXO_PROVIDER
+        value: disabled
