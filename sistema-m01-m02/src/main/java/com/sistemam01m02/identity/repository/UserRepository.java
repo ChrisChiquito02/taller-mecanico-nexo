@@ -1,7 +1,6 @@
 package com.sistemam01m02.identity.repository;
 
 import com.sistemam01m02.identity.entity.AppUser;
-import jakarta.persistence.LockModeType;
 import java.util.*;
 import org.springframework.data.jpa.repository.*;
 
@@ -17,11 +16,9 @@ public interface UserRepository extends JpaRepository<AppUser, UUID> {
 
   Optional<AppUser> findByEmailNormalized(String email);
 
-  @Lock(LockModeType.PESSIMISTIC_WRITE)
-  @Query("select u from AppUser u where u.emailNormalized=:email")
+  @Query(value = "select * from app_user where email_normalized=:email for update", nativeQuery = true)
   Optional<AppUser> lockByEmail(String email);
 
-  @Lock(LockModeType.PESSIMISTIC_WRITE)
-  @Query("select u from AppUser u where u.id=:id")
+  @Query(value = "select * from app_user where id=:id for update", nativeQuery = true)
   Optional<AppUser> lockById(UUID id);
 }

@@ -2,7 +2,6 @@ package com.sistemam01m02.identity.repository;
 
 import com.sistemam01m02.identity.entity.AccountToken;
 import com.sistemam01m02.identity.entity.AccountToken.Kind;
-import jakarta.persistence.LockModeType;
 import java.time.Instant;
 import java.util.*;
 import org.springframework.data.jpa.repository.*;
@@ -13,8 +12,7 @@ public interface TokenRepository extends JpaRepository<AccountToken, UUID> {
   @Query("select t.user.id from AccountToken t where t.tokenHash=:hash and t.kind=:kind")
   Optional<UUID> findOwner(String hash, Kind kind);
 
-  @Lock(LockModeType.PESSIMISTIC_WRITE)
-  @Query("select t from AccountToken t where t.tokenHash=:hash and t.kind=:kind")
+  @Query(value = "select * from account_token where token_hash=:hash and kind=:kind for update", nativeQuery = true)
   Optional<AccountToken> lockByHash(String hash, Kind kind);
 
   @Modifying
