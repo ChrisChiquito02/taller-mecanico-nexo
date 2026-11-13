@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-11-08T20:24:16.027109+00:00",
+  "run_id": "examenerik-fuzz-376842b7",
+  "restler_source_commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+  "restler_binary_sha256": "131bf27e4a05fe41ae2a4e94021e7e1e301cc3a50dc308206c72cdd20df1656c",
+  "scope": "MySQL 8.4 + API Java21 + Mailpit, red Docker interna, datos sintéticos, loopback",
+  "spec_source_sha256": "84da02b9e109c690611054c785d927078bcf37d67e9db2d4403cde6f3cad8abb",
+  "commands_exit_codes": {},
+  "completed": false,
+  "error": "CalledProcessError: Command '['docker', 'port', 'fcf4c38dcb82eac0fd503536cf53b68e275c28394c23b90bfa80cc5ffe2df8db', '8080/tcp']' returned non-zero exit status 1.",
+  "cleanup_success": true,
+  "finished_utc": "2026-11-08T20:24:24.712653+00:00"
+}

@@ -1,0 +1,163 @@
+{
+  "project": "ExamenErik",
+  "agent": "NEXO-Δ AI",
+  "exported_at": "2026-11-13T01:07:57.334Z",
+  "messages": [
+    {
+      "speaker": "user",
+      "content": "Explica este cambio hipotético, sus riesgos, la alternativa y el plan de reversión. Distingue hechos e incertidumbres."
+    },
+    {
+      "speaker": "assistant",
+      "content": "Compara primero el escenario solicitado con la alternativa del catálogo.\n\nEscenario solicitado: riesgo medio, 45/100.\n1 tokens de renovación (refresh) vigentes conocidos afectados en la hipótesis. El total de sesiones y de JWT de acceso es desconocido.\nAlternativa: [\"USER\"], 45/100.\nReversión propuesta: revisar roles y permisos y solicitar un nuevo inicio de sesión. La simulación no aplica cambios.",
+      "metadata": "{\"tool\":\"simulation\",\"model\":\"qwen2.5-coder:7b\",\"provider\":\"ollama\",\"generated\":true,\"advisory\":true,\"references\":[],\"simulation\":{\"agent\":\"NEXO-Δ Predictive Access Lab\",\"mode\":\"simulation_only\",\"source\":\"authorized_live_read\",\"at_minute\":5,\"snapshot_complete\":true,\"required_permissions\":[\"profile:read\"],\"requested\":{\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}],\"rollback_proposal_only\":{\"permission_patch\":{},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"assignments\":{\"objetivo\":[\"ADMIN\"]}},\"risk\":{\"score\":45,\"privilege_gain_points\":0,\"label\":\"medio\",\"no_writer_points\":40,\"session_disruption_points\":5},\"remaining_active_writers\":0},\"least_privilege_candidates\":[{\"roles\":[\"USER\"],\"extra_permissions\":[],\"extra_weight\":0},{\"roles\":[\"ADMIN\"],\"extra_permissions\":[\"users:read\",\"users:write\"],\"extra_weight\":50},{\"roles\":[\"ADMIN\",\"USER\"],\"extra_permissions\":[\"users:read\",\"users:write\"],\"extra_weight\":50}],\"alternative_evaluated\":{\"change\":{\"objetivo\":[\"USER\"]},\"no_change_needed\":false,\"simulation\":{\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}],\"rollback_proposal_only\":{\"permission_patch\":{},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"assignments\":{\"objetivo\":[\"ADMIN\"]}},\"risk\":{\"score\":45,\"privilege_gain_points\":0,\"label\":\"medio\",\"no_writer_points\":40,\"session_disruption_points\":5},\"remaining_active_writers\":0}},\"limitations\":[\"Rúbrica educativa, no probabilidad ni certificación.\",\"Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.\",\"Snapshot completo al instante de lectura, sujeto a concurrencia posterior.\",\"Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.\",\"No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.\"]},\"origin\":\"simulation\"}"
+    }
+  ],
+  "simulation": {
+    "agent": "NEXO-Δ Predictive Access Lab",
+    "mode": "simulation_only",
+    "source": "authorized_live_read",
+    "at_minute": 5,
+    "snapshot_complete": true,
+    "required_permissions": [
+      "profile:read"
+    ],
+    "requested": {
+      "affected": [
+        {
+          "user": "objetivo",
+          "before_roles": [
+            "ADMIN"
+          ],
+          "proposed_roles": [
+            "USER"
+          ],
+          "before_permissions": [
+            "profile:read",
+            "users:read",
+            "users:write"
+          ],
+          "proposed_permissions": [
+            "profile:read"
+          ],
+          "gained": [],
+          "lost": [
+            "users:read",
+            "users:write"
+          ],
+          "resources_exposed": [],
+          "sessions_invalidated_by_change": 1,
+          "sessions_still_valid": 0
+        }
+      ],
+      "rollback_proposal_only": {
+        "permission_patch": {},
+        "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+        "assignments": {
+          "objetivo": [
+            "ADMIN"
+          ]
+        }
+      },
+      "risk": {
+        "score": 45,
+        "privilege_gain_points": 0,
+        "label": "medio",
+        "no_writer_points": 40,
+        "session_disruption_points": 5
+      },
+      "remaining_active_writers": 0
+    },
+    "least_privilege_candidates": [
+      {
+        "roles": [
+          "USER"
+        ],
+        "extra_permissions": [],
+        "extra_weight": 0
+      },
+      {
+        "roles": [
+          "ADMIN"
+        ],
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "extra_weight": 50
+      },
+      {
+        "roles": [
+          "ADMIN",
+          "USER"
+        ],
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "extra_weight": 50
+      }
+    ],
+    "alternative_evaluated": {
+      "change": {
+        "objetivo": [
+          "USER"
+        ]
+      },
+      "no_change_needed": false,
+      "simulation": {
+        "affected": [
+          {
+            "user": "objetivo",
+            "before_roles": [
+              "ADMIN"
+            ],
+            "proposed_roles": [
+              "USER"
+            ],
+            "before_permissions": [
+              "profile:read",
+              "users:read",
+              "users:write"
+            ],
+            "proposed_permissions": [
+              "profile:read"
+            ],
+            "gained": [],
+            "lost": [
+              "users:read",
+              "users:write"
+            ],
+            "resources_exposed": [],
+            "sessions_invalidated_by_change": 1,
+            "sessions_still_valid": 0
+          }
+        ],
+        "rollback_proposal_only": {
+          "permission_patch": {},
+          "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+          "assignments": {
+            "objetivo": [
+              "ADMIN"
+            ]
+          }
+        },
+        "risk": {
+          "score": 45,
+          "privilege_gain_points": 0,
+          "label": "medio",
+          "no_writer_points": 40,
+          "session_disruption_points": 5
+        },
+        "remaining_active_writers": 0
+      }
+    },
+    "limitations": [
+      "Rúbrica educativa, no probabilidad ni certificación.",
+      "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+      "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+      "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+      "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+    ]
+  }
+}

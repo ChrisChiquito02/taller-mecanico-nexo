@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilizacion-nexo/correo.py", line 22, in <module>
+    assert reset==200 and reuse>=400 and old==401 and new==200,(reset,reuse,old,new)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (204, 401, 401, 200)

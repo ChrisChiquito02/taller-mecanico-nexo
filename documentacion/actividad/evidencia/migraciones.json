@@ -1,0 +1,12 @@
+{
+  "sistema-m01-m02/src/main/resources/db/migration/V1__identity_baseline.sql": {
+    "current_sha256": "556d89dd4ed1ff6e4d1dadd91bb5152e9b136efb9be7d717de5b4368153c42c4",
+    "historical_baseline_sha256": "556d89dd4ed1ff6e4d1dadd91bb5152e9b136efb9be7d717de5b4368153c42c4",
+    "matches_historical_baseline": true
+  },
+  "sistema-m01-m02/src/main/resources/db/migration/V2__sessions_and_rbac.sql": {
+    "current_sha256": "5fee4d711245f3bdc90c0997b1ae8db0dce0c18e5d85717c97c1cf04cd2aa87e",
+    "historical_baseline_sha256": "5fee4d711245f3bdc90c0997b1ae8db0dce0c18e5d85717c97c1cf04cd2aa87e",
+    "matches_historical_baseline": true
+  }
+}

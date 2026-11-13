@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/resistencia.py", line 64, in <module>
+    run()
+    ~~~^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/resistencia.py", line 50, in run
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool: persisted=list(pool.map(worker,range(6)))
+                                                                                 ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 645, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 312, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 447, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/resistencia.py", line 28, in worker
+    code,data,elapsed=call(port,f'/nexo/conversations/{chat}/messages',{'text':LONG if long else SHORT,'tool':'general'},token)
+                      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/carga.py", line 18, in call
+    raw=r.read().decode()
+        ~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 488, in read
+    return self._read_chunked(amt)
+           ~~~~~~~~~~~~~~~~~~^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 621, in _read_chunked
+    while (chunk_left := self._get_chunk_left()) is not None:
+                         ~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 603, in _get_chunk_left
+    chunk_left = self._read_next_chunk_size()
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 554, in _read_next_chunk_size
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+TimeoutError: timed out

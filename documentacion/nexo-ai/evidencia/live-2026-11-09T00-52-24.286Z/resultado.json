@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-11-09T00:52:24.286Z",
+  "synthetic_only": true,
+  "provider": "Ollama real",
+  "model": "qwen2.5-coder:7b",
+  "turns": [],
+  "checks": [],
+  "errors": [],
+  "passed": false,
+  "finished_at": "2026-11-09T00:52:24.632Z"
+}

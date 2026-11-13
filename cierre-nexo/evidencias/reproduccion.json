@@ -1,0 +1,6 @@
+{"prompt": "Responde con exactamente dos palabras y al menos una palabra. Saluda.", "http": 200, "text": "¡Hola! ¿Cómo estás? ¿En qué puedo ayudarte hoy?", "types": ["status", "context", "delta", "done"]}
+{"prompt": "Responde con exactamente dos palabras y al menos una palabra. Saluda.", "http": 200, "text": "¡Hola! ¿Cómo puedo ayudarte hoy?", "types": ["status", "context", "delta", "done"]}
+{"prompt": "Responde con exactamente dos palabras y al menos una palabra. Saluda.", "http": 200, "text": "¡Hola! ¿Cómo estás? ¿En qué puedo ayudarte hoy?", "types": ["status", "context", "delta", "done"]}
+{"prompt": "Write exactly two lines and at most three lines. Name two colors.", "http": 200, "text": "Red and blue.", "types": ["status", "context", "delta", "done"]}
+{"prompt": "Write exactly two lines and at most three lines. Name two colors.", "http": 200, "text": "Red and blue.", "types": ["status", "context", "delta", "done"]}
+{"prompt": "Write exactly two lines and at most three lines. Name two colors.", "http": 200, "text": "Red and blue.", "types": ["status", "context", "delta", "done"]}

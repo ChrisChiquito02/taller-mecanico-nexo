@@ -1,0 +1,98 @@
+[
+  {
+    "prompt": "Escribe exactamente tres líneas y al menos cinco líneas. ¿Es posible?",
+    "attempt": 1,
+    "passed": false,
+    "answer": "Sí, es posible. Aquí tienes un ejemplo de tres líneas y cinco líneas:\n\nTres líneas:\n1. La primavera es un período de florecimiento.\n2. El sol brilla con fuerza.\n3. Las personas disfrutan de los días más calurosos.\n\nCinco líneas:\n1. La primavera es un período de florecimiento.\n2. El sol brilla con fuerza.\n3. Las personas disfrutan de los días más calurosos.\n4. Las flores aparecen en los jardines.\n5. El aire se siente más fresco y agradable.",
+    "reason": "stop",
+    "tokens": 135
+  },
+  {
+    "prompt": "Escribe exactamente tres líneas y al menos cinco líneas. ¿Es posible?",
+    "attempt": 2,
+    "passed": false,
+    "answer": "Sí, es posible. Aquí tienes un ejemplo de tres líneas y cinco líneas:\n\nTres líneas:\n1. Primera línea\n2. Segunda línea\n3. Tercera línea\n\nCinco líneas:\n1. Primera línea\n2. Segunda línea\n3. Tercera línea\n4. Cuarta línea\n5. Quinta línea",
+    "reason": "stop",
+    "tokens": 81
+  },
+  {
+    "prompt": "Escribe exactamente tres líneas y al menos cinco líneas. ¿Es posible?",
+    "attempt": 3,
+    "passed": false,
+    "answer": "Sí, es posible. Aquí tienes un ejemplo:\n\n1. Primera línea\n2. Segunda línea\n3. Tercera línea\n\nAdemás, aquí tienes cinco líneas:\n\n1. Primera línea\n2. Segunda línea\n3. Tercera línea\n4. Cuarta línea\n5. Quinta línea",
+    "reason": "stop",
+    "tokens": 71
+  },
+  {
+    "prompt": "Write exactly three sentences and at most one sentence. Can you satisfy both?",
+    "attempt": 1,
+    "passed": false,
+    "answer": "I can satisfy exactly three sentences if you provide me with three distinct requests or topics to write about. If you only provide one request, I can certainly satisfy that with one sentence.",
+    "reason": "stop",
+    "tokens": 37
+  },
+  {
+    "prompt": "Write exactly three sentences and at most one sentence. Can you satisfy both?",
+    "attempt": 2,
+    "passed": false,
+    "answer": "I can write exactly three sentences.",
+    "reason": "stop",
+    "tokens": 8
+  },
+  {
+    "prompt": "Write exactly three sentences and at most one sentence. Can you satisfy both?",
+    "attempt": 3,
+    "passed": false,
+    "answer": "I can satisfy exactly three sentences by writing three distinct sentences, and I can satisfy at most one sentence by writing only one sentence.",
+    "reason": "stop",
+    "tokens": 27
+  },
+  {
+    "prompt": "Escribe exactamente dos líneas y al menos una línea sobre árboles.",
+    "attempt": 1,
+    "passed": false,
+    "answer": "Aquí tienes dos líneas, con una que se centra en los árboles:\n\n1. El sol brilla intensamente mientras las hojas de los árboles se mueven suavemente en la brisa.\n2. Los árboles son no solo impresionantes por su belleza, sino que también desempeñan un papel crucial en la regulación del clima y la producción de oxígeno.",
+    "reason": "stop",
+    "tokens": 95
+  },
+  {
+    "prompt": "Escribe exactamente dos líneas y al menos una línea sobre árboles.",
+    "attempt": 2,
+    "passed": false,
+    "answer": "Aquí tienes dos líneas, con al menos una sobre árboles:\n\n1. El sol se oculta tras el majestuoso ciprés que guarda el parque central.\n2. Los árboles danzan suavemente en la brisa suave, sus hojas murmurando secretos del bosque.",
+    "reason": "stop",
+    "tokens": 72
+  },
+  {
+    "prompt": "Escribe exactamente dos líneas y al menos una línea sobre árboles.",
+    "attempt": 3,
+    "passed": false,
+    "answer": "Aquí tienes dos líneas, con al menos una sobre árboles:\n\n1. Los árboles son fundamentales para la vida en la Tierra, proporcionando oxígeno y sombra.\n2. La majestuosidad de los pinos puede ser impresionante, con sus largas ramas y troncos anchos.",
+    "reason": "stop",
+    "tokens": 76
+  },
+  {
+    "prompt": "Responde en español y exclusivamente en inglés. ¿Puedes satisfacer ambas?",
+    "attempt": 1,
+    "passed": true,
+    "answer": "No, no puedo satisfacer ambas peticiones simultáneamente. Por favor, indícame cuál de las dos te gustaría que cumpliese.",
+    "reason": "stop",
+    "tokens": 36
+  },
+  {
+    "prompt": "Responde en español y exclusivamente en inglés. ¿Puedes satisfacer ambas?",
+    "attempt": 2,
+    "passed": false,
+    "answer": "No, I cannot fulfill both requests simultaneously. Please let me know which one you would like me to address first.",
+    "reason": "stop",
+    "tokens": 24
+  },
+  {
+    "prompt": "Responde en español y exclusivamente en inglés. ¿Puedes satisfacer ambas?",
+    "attempt": 3,
+    "passed": false,
+    "answer": "No, I cannot fulfill both requests simultaneously. Please specify which one you would like assistance with.",
+    "reason": "stop",
+    "tokens": 20
+  }
+]

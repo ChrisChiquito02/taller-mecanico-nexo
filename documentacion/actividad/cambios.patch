@@ -1,0 +1,1739 @@
+--- /dev/null
++++ b/.dockerignore
+@@ -0,0 +1,15 @@
++**/node_modules
++**/target
++**/.env*
++**/.git
++work
++outputs
++documentacion
++docs
++agente-nexo
++seguridad
++**/*.pem
++**/*.key
++**/*.p12
++deploy/mysql/server
++deploy/mysql/ca-private
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,12 @@
++**/.env
++**/.env.local
++**/.env.production
++**/node_modules/
++**/target/
++frontend/dist/
++work/
++seguridad/private/
++__pycache__/
++*.pyc
++deploy/mysql/server/
++deploy/mysql/ca-private/
+--- a/README.md
++++ b/README.md
+@@ -1,7 +1,8 @@
+ # ExamenErik
+ 
+-Identidad integrada con Java 21, Spring Boot 4.1.1, MySQL, JWT, Argon2id, RBAC y recuperación SMTP. Frontend JavaScript modular servido en el mismo origen.
++Identidad integrada con Java 21, Spring Boot 4.1.1, MySQL, JWT, Argon2id, RBAC y recuperación SMTP. Frontend HTML/CSS/JavaScript modular con build independiente; modo integrado opcional para desarrollo.
+ 
++- [Actividad universitaria: publicación gratuita, NEXO-Δ, RESTler y exposición](documentacion/actividad/README.md)
+ - [Orquestador principal](orquestador.md)
+ - [Documentador Frontend](documentacion/frontend/documentadorFrontend.md)
+ - [Documentador Backend](documentacion/backend/documentadorBackend.md)
+@@ -12,6 +13,7 @@
+ ```sh
+ npm --prefix frontend ci
+ npm --prefix frontend run check
++npm --prefix frontend run build:integrated
+ sistema-m01-m02/scripts/verify-java21.sh
+ cd sistema-m01-m02
+ ./scripts/init-local.sh
+--- /dev/null
++++ b/agente-nexo/Abrir NEXO.command
+@@ -0,0 +1,9 @@
++#!/bin/sh
++set -eu
++cd "$(dirname "$0")"
++if ! command -v python3 >/dev/null 2>&1; then
++  echo "NEXO-Δ necesita Python 3 para abrirse."
++  read -r respuesta
++  exit 1
++fi
++exec python3 servidor.py --open
+--- /dev/null
++++ b/agente-nexo/GUIA_DE_USO.md
+@@ -0,0 +1,48 @@
++# Usar NEXO-Δ antes de publicar ExamenErik
++
++NEXO-Δ ya funciona como un asesor local de simulación. Su pantalla muestra escenarios sintéticos, puntajes calculados, impacto en tokens, alternativas, propuesta de vuelta atrás y una explicación generada por el modelo local. No consulta ni modifica la base de datos real ni se publica como parte del frontend IAM.
++
++## Abrir con doble clic en Mac
++
++1. Abre Ollama. El modelo `qwen2.5-coder:7b` ya estaba instalado en este equipo y se usó en las demostraciones.
++2. En la carpeta `agente-nexo`, abre **Abrir NEXO.command** con doble clic.
++3. Se abre una ventana de Terminal y el navegador con una dirección local. Mantén esa Terminal abierta mientras usas el panel; Ctrl+C lo cierra.
++
++Si prefieres iniciarlo manualmente desde la raíz del proyecto:
++
++```sh
++python3 agente-nexo/servidor.py --open
++```
++
++El puerto se elige automáticamente para evitar conflictos. Usa la dirección `http://127.0.0.1:...` que muestra Terminal. El panel escucha exclusivamente en tu computadora; no está diseñado para publicarlo ni exponerlo en la red.
++
++## Demostración para el aula
++
++1. Elige **Un usuario se vuelve administrador**. Conserva el minuto 5 y la explicación con IA activada. Pulsa Analizar escenario.
++2. Verás 60/100, un usuario afectado y dos tokens invalidados. La alternativa es conservar USER sin ejecutar una reasignación: riesgo 0/100.
++3. Elige **Solo necesita consultar usuarios**. El catálogo actual solo cubre users:read mediante ADMIN, que también concede escritura. La alternativa calculada tiene el mismo riesgo 60/100. Un rol de consulta queda como propuesta futura; conservar USER deja pendiente la tarea solicitada.
++4. Elige **Un permiso compartido cambia**. Se simula que USER gana users:write: dos usuarios afectados, riesgo 70/100 y sus tokens siguen vigentes. Es una hipótesis de catálogo, no un endpoint implementado en el IAM.
++5. Regresa al primer caso y cambia el momento a 20 minutos. El token de acceso ya habría expirado antes del cambio, por lo que solo se atribuye al cambio la invalidación de un refresh: riesgo 55/100.
++6. Puedes desactivar Explicación con IA local para mostrar únicamente los cálculos. La pantalla lo identifica como Motor de simulación y no afirma haber ejecutado IA.
++7. Pulsa **Descargar informe JSON** para guardar el resultado que estás viendo. Incluye el hash del escenario y, si hubo IA, modelo y fecha de la inferencia.
++
++## Qué decir al exponer
++
++“NEXO-Δ anticipa las consecuencias de un cambio de autorización. El código calcula permisos, tokens y riesgo; Qwen2.5-Coder explica el resultado mediante Ollama. Comparamos opciones y dejamos la decisión a revisión humana. Aquí trabajamos con datos sintéticos y no ejecutamos cambios reales”.
++
++La puntuación no es una probabilidad de ataque. El texto de IA requiere revisión y está separado de los números. Restaurar roles no revive tokens revocados; cuando una operación real invalida sesiones, se necesita iniciar sesión de nuevo.
++
++## Si algo falla
++
++- Si no hay conexión con la IA, abre Ollama y comprueba que el modelo configurado está disponible. El panel no descarga modelos automáticamente y no reemplaza un fallo por una respuesta de IA prefabricada.
++- Solo se permite un análisis a la vez; una segunda solicitud recibe un aviso para esperar.
++- Los campos se limitan a los tres escenarios y a un minuto entero entre 0 y 10080. No acepta contraseñas, rutas de archivos, usuarios reales ni texto libre para enviar al modelo.
++- Si cierras Terminal, vuelve a abrir el acceso directo: puede mostrar un puerto diferente.
++
++## Verificar el agente y el panel
++
++```sh
++python3 -m unittest discover -s agente-nexo -v
++```
++
++La suite actual tiene 12 pruebas: las 7 del motor y 5 del panel. Estas últimas comprueban rechazo de origen/Host ajenos, entradas inesperadas y demasiado grandes, preservación del fixture, fallo de IA explícito y exclusión de inferencias simultáneas. Se ejecutaron además tres inferencias reales desde Chrome y comprobaciones de descarga y pantalla móvil; no se confunden esas demostraciones con pruebas unitarias.
+--- /dev/null
++++ b/agente-nexo/README.md
+@@ -0,0 +1,16 @@
++# NEXO-Δ para ExamenErik
++
++Agente local de simulación contrafactual sin conexión IAM/MySQL. Python estándar, sin dependencias adicionales. Diseño y límites: [NEXO_DELTA](../documentacion/actividad/NEXO_DELTA.md).
++
++```sh
++python3 nexo.py escenario.json --ai
++python3 nexo.py escenario-lectura.json
++python3 nexo.py escenario-permisos.json
++python3 -m unittest -v
++```
++
++`--ai` usa Ollama en http://127.0.0.1:11434 con qwen2.5-coder:7b por defecto; no descarga el modelo. Se puede elegir otro modelo instalado mediante `--model`. Sin --ai se declara motor determinista y ai.status=not_requested. No introducir usuarios, secretos o sesiones reales.
++
++## Pantalla de demostración
++
++Abre `Abrir NEXO.command` con doble clic en Mac o ejecuta `python3 servidor.py --open`. Consulta [la guía de uso](GUIA_DE_USO.md). El panel escucha solo en 127.0.0.1 y no se conecta al IAM.
+--- /dev/null
++++ b/agente-nexo/escenario-lectura.json
+@@ -0,0 +1,93 @@
++{
++  "synthetic": true,
++  "roles": {
++    "USER": [
++      "profile:read"
++    ],
++    "ADMIN": [
++      "profile:read",
++      "users:read",
++      "users:write"
++    ]
++  },
++  "users": [
++    {
++      "id": "u-1",
++      "roles": [
++        "ADMIN"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-2",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-3",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    }
++  ],
++  "change": {
++    "assignments": {
++      "u-2": [
++        "ADMIN"
++      ]
++    },
++    "permission_patch": {}
++  },
++  "required_permissions": [
++    "users:read"
++  ],
++  "at_minute": 5
++}--- /dev/null
++++ b/agente-nexo/escenario-permisos.json
+@@ -0,0 +1,94 @@
++{
++  "synthetic": true,
++  "roles": {
++    "USER": [
++      "profile:read"
++    ],
++    "ADMIN": [
++      "profile:read",
++      "users:read",
++      "users:write"
++    ]
++  },
++  "users": [
++    {
++      "id": "u-1",
++      "roles": [
++        "ADMIN"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-2",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-3",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    }
++  ],
++  "change": {
++    "assignments": {},
++    "permission_patch": {
++      "USER": [
++        "profile:read",
++        "users:write"
++      ]
++    }
++  },
++  "required_permissions": [
++    "profile:read"
++  ],
++  "at_minute": 5
++}--- /dev/null
++++ b/agente-nexo/escenario.json
+@@ -0,0 +1,93 @@
++{
++  "synthetic": true,
++  "roles": {
++    "USER": [
++      "profile:read"
++    ],
++    "ADMIN": [
++      "profile:read",
++      "users:read",
++      "users:write"
++    ]
++  },
++  "users": [
++    {
++      "id": "u-1",
++      "roles": [
++        "ADMIN"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-2",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    },
++    {
++      "id": "u-3",
++      "roles": [
++        "USER"
++      ],
++      "status": "ACTIVE",
++      "session_version": 3,
++      "sessions": [
++        {
++          "kind": "access",
++          "sv": 3,
++          "expires_minute": 15,
++          "consumed": false
++        },
++        {
++          "kind": "refresh",
++          "sv": 3,
++          "expires_minute": 10080,
++          "consumed": false
++        }
++      ]
++    }
++  ],
++  "change": {
++    "assignments": {
++      "u-2": [
++        "ADMIN"
++      ]
++    },
++    "permission_patch": {}
++  },
++  "required_permissions": [
++    "profile:read"
++  ],
++  "at_minute": 5
++}--- /dev/null
++++ b/agente-nexo/nexo.py
+@@ -0,0 +1,174 @@
++#!/usr/bin/env python3
++"""NEXO-Δ: laboratorio contrafactual local, sin conexión al IAM ni a MySQL."""
++import argparse
++import copy
++import hashlib
++import itertools
++import json
++from pathlib import Path
++import re
++import urllib.request
++
++PERMISSIONS = {"profile:read", "users:read", "users:write"}
++WEIGHTS = {"profile:read": 2, "users:read": 15, "users:write": 35}
++
++def exact(obj, keys):
++    if not isinstance(obj, dict) or set(obj) != set(keys):
++        raise ValueError("Campos inesperados o faltantes; no incluir datos personales ni secretos")
++
++def validate(s):
++    exact(s, ["synthetic", "roles", "users", "change", "required_permissions", "at_minute"])
++    if s["synthetic"] is not True: raise ValueError("Solo snapshots sintéticos")
++    if not isinstance(s["roles"], dict) or not 1 <= len(s["roles"]) <= 8: raise ValueError("Catálogo inválido")
++    for code, perms in s["roles"].items():
++        if not re.fullmatch(r"[A-Z_]{1,30}", code) or not isinstance(perms, list) or not set(perms) <= PERMISSIONS: raise ValueError("Rol inválido")
++    def role_list(value):
++        if not isinstance(value, list) or len(value) != len(set(value)) or not set(value) <= s["roles"].keys(): raise ValueError("Roles desconocidos/duplicados")
++    if not isinstance(s["users"], list) or not 1 <= len(s["users"]) <= 100: raise ValueError("Usuarios fuera de límite")
++    ids = set()
++    for u in s["users"]:
++        exact(u, ["id", "roles", "status", "session_version", "sessions"])
++        if not re.fullmatch(r"u-[0-9]{1,3}", u["id"]) or u["id"] in ids: raise ValueError("Usa identificadores sintéticos u-1, u-2...")
++        ids.add(u["id"]); role_list(u["roles"])
++        if u["status"] not in ["PENDING", "ACTIVE", "LOCKED", "DISABLED"] or type(u["session_version"]) is not int or u["session_version"] < 0: raise ValueError("Estado inválido")
++        if not isinstance(u["sessions"], list) or len(u["sessions"]) > 20: raise ValueError("Sesiones fuera de límite")
++        for t in u["sessions"]:
++            exact(t, ["kind", "sv", "expires_minute", "consumed"])
++            if t["kind"] not in ["access", "refresh"] or type(t["sv"]) is not int or type(t["expires_minute"]) is not int or type(t["consumed"]) is not bool: raise ValueError("Sesión inválida")
++    exact(s["change"], ["assignments", "permission_patch"])
++    if not isinstance(s["change"]["assignments"], dict) or not set(s["change"]["assignments"]) <= ids: raise ValueError("Destinatario desconocido")
++    for roles in s["change"]["assignments"].values():
++        role_list(roles)
++        if not roles: raise ValueError("assignRoles exige al menos un rol")
++    patch = s["change"]["permission_patch"]
++    if not isinstance(patch, dict) or not set(patch) <= s["roles"].keys(): raise ValueError("Parche inválido")
++    for perms in patch.values():
++        if not isinstance(perms, list) or not set(perms) <= PERMISSIONS: raise ValueError("Permisos desconocidos")
++    if not isinstance(s["required_permissions"], list) or not set(s["required_permissions"]) <= PERMISSIONS: raise ValueError("Necesidad inválida")
++    if type(s["at_minute"]) is not int or not 0 <= s["at_minute"] <= 10080: raise ValueError("Horizonte inválido")
++    return s
++
++def effective(roles, catalog):
++    return set().union(*(set(catalog[r]) for r in roles)) if roles else set()
++
++def valid_session(t, user, minute):
++    return (user["status"] == "ACTIVE" and t["expires_minute"] > minute
++            and (t["kind"] != "access" or t["sv"] == user["session_version"])
++            and (t["kind"] != "refresh" or not t["consumed"]))
++
++def simulate(snapshot, change=None):
++    s = validate(copy.deepcopy(snapshot)); before = copy.deepcopy(s)
++    c = change if change is not None else s["change"]
++    s["change"] = c; validate(s)
++    s["roles"].update(c["permission_patch"])
++    affected = []
++    for u in s["users"]:
++        old = next(v for v in before["users"] if v["id"] == u["id"])
++        if u["id"] in c["assignments"]:
++            u["roles"] = c["assignments"][u["id"]]
++            u["session_version"] += 1  # assignRoles invalida incluso una asignación idéntica.
++            for t in u["sessions"]:
++                if t["kind"] == "refresh": t["consumed"] = True
++        oldp = effective(old["roles"], before["roles"]); newp = effective(u["roles"], s["roles"])
++        if oldp != newp or u["id"] in c["assignments"]:
++            at = s["at_minute"]
++            live = sum(valid_session(t, old, at) for t in old["sessions"])
++            after_live = sum(valid_session(t, u, at) for t in u["sessions"])
++            affected.append({"user": u["id"], "before_roles": old["roles"], "proposed_roles": u["roles"], "before_permissions": sorted(oldp), "proposed_permissions": sorted(newp), "gained": sorted(newp-oldp), "lost": sorted(oldp-newp),
++                             "sessions_valid_at_horizon_before": live,
++                             "sessions_invalidated_by_change": live-after_live,
++                             "sessions_still_valid": after_live})
++    admins = sum(u["status"] == "ACTIVE" and "users:write" in effective(u["roles"], s["roles"]) for u in s["users"])
++    gains = sum(WEIGHTS[p] for u in affected for p in u["gained"])
++    disruption = min(20, 5 * sum(u["sessions_invalidated_by_change"] for u in affected))
++    lockout = 40 if admins == 0 else 0
++    score = min(100, gains+disruption+lockout)
++    return {"at_minute": s["at_minute"], "affected": affected, "remaining_active_writers": admins,
++            "risk": {"score": score, "label": "alto" if score >= 60 else "medio" if score >= 25 else "bajo",
++                     "privilege_gain_points": gains, "session_disruption_points": disruption, "no_writer_points": lockout},
++            "rollback_proposal_only": {"assignments": {u["id"]: u["roles"] for u in before["users"] if u["id"] in c["assignments"]},
++              "permission_patch": {r: before["roles"][r] for r in c["permission_patch"]},
++              "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."}}
++
++def candidates(s):
++    required = set(s["required_permissions"]); roles = sorted(s["roles"])
++    choices = []
++    for n in range(len(roles)+1):
++        for subset in itertools.combinations(roles, n):
++            perms = effective(subset, s["roles"])
++            if required <= perms:
++                choices.append({"roles": list(subset), "extra_permissions": sorted(perms-required),
++                                "extra_weight": sum(WEIGHTS[p] for p in perms-required)})
++    return sorted(choices, key=lambda c: (c["extra_weight"], len(c["roles"]), c["roles"]))[:8]
++
++def explain(report, model):
++    # URL literal loopback, sin redirecciones, sin claves y sin herramientas de escritura.
++    schema = {"type": "object", "properties": {"explanation": {"type": "string"}, "human_review": {"type": "string"}},
++              "required": ["explanation", "human_review"], "additionalProperties": False}
++    facts = []
++    for u in report["requested"]["affected"]:
++        facts.append(f"{u['user']}: ANTES roles={u['before_roles']}, permisos={u['before_permissions']}. "
++                     f"DESPUÉS HIPOTÉTICO roles={u['proposed_roles']}, permisos={u['proposed_permissions']}. "
++                     f"Permisos que NO tenía antes y ganaría={u['gained']}; perdería={u['lost']}. "
++                     f"Tokens invalidados por el cambio={u['sessions_invalidated_by_change']}; siguen válidos={u['sessions_still_valid']}.")
++    alternative = report["alternative_evaluated"]
++    alt_risk = alternative["simulation"]["risk"]["score"] if alternative else None
++    no_change = bool(alternative and alternative["no_change_needed"])
++    context = {"project": "ExamenErik", "required_permissions_for_task": report["required_permissions"],
++               "requested_change_facts": facts, "requested_change_risk": report["requested"]["risk"],
++               "alternative_risk": alt_risk,
++               "alternative_action": "CONSERVAR ESTADO ORIGINAL: satisface la tarea SIN los permisos nuevos del cambio solicitado" if no_change else "El catálogo no ofrece una mejora de menor privilegio; posponer el cambio deja pendiente la tarea. Diseñar un rol de lectura sería trabajo futuro",
++               "rollback": report["requested"]["rollback_proposal_only"],
++               "execution": "Solo simulación: ninguno de los cambios se aplicó"}
++    payload = {"model": model, "stream": False, "format": schema,
++               "options": {"temperature": 0, "num_predict": 650},
++               "messages": [{"role": "system", "content": "Eres NEXO-Δ de ExamenErik. Devuelve JSON con explanation y human_review, dos párrafos breves en español, sin otros campos. Explica primero el CAMBIO SOLICITADO con su riesgo y efectos, después la ALTERNATIVA con su riesgo. Los hechos antes/después son definitivos: un permiso nuevo no existía antes. No confundas el riesgo del cambio con el de conservar el estado original. Respeta alternative_action literalmente en significado. El puntaje es una rúbrica, no probabilidad. Nunca afirmes ejecutar cambios ni revivir sesiones. La recomendación queda para revisión humana. No agregues hechos, roles implementados ni políticas que no consten en los datos."},
++                            {"role": "user", "content": json.dumps(context, ensure_ascii=False)}]}
++    class NoRedirect(urllib.request.HTTPRedirectHandler):
++        def redirect_request(self, *args, **kwargs): return None
++    req = urllib.request.Request("http://127.0.0.1:11434/api/chat", json.dumps(payload).encode(), {"Content-Type": "application/json"})
++    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
++    with opener.open(req, timeout=180) as response:
++        result = json.loads(response.read(100000))
++    text = json.loads(result["message"]["content"])
++    exact(text, ["explanation", "human_review"])
++    if not all(isinstance(v, str) and len(v) <= 6000 for v in text.values()): raise ValueError("Salida IA inválida")
++    return {"status": "executed", "provider": "Ollama loopback", "model": result["model"], "created_at": result["created_at"],
++            "eval_count": result.get("eval_count"), "advisory_untrusted": text}
++
++def run(s, use_ai=False, model="qwen2.5-coder:7b"):
++    validate(s)
++    requested = simulate(s)
++    options = candidates(s)
++    alternative = None
++    targets = set(s["change"]["assignments"]) | {u["id"] for u in s["users"] if set(u["roles"]) & set(s["change"]["permission_patch"])}
++    if options and options[0]["roles"] and targets:
++        assignments = {u["id"]: options[0]["roles"] for u in s["users"] if u["id"] in targets and set(u["roles"]) != set(options[0]["roles"])}
++        c = {"assignments": assignments, "permission_patch": {}}
++        alternative = {"change": c, "no_change_needed": not assignments, "simulation": simulate(s, c)}
++    report = {"agent": "NEXO-Δ", "project": "ExamenErik", "mode": "simulation_only",
++              "input_sha256": hashlib.sha256(json.dumps(s, sort_keys=True).encode()).hexdigest(),
++              "required_permissions": sorted(s["required_permissions"]),
++              "requested": requested, "least_privilege_candidates": options,
++              "alternative_evaluated": alternative,
++              "limitations": ["Snapshot sintético; no predice ataques ni disponibilidad real.",
++                "permission_patch es una hipótesis de catálogo: no existe endpoint para editarlo en el IAM.",
++                "Estado LOCKED se trata como no activo; no se modela vencimiento del bloqueo.",
++                "No modela carreras de concurrencia ni reutilización de refresh consumido (que revoca todas las sesiones).",
++                "El puntaje es una rúbrica educativa, no una probabilidad ni certificación."]}
++    if use_ai:
++        report["ai"] = explain(report, model)
++    else: report["ai"] = {"status": "not_requested", "note": "Motor determinista; no afirmar que se ejecutó IA"}
++    return report
++
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("snapshot", type=Path); parser.add_argument("--ai", action="store_true")
++    parser.add_argument("--model", default="qwen2.5-coder:7b")
++    args = parser.parse_args()
++    try:
++        if args.snapshot.stat().st_size > 100000: raise ValueError("Snapshot demasiado grande")
++        report = run(json.loads(args.snapshot.read_text()), args.ai, args.model)
++        print(json.dumps(report, ensure_ascii=False, indent=2))
++    except Exception as exc:
++        raise SystemExit(f"NEXO-Δ detenido sin cambios: {type(exc).__name__}: {exc}")
+--- /dev/null
++++ b/agente-nexo/panel/app.js
+@@ -0,0 +1,83 @@
++const $ = selector => document.querySelector(selector);
++let lastReport = null;
++const text = (selector, value) => { $(selector).textContent = String(value); };
++const formatRoles = roles => roles.length ? roles.join(' + ') : 'Sin roles';
++function element(tag, value, className) {
++  const node = document.createElement(tag); node.textContent = value;
++  if (className) node.className = className;
++  return node;
++}
++function render(report) {
++  lastReport = report;
++  const result = report.requested;
++  text('#risk-score', `${result.risk.score}/100`);
++  text('#risk-label', `Riesgo ${result.risk.label} · minuto ${result.at_minute}`);
++  text('#affected-count', result.affected.length);
++  text('#session-count', result.affected.reduce((sum, user) => sum + user.sessions_invalidated_by_change, 0));
++  $('#affected').replaceChildren();
++  for (const user of result.affected) {
++    const row = element('article', '', 'person');
++    row.append(element('strong', user.user), element('p', `${formatRoles(user.before_roles)} → ${formatRoles(user.proposed_roles)}`));
++    if (user.gained.length) row.append(element('p', `Permisos nuevos: ${user.gained.join(', ')}`));
++    if (user.lost.length) row.append(element('p', `Permisos retirados: ${user.lost.join(', ')}`));
++    row.append(element('small', `${user.sessions_still_valid} tokens siguen válidos; ${user.sessions_invalidated_by_change} quedarían invalidados por el cambio.`));
++    $('#affected').append(row);
++  }
++  if (!result.affected.length) $('#affected').append(element('p', 'Este escenario no altera permisos ni revoca sesiones al momento elegido.'));
++  const alternative = report.alternative_evaluated;
++  if (alternative) {
++    text('#alternative-title', alternative.no_change_needed ? 'Conservar el estado actual' : 'Revisar otro conjunto de roles');
++    const roles = Object.entries(alternative.change.assignments).map(([id, roles]) => `${id}: ${formatRoles(roles)}`).join('; ');
++    const message = alternative.no_change_needed ? 'No llamar a la operación de cambio de roles. La necesidad ya está cubierta.' : roles;
++    text('#alternative-body', `${message} Riesgo calculado: ${alternative.simulation.risk.score}/100.`);
++    $('#catalog-gap').hidden = !report.least_privilege_candidates[0]?.extra_permissions.includes('users:write');
++  } else {
++    text('#alternative-title', 'No hay alternativa evaluada');
++    text('#alternative-body', 'Revisa las necesidades y los roles disponibles antes de decidir.');
++    $('#catalog-gap').hidden = true;
++  }
++  $('#rollback').replaceChildren();
++  const rollback = result.rollback_proposal_only;
++  for (const [id, roles] of Object.entries(rollback.assignments)) $('#rollback').append(element('p', `${id}: volver al conjunto ${formatRoles(roles)}.`));
++  for (const [role, permissions] of Object.entries(rollback.permission_patch)) $('#rollback').append(element('p', `Catálogo ${role}: volver a ${permissions.join(', ') || 'ningún permiso'}.`));
++  if (!Object.keys(rollback.assignments).length && !Object.keys(rollback.permission_patch).length) $('#rollback').append(element('p', 'No hay modificaciones de roles o catálogo que revertir en este escenario.'));
++  if (report.ai.status === 'executed') {
++    text('#ai-status', 'Inferencia realizada');
++    text('#explanation', report.ai.advisory_untrusted.explanation);
++    text('#review', report.ai.advisory_untrusted.human_review);
++    text('#ai-meta', `${report.ai.model} · ${new Date(report.ai.created_at).toLocaleString('es-MX')} · Recomendación para revisión humana`);
++  } else {
++    text('#ai-status', 'Motor de simulación');
++    text('#explanation', 'Se calcularon los efectos con las reglas del proyecto. No se solicitó una inferencia de IA.');
++    text('#review', 'Puedes activar la explicación con IA local y volver a analizar el escenario.');
++    text('#ai-meta', 'Sin inferencia generativa en este informe.');
++  }
++  $('#empty').hidden = true; $('#results').hidden = false;
++}
++$('#simulation').addEventListener('submit', async event => {
++  event.preventDefault();
++  if (!event.currentTarget.reportValidity()) return;
++  const button = $('#analyze'); button.disabled = true;
++  $('#results').hidden = true; $('#empty').hidden = true; $('.output').setAttribute('aria-busy', 'true');
++  const useAI = $('#use-ai').checked;
++  text('#message', useAI ? 'Calculando escenarios y consultando la IA local… Puede tardar unos minutos.' : 'Calculando el impacto del escenario…');
++  try {
++    const response = await fetch('/api/simulate', {method: 'POST', headers: {'Content-Type': 'application/json'},
++      body: JSON.stringify({scenario: $('input[name=scenario]:checked').value, at_minute: Number($('#minute').value), use_ai: useAI})});
++    const report = await response.json();
++    if (!response.ok) throw new Error(report.error || 'No se pudo completar el análisis.');
++    render(report); text('#message', 'Análisis completado. No se aplicaron cambios reales.');
++  } catch (error) {
++    lastReport = null; $('#results').hidden = true; $('#empty').hidden = false;
++    text('#message', error.message || 'No se pudo conectar con el panel local.');
++  } finally {
++    button.disabled = false; $('.output').setAttribute('aria-busy', 'false');
++  }
++});
++$('#download').addEventListener('click', () => {
++  if (!lastReport) return;
++  const blob = new Blob([JSON.stringify(lastReport, null, 2)], {type: 'application/json'});
++  const url = URL.createObjectURL(blob); const link = document.createElement('a');
++  link.href = url; link.download = 'nexo-delta-informe.json'; link.click();
++  setTimeout(() => URL.revokeObjectURL(url), 1000);
++});
+--- /dev/null
++++ b/agente-nexo/panel/index.html
+@@ -0,0 +1,34 @@
++<!doctype html>
++<html lang="es">
++<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXO-Δ · ExamenErik</title><link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script></head>
++<body>
++<header class="top"><a href="/" class="brand" aria-label="NEXO Delta, inicio"><span class="mark">Δ</span><span>NEXO-Δ<small>EXAMENERIK</small></span></a><span class="pill"><span class="dot"></span>Laboratorio local</span></header>
++<main>
++<section class="intro"><p class="eyebrow">ANTES DE CAMBIAR UN ACCESO</p><h1>Explora el cambio.<br><span>Anticipa sus efectos.</span></h1><p class="lede">Simula cambios de roles y permisos, compara alternativas y revisa el impacto en las sesiones antes de tomar una decisión.</p><p class="boundary">Todos los escenarios usan datos sintéticos. Las cuentas y los permisos reales permanecen intactos.</p></section>
++<div class="workspace">
++<section class="setup card" aria-labelledby="scenario-title"><div class="section-heading"><span class="step">01</span><h2 id="scenario-title">Elige un escenario</h2></div>
++<form id="simulation">
++<fieldset><legend class="sr-only">Escenario de simulación</legend>
++<label class="choice"><input type="radio" name="scenario" value="ascenso" checked><span><strong>Un usuario se vuelve administrador</strong><small>u-2 pasa de USER a ADMIN, aunque solo necesita consultar su perfil.</small></span><span class="arrow">↗</span></label>
++<label class="choice"><input type="radio" name="scenario" value="consulta"><span><strong>Solo necesita consultar usuarios</strong><small>Comprueba si el catálogo actual permite dar acceso de lectura sin escritura.</small></span><span class="arrow">↗</span></label>
++<label class="choice"><input type="radio" name="scenario" value="compartido"><span><strong>Un permiso compartido cambia</strong><small>Simula agregar escritura a USER y sus efectos en todos los usuarios de ese rol.</small></span><span class="arrow">↗</span></label>
++</fieldset>
++<div class="settings"><label class="minute" for="minute">Momento del cambio<small>Minutos desde el estado inicial</small><input id="minute" name="at_minute" type="number" min="0" max="10080" step="1" value="5" required></label><label class="ai-switch"><input id="use-ai" type="checkbox" checked><span><strong>Explicación con IA local</strong><small>Qwen2.5-Coder · Ollama</small></span></label></div>
++<button id="analyze" class="primary" type="submit">Analizar escenario <span aria-hidden="true">→</span></button>
++<p class="form-note">NEXO calcula el impacto y compara opciones. La IA explica los resultados para tu revisión.</p>
++</form></section>
++<section class="output card" aria-labelledby="result-title" aria-busy="false"><div class="section-heading"><span class="step">02</span><h2 id="result-title">Revisa las consecuencias</h2></div>
++<p id="message" role="status" aria-live="polite"></p>
++<div id="empty" class="empty"><span class="empty-symbol" aria-hidden="true">Δ</span><h3>Una decisión mejor informada</h3><p>Elige un escenario y descubre qué cambiaría, qué sesiones se perderían y qué alternativa requiere menos privilegios.</p><div class="empty-tags"><span>Permisos</span><span>Sesiones</span><span>Alternativas</span></div></div>
++<div id="results" hidden>
++<div class="metrics"><article class="metric"><span>Riesgo del cambio</span><strong id="risk-score"></strong><small id="risk-label"></small></article><article class="metric"><span>Usuarios afectados</span><strong id="affected-count"></strong><small>en este escenario</small></article><article class="metric"><span>Tokens invalidados</span><strong id="session-count"></strong><small>acceso y renovación</small></article></div>
++<p class="rubric">El puntaje usa una rúbrica educativa de 0 a 100. No expresa una probabilidad de ataque.</p>
++<div class="result-section"><h3>Impacto por usuario</h3><div id="affected"></div></div>
++<div class="alternative result-section"><span class="eyebrow">ALTERNATIVA EVALUADA</span><h3 id="alternative-title"></h3><p id="alternative-body"></p><p id="catalog-gap" hidden>El catálogo V2 no tiene un rol que permita consultar usuarios sin conceder también escritura. Un rol de lectura sería una ampliación futura que necesita revisión.</p></div>
++<div class="result-section"><h3>Propuesta de vuelta atrás</h3><div id="rollback"></div><p class="note">Restaurar roles no restaura sesiones revocadas. Se necesita iniciar sesión de nuevo.</p></div>
++<div class="ai-result result-section"><div class="ai-title"><h3>Lectura de NEXO-Δ</h3><span id="ai-status" class="small-pill"></span></div><p id="explanation"></p><p id="review"></p><small id="ai-meta"></small></div>
++<button id="download" type="button" class="secondary">Descargar informe JSON ↓</button>
++</div></section>
++</div>
++</main><footer><span>NEXO-Δ · Asesor de autorización</span><span>Simular → comparar → revisar</span></footer>
++</body></html>
+--- /dev/null
++++ b/agente-nexo/panel/styles.css
+@@ -0,0 +1 @@
++:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172c2a;background:#f3f6f2;font-synthesis:none;line-height:1.5;color-scheme:light}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}a{color:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}[hidden]{display:none!important}.top,main,footer{max-width:1440px;margin:auto;padding-left:56px;padding-right:56px}.top{display:flex;align-items:center;justify-content:space-between;min-height:110px;border-bottom:1px solid #dce4dd}.brand{display:flex;gap:12px;align-items:center;font-size:24px;font-weight:800;letter-spacing:-.8px;text-decoration:none}.brand small{display:block;font-size:10px;letter-spacing:2.5px;color:#6d7a75;font-weight:600;margin-top:-1px}.mark{display:grid;place-items:center;background:#164d42;color:#e0f6a2;border-radius:14px;width:47px;height:47px;font-size:36px;font-weight:500}.pill{display:flex;align-items:center;gap:9px;font-size:12px;padding:8px 13px;border:1px solid #d3dfd3;border-radius:40px;color:#426051}.dot{width:7px;height:7px;background:#718f45;border-radius:50%}.intro{padding:57px 0 37px;max-width:850px}.eyebrow{font-size:11px;letter-spacing:2.1px;color:#5b765e;font-weight:750;margin:0 0 14px}h1{font-size:clamp(36px,4.3vw,62px);line-height:1.08;letter-spacing:-2.6px;margin:0 0 20px;font-weight:700}h1 span{color:#63866b}.lede{font-size:16px;color:#586a60;max-width:650px;line-height:1.7;margin:0}.boundary{font-size:12px;color:#778579;margin-top:17px}.workspace{display:grid;grid-template-columns:minmax(345px, .94fr) minmax(440px,1.15fr);gap:25px;align-items:start}.card{background:#fff;border:1px solid #dce5dc;border-radius:20px;padding:29px;box-shadow:0 7px 25px #163a2910}.section-heading{display:flex;align-items:center;gap:12px;margin-bottom:25px}h2{font-size:18px;letter-spacing:-.4px;margin:0}.step{font-size:11px;color:#708474;border:1px solid #d9e4d9;padding:5px 7px;border-radius:7px}fieldset{border:0;padding:0;margin:0}.choice{display:flex;align-items:flex-start;gap:12px;border:1px solid #e2e8df;padding:17px 14px;border-radius:12px;margin-bottom:12px;cursor:pointer;transition:.15s}.choice:has(input:checked){background:#f3f8ec;border-color:#9bb885;box-shadow:inset 3px 0 #416b3e}.choice input{accent-color:#3e6e46;margin-top:6px}.choice strong{display:block;font-size:13px;font-weight:650}.choice small{display:block;font-size:11px;line-height:1.6;margin-top:5px;color:#6c786d}.arrow{color:#8f9e88;margin-left:auto;font-size:16px}.settings{display:flex;gap:20px;align-items:center;padding:18px 0 25px}.minute{font-size:12px;font-weight:650;max-width:190px}.minute small{display:block;font-size:10px;font-weight:400;color:#7c857c;margin:4px 0 7px}.minute input{width:100%;padding:8px 10px;border:1px solid #d7dfd3;border-radius:7px;background:#fff;color:#213c2d}.ai-switch{display:flex;gap:9px;align-items:center;cursor:pointer}.ai-switch input{accent-color:#386545;width:16px;height:16px;flex-shrink:0}.ai-switch strong{font-size:11px;display:block}.ai-switch small{display:block;font-size:10px;color:#758170;margin-top:3px}.primary{border:0;background:#194c3f;color:#fff;width:100%;padding:14px 17px;border-radius:10px;font-size:13px;text-align:left;font-weight:600;display:flex;justify-content:space-between}.primary:hover{background:#246451}.primary span{font-size:19px;line-height:20px}.form-note{font-size:10px;color:#859080;line-height:1.6;margin:13px 0 0}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #b4c77e;outline-offset:3px}.empty{text-align:center;padding:67px 20px 80px}.empty-symbol{font-size:65px;color:#8eab86;font-weight:250;line-height:1;display:block;margin-bottom:25px}.empty h3{font-size:19px;letter-spacing:-.4px}.empty p{font-size:12px;line-height:1.8;max-width:310px;margin:auto;color:#7d897a}.empty-tags{display:flex;justify-content:center;gap:8px;margin-top:22px}.empty-tags span{font-size:10px;border:1px solid #e0e6dc;padding:5px 10px;border-radius:40px;color:#85917e}#message{font-size:12px;color:#52684d;margin:0 0 16px}#message:empty{margin:0}.metrics{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:9px}.metric{background:#f4f7f0;padding:15px 12px;border-radius:10px;display:flex;flex-direction:column}.metric span{font-size:10px;color:#6c7b63}.metric strong{font-size:29px;letter-spacing:-1.2px;margin:6px 0 1px;line-height:1.2;color:#305333}.metric small{font-size:9px;color:#7c8975}.rubric,.note{font-size:10px;color:#809078;line-height:1.6;margin:13px 0}.result-section{margin-top:23px}h3{font-size:13px;margin:0 0 11px;letter-spacing:-.15px}.person{border-bottom:1px solid #e9ede5;padding:10px 0}.person strong{font-size:12px}.person p{margin:3px 0;font-size:11px;color:#5d7158;overflow-wrap:anywhere}.person small{font-size:10px;color:#849079}.alternative{background:#f0f6e7;padding:17px;border-radius:11px;border:1px solid #d9e6ca}.alternative .eyebrow{font-size:8px;letter-spacing:1.6px;margin-bottom:7px}.alternative h3{font-size:14px;margin-bottom:6px}.alternative p,#rollback p{font-size:11px;line-height:1.7;margin:5px 0;color:#5d7251}.ai-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.ai-title h3{margin:0}.small-pill{font-size:9px;color:#577348;background:#eef5e6;border-radius:30px;padding:4px 8px}.ai-result p{font-size:12px;line-height:1.8;color:#5b6c55;white-space:pre-wrap}.ai-result small{display:block;font-size:9px;color:#8b9683;line-height:1.5}.secondary{background:#fff;color:#345331;border:1px solid #cbd9c2;border-radius:8px;padding:10px 14px;font-size:11px;margin-top:22px}footer{display:flex;justify-content:space-between;padding-top:30px;padding-bottom:35px;font-size:10px;color:#8a9783}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:960px){.top,main,footer{padding-left:25px;padding-right:25px}.workspace{grid-template-columns:1fr}.intro{padding-top:35px}.output{min-height:350px}.empty{padding:30px 20px 50px}}@media(max-width:500px){.top,main,footer{padding-left:17px;padding-right:17px}.top{min-height:85px}.brand{font-size:21px}.pill{font-size:10px;padding:6px 8px}h1{letter-spacing:-1.5px}.lede{font-size:14px}.card{padding:20px;border-radius:15px}.settings{flex-direction:column;align-items:stretch;gap:18px}.minute{max-width:none}.metrics{grid-template-columns:1fr}.metric{display:block}.metric strong{display:block}.metric span,.metric small{font-size:11px}footer{gap:15px}.ai-title{align-items:flex-start}}
+--- /dev/null
++++ b/agente-nexo/servidor.py
+@@ -0,0 +1,128 @@
++#!/usr/bin/env python3
++"""Panel local de NEXO-Δ: solo fixtures sintéticos, sin acceso al IAM."""
++import argparse
++import copy
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++import json
++from pathlib import Path
++import threading
++import urllib.error
++import webbrowser
++
++from nexo import run
++
++BASE = Path(__file__).resolve().parent
++MODEL = "qwen2.5-coder:7b"
++SCENARIOS = {
++    "ascenso": {"file": "escenario.json", "title": "Convertir USER en ADMIN"},
++    "consulta": {"file": "escenario-lectura.json", "title": "Dar acceso de consulta"},
++    "compartido": {"file": "escenario-permisos.json", "title": "Agregar escritura a USER"},
++}
++STATIC = {"/": ("index.html", "text/html; charset=utf-8"),
++          "/app.js": ("app.js", "text/javascript; charset=utf-8"),
++          "/styles.css": ("styles.css", "text/css; charset=utf-8")}
++
++class NexoServer(ThreadingHTTPServer):
++    daemon_threads = True
++    def __init__(self, port):
++        super().__init__(("127.0.0.1", port), Handler)
++        self.origin = f"http://127.0.0.1:{self.server_port}"
++        self.inference_lock = threading.Lock()
++
++class Handler(BaseHTTPRequestHandler):
++    server_version = "NEXO"
++    sys_version = ""
++
++    def log_message(self, *args):
++        pass  # Sin cuerpos, cookies, informes ni credenciales en logs.
++
++    def reply(self, status, body, kind="application/json; charset=utf-8"):
++        if not isinstance(body, bytes):
++            body = json.dumps(body, ensure_ascii=False).encode()
++        self.send_response(status)
++        self.send_header("Content-Type", kind)
++        self.send_header("Content-Length", str(len(body)))
++        self.send_header("Cache-Control", "no-store")
++        self.send_header("X-Content-Type-Options", "nosniff")
++        self.send_header("Referrer-Policy", "no-referrer")
++        self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
++        self.end_headers()
++        try:
++            self.wfile.write(body)
++        except (BrokenPipeError, ConnectionResetError):
++            pass
++
++    def host_allowed(self):
++        # Comprobar Host también en GET impide servir el panel a través de DNS rebinding.
++        if self.headers.get("Host") != self.server.origin.removeprefix("http://"):
++            self.reply(403, {"error": "Acceso local rechazado"})
++            return False
++        return True
++
++    def do_GET(self):
++        if not self.host_allowed(): return
++        if self.path == "/api/scenarios":
++            self.reply(200, {"scenarios": [{"id": key, "title": value["title"]} for key, value in SCENARIOS.items()], "model": MODEL})
++            return
++        if self.path not in STATIC:
++            self.reply(404, {"error": "Ruta no disponible"}); return
++        name, kind = STATIC[self.path]
++        self.reply(200, (BASE/"panel"/name).read_bytes(), kind)
++
++    def do_POST(self):
++        if not self.host_allowed(): return
++        if self.path != "/api/simulate":
++            self.reply(404, {"error": "Ruta no disponible"}); return
++        if self.headers.get("Origin") != self.server.origin:
++            self.reply(403, {"error": "Origen no permitido"}); return
++        if self.headers.get("Content-Type", "").split(";", 1)[0].strip().lower() != "application/json":
++            self.reply(415, {"error": "Se requiere JSON"}); return
++        if self.headers.get("Transfer-Encoding"):
++            self.reply(400, {"error": "Solicitud no válida"}); return
++        try:
++            size = int(self.headers.get("Content-Length", "0"))
++            if not 0 < size <= 2048:
++                self.reply(413, {"error": "Solicitud fuera del tamaño permitido"}); return
++            self.connection.settimeout(10)
++            data = json.loads(self.rfile.read(size))
++            if not isinstance(data, dict) or set(data) != {"scenario", "at_minute", "use_ai"}:
++                raise ValueError()
++            if not isinstance(data["scenario"], str) or data["scenario"] not in SCENARIOS:
++                raise ValueError()
++            if type(data["at_minute"]) is not int or not 0 <= data["at_minute"] <= 10080:
++                raise ValueError()
++            if type(data["use_ai"]) is not bool: raise ValueError()
++        except (ValueError, TypeError, TimeoutError):
++            self.reply(400, {"error": "Elige un escenario y un minuto entero entre 0 y 10080"}); return
++        if not self.server.inference_lock.acquire(blocking=False):
++            self.reply(409, {"error": "Hay un análisis en curso. Espera a que termine"}); return
++        try:
++            source = json.loads((BASE/SCENARIOS[data["scenario"]]["file"]).read_text())
++            snapshot = copy.deepcopy(source)
++            snapshot["at_minute"] = data["at_minute"]
++            report = run(snapshot, use_ai=data["use_ai"], model=MODEL)
++            self.reply(200, report)
++        except urllib.error.URLError:
++            self.reply(503, {"error": "No se pudo completar la inferencia local. Abre Ollama y comprueba que qwen2.5-coder:7b está instalado. No se sustituyó la IA por una respuesta simulada"})
++        except Exception:
++            self.reply(503, {"error": "No se pudo completar el análisis. No se realizaron cambios. Puedes revisar el escenario o volver a intentarlo"})
++        finally:
++            self.server.inference_lock.release()
++
++    def do_OPTIONS(self):
++        if self.host_allowed(): self.reply(403, {"error": "No se permite acceso desde otros sitios"})
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--port", type=int, default=0, help="0 elige un puerto local libre")
++    parser.add_argument("--open", action="store_true", help="Abrir el navegador")
++    args = parser.parse_args()
++    with NexoServer(args.port) as server:
++        print(f"NEXO-Δ disponible en {server.origin}", flush=True)
++        print("Datos sintéticos. Pulsa Ctrl+C para cerrar el panel.", flush=True)
++        if args.open: webbrowser.open(server.origin)
++        try: server.serve_forever()
++        except KeyboardInterrupt: pass
++
++if __name__ == "__main__": main()
+--- /dev/null
++++ b/agente-nexo/test_nexo.py
+@@ -0,0 +1,39 @@
++import copy
++import json
++from pathlib import Path
++import unittest
++from nexo import run, simulate, validate
++
++class NexoTest(unittest.TestCase):
++    def setUp(self): self.s = json.loads((Path(__file__).parent / 'escenario.json').read_text())
++    def test_assignment_revokes_access_and_refresh_without_mutating_input(self):
++        original = copy.deepcopy(self.s); out = simulate(self.s)
++        self.assertEqual(out['affected'][0]['sessions_invalidated_by_change'], 2)
++        self.assertEqual(self.s, original)
++    def test_expired_sessions_are_not_counted_as_change_damage(self):
++        self.s['at_minute'] = 20
++        self.assertEqual(simulate(self.s)['affected'][0]['sessions_invalidated_by_change'], 1)
++    def test_least_privilege_uses_real_catalog(self):
++        report = run(self.s)
++        self.assertEqual(report['least_privilege_candidates'][0]['roles'], ['USER'])
++        self.assertEqual(report['ai']['status'], 'not_requested')
++        self.assertTrue(report['alternative_evaluated']['no_change_needed'])
++        self.assertEqual(report['alternative_evaluated']['simulation']['risk']['score'], 0)
++    def test_no_readonly_admin_role_is_invented(self):
++        self.s['required_permissions'] = ['users:read']
++        c = run(self.s)['least_privilege_candidates'][0]
++        self.assertEqual(c['roles'], ['ADMIN']); self.assertIn('users:write', c['extra_permissions'])
++    def test_last_writer_loss_scores_lockout(self):
++        self.s['change']['assignments'] = {'u-1':['USER']}
++        self.assertEqual(simulate(self.s)['risk']['no_writer_points'], 40)
++    def test_permission_patch_changes_authorities_without_revoking_sessions(self):
++        self.s['change'] = {'assignments':{}, 'permission_patch':{'USER':['profile:read','users:write']}}
++        self.assertEqual(len(simulate(self.s)['affected']), 2)
++        self.assertTrue(all(u['sessions_still_valid'] == 2 for u in simulate(self.s)['affected']))
++    def test_rejects_personal_fields_and_unknown_permissions(self):
++        self.s['users'][0]['email'] = 'person@example.test'
++        with self.assertRaises(ValueError): validate(self.s)
++        del self.s['users'][0]['email']; self.s['roles']['USER'].append('execute:shell')
++        with self.assertRaises(ValueError): validate(self.s)
++
++if __name__ == '__main__': unittest.main()
+--- /dev/null
++++ b/agente-nexo/test_servidor.py
+@@ -0,0 +1,70 @@
++import hashlib
++import http.client
++import json
++from pathlib import Path
++import threading
++import unittest
++from unittest.mock import patch
++import urllib.error
++from servidor import NexoServer
++
++class PanelBoundaryTest(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.server = NexoServer(0)
++        cls.thread = threading.Thread(target=cls.server.serve_forever, kwargs={"poll_interval":0.02}, daemon=True)
++        cls.thread.start()
++
++    @classmethod
++    def tearDownClass(cls):
++        cls.server.shutdown(); cls.server.server_close(); cls.thread.join()
++
++    def post(self, body=None, origin=None, host=None, content_type="application/json", raw=None):
++        data = json.dumps(body or {"scenario":"ascenso","at_minute":5,"use_ai":False}).encode() if raw is None else raw
++        connection = http.client.HTTPConnection("127.0.0.1", self.server.server_port, timeout=3)
++        headers = {"Content-Type":content_type, "Origin":origin or self.server.origin}
++        if host: headers["Host"] = host
++        connection.request("POST", "/api/simulate", body=data, headers=headers)
++        response = connection.getresponse(); status = response.status
++        payload = json.loads(response.read()); connection.close()
++        return status, payload
++
++    def test_cross_site_and_rebound_host_cannot_invoke_model(self):
++        with patch("servidor.run") as model:
++            self.assertEqual(self.post(origin="https://other.example.test")[0],403)
++            self.assertEqual(self.post(host="other.example.test")[0],403)
++            model.assert_not_called()
++
++    def test_no_arbitrary_files_secrets_or_large_inputs_accepted(self):
++        with patch("servidor.run") as model:
++            self.assertEqual(self.post({"scenario":"../../.env.local","at_minute":5,"use_ai":True})[0],400)
++            self.assertEqual(self.post({"scenario":"ascenso","at_minute":5,"use_ai":True,"password":"private"})[0],400)
++            self.assertEqual(self.post(raw=b"x"*2049)[0],413)
++            self.assertEqual(self.post(content_type="text/plain")[0],415)
++            model.assert_not_called()
++
++    def test_simulation_matches_engine_and_keeps_fixture_unchanged(self):
++        source = Path(__file__).parent / 'escenario.json'
++        before = hashlib.sha256(source.read_bytes()).hexdigest()
++        status, report = self.post({"scenario":"ascenso","at_minute":20,"use_ai":False})
++        self.assertEqual(status,200)
++        self.assertEqual(report['requested']['risk']['score'],55)
++        self.assertEqual(report['requested']['affected'][0]['sessions_invalidated_by_change'],1)
++        self.assertEqual(report['ai']['status'],'not_requested')
++        self.assertEqual(before,hashlib.sha256(source.read_bytes()).hexdigest())
++
++    def test_model_failure_never_returns_fake_ai_success(self):
++        with patch("servidor.run",side_effect=urllib.error.URLError('unavailable')):
++            status, response = self.post({"scenario":"ascenso","at_minute":5,"use_ai":True})
++            self.assertEqual(status,503)
++            self.assertNotIn('ai',response)
++
++    def test_second_request_does_not_start_another_inference(self):
++        self.server.inference_lock.acquire()
++        try:
++            with patch('servidor.run') as model:
++                self.assertEqual(self.post()[0],409)
++                model.assert_not_called()
++        finally: self.server.inference_lock.release()
++
++if __name__=='__main__': unittest.main()
+--- /dev/null
++++ b/deploy/Dockerfile.api
+@@ -0,0 +1,12 @@
++FROM eclipse-temurin:21-jdk AS build
++WORKDIR /src
++COPY sistema-m01-m02/ .
++RUN chmod +x mvnw && ./mvnw -B -ntp -Papi-only clean package -DskipTests
++FROM eclipse-temurin:21-jre
++RUN groupadd --system app && useradd --system --gid app --home-dir /app app
++WORKDIR /app
++COPY --from=build --chown=app:app /src/target/backend-0.1.0-SNAPSHOT.jar app.jar
++COPY --chmod=755 deploy/start-api.sh /app/start-api.sh
++USER app
++EXPOSE 8080
++ENTRYPOINT ["/app/start-api.sh"]
+--- /dev/null
++++ b/deploy/backend.env.example
+@@ -0,0 +1,21 @@
++# Ejemplo público. Cargar valores REALES solo en el gestor de secretos de Render Free.
++DB_URL=jdbc:mysql://db.tu-identificador.is-a.dev:3306/identity?sslMode=VERIFY_IDENTITY&serverTimezone=UTC
++DB_USERNAME=identity_app
++DB_PASSWORD=REEMPLAZAR
++JWT_SIGNING_KEY=REEMPLAZAR_BASE64_32_BYTES_O_MAS
++APP_ALLOWED_ORIGINS=https://app.tu-identificador.is-a.dev
++APP_COOKIE_SECURE=true
++APP_COOKIE_SAME_SITE=Strict
++APP_RECOVERY_MODE=smtp
++APP_RECOVERY_BASE_URL=https://app.tu-identificador.is-a.dev/reset-password.html
++SMTP_HOST=mail.smtp2go.com
++SMTP_PORT=2525
++SMTP_USERNAME=REEMPLAZAR
++SMTP_PASSWORD=REEMPLAZAR
++SMTP_AUTH=true
++SMTP_STARTTLS=true
++SMTP_FROM=REEMPLAZAR_REMITENTE_VERIFICADO
++APP_BOOTSTRAP_ENABLED=false
++DB_POOL_MAX_SIZE=5
++DB_POOL_MIN_IDLE=1
++DB_CA_CERT_BASE64=BASE64_DEL_CERTIFICADO_PUBLICO_CA_PEM
+--- /dev/null
++++ b/deploy/dns/api.tu-identificador.json.example
+@@ -0,0 +1,8 @@
++{
++  "owner": {
++    "username": "REEMPLAZAR_USUARIO_GITHUB"
++  },
++  "records": {
++    "CNAME": "REEMPLAZAR.onrender.com"
++  }
++}--- /dev/null
++++ b/deploy/dns/db.tu-identificador.json.example
+@@ -0,0 +1,10 @@
++{
++  "owner": {
++    "username": "REEMPLAZAR_USUARIO_GITHUB"
++  },
++  "records": {
++    "A": [
++      "REEMPLAZAR_IP_ORACLE"
++    ]
++  }
++}--- /dev/null
++++ b/deploy/dns/tu-identificador.json.example
+@@ -0,0 +1,8 @@
++{
++  "owner": {
++    "username": "REEMPLAZAR_USUARIO_GITHUB"
++  },
++  "records": {
++    "CNAME": "REEMPLAZAR.pages.dev"
++  }
++}--- /dev/null
++++ b/deploy/mysql/.env.example
+@@ -0,0 +1,4 @@
++MYSQL_ROOT_PASSWORD=GENERAR_ALEATORIO
++MYSQL_PASSWORD=GENERAR_OTRO_ALEATORIO
++# Mantener 127.0.0.1 en pruebas; en VM, IP privada propia protegida por firewall.
++MYSQL_BIND_ADDRESS=127.0.0.1
+--- /dev/null
++++ b/deploy/mysql/.gitignore
+@@ -0,0 +1,4 @@
++server/
++ca-private/
++.env
++*.p12
+--- /dev/null
++++ b/deploy/mysql/compose.yml
+@@ -0,0 +1,24 @@
++name: examenerik-cloud-db
++services:
++  mysql:
++    image: mysql:8.4
++    restart: unless-stopped
++    environment:
++      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Configura secreto local en VM}
++      MYSQL_DATABASE: identity
++      MYSQL_USER: identity_app
++      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Configura secreto local en VM}
++    ports:
++      - "${MYSQL_BIND_ADDRESS:-127.0.0.1}:3306:3306"
++    volumes:
++      - identity-data:/var/lib/mysql
++      - ./server:/etc/mysql/tls:ro
++      - ./tls.cnf:/etc/mysql/conf.d/tls.cnf:ro
++    mem_limit: 2g
++    healthcheck:
++      test: ["CMD-SHELL", "MYSQL_PWD=$$MYSQL_ROOT_PASSWORD mysqladmin ping -h 127.0.0.1 -u root --silent"]
++      interval: 10s
++      timeout: 5s
++      retries: 15
++volumes:
++  identity-data:
+--- /dev/null
++++ b/deploy/mysql/generar-tls.py
+@@ -0,0 +1,19 @@
++#!/usr/bin/env python3
++"""Genera una CA propia y certificado DNS en directorio nuevo; jamás sobreescribe."""
++import argparse
++import os
++from pathlib import Path
++import re
++import subprocess
++p=argparse.ArgumentParser();p.add_argument('hostname');p.add_argument('output',type=Path);a=p.parse_args()
++if not re.fullmatch(r'[a-z0-9](?:[a-z0-9.-]{0,251}[a-z0-9])?',a.hostname) or '..' in a.hostname: raise SystemExit('Hostname inválido')
++a.output.mkdir(parents=True,exist_ok=False); os.chmod(a.output,0o700)
++server=a.output/'server';server.mkdir(); ca=a.output/'ca-private';ca.mkdir(mode=0o700)
++def run(*args):subprocess.run(['openssl',*map(str,args)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
++run('req','-x509','-newkey','rsa:3072','-nodes','-days','365','-subj','/CN=ExamenErik demo CA','-keyout',ca/'ca-key.pem','-out',server/'ca.pem')
++run('req','-new','-newkey','rsa:3072','-nodes','-subj','/CN='+a.hostname,'-keyout',server/'server-key.pem','-out',ca/'server.csr')
++ext=ca/'extensions.cnf';ext.write_text('subjectAltName=DNS:'+a.hostname+'\nbasicConstraints=CA:FALSE\nkeyUsage=digitalSignature,keyEncipherment\nextendedKeyUsage=serverAuth\n')
++run('x509','-req','-in',ca/'server.csr','-CA',server/'ca.pem','-CAkey',ca/'ca-key.pem','-CAcreateserial','-days','90','-extfile',ext,'-out',server/'server-cert.pem')
++for directory in [server,ca]:
++ for file in directory.iterdir():file.chmod(0o600 if 'key' in file.name else 0o644)
++print('Generado. CA privada queda fuera del montaje; certificado servidor vence en 90 días. Ajusta propietario de server-key.pem al UID mysql de la imagen.')
+--- /dev/null
++++ b/deploy/mysql/tls.cnf
+@@ -0,0 +1,9 @@
++[mysqld]
++require_secure_transport=ON
++ssl_ca=/etc/mysql/tls/ca.pem
++ssl_cert=/etc/mysql/tls/server-cert.pem
++ssl_key=/etc/mysql/tls/server-key.pem
++tls_version=TLSv1.2,TLSv1.3
++mysqlx=0
++max_connections=30
++local_infile=OFF
+--- /dev/null
++++ b/deploy/start-api.sh
+@@ -0,0 +1,13 @@
++#!/bin/sh
++set -eu
++if [ -n "${DB_CA_CERT_BASE64:-}" ]; then
++  umask 077
++  printf '%s' "$DB_CA_CERT_BASE64" | base64 -d > /tmp/db-ca.pem
++  cp "$JAVA_HOME/lib/security/cacerts" /tmp/identity-cacerts
++  keytool -importcert -noprompt -alias examenerik-db -file /tmp/db-ca.pem \
++    -keystore /tmp/identity-cacerts -storepass changeit >/dev/null 2>&1
++  # changeit protege un almacén de certificados públicos; no es una credencial de BD.
++  exec java -XX:MaxRAMPercentage=65 -Djavax.net.ssl.trustStore=/tmp/identity-cacerts \
++    -Djavax.net.ssl.trustStorePassword=changeit -jar /app/app.jar
++fi
++exec java -XX:MaxRAMPercentage=65 -jar /app/app.jar
+--- a/frontend/.env.example
++++ b/frontend/.env.example
+@@ -1,3 +1,2 @@
+-# Variable de construcción; la API debe permanecer en el mismo origen.
+-# Exportar antes de npm run build. No se carga automáticamente.
+-APP_API_BASE_PATH=/api
++# Solo configuración pública de build; NO poner secretos aquí. Exportar antes del build.
++APP_API_BASE_PATH=https://api.example.test/api
+--- a/frontend/README.md
++++ b/frontend/README.md
+@@ -1,12 +1,18 @@
+ # Frontend de ExamenErik
+ 
+-Fuentes únicas en `src/` y `public/`; build generado hacia recursos Spring. [Documentador completo](../documentacion/frontend/documentadorFrontend.md).
++Fuentes HTML/CSS/JavaScript modular en `src/` y `public/`, compiladas con esbuild.
+ 
+ ```sh
+ npm ci
+ npm run check
+-npx playwright install chromium
+-npm run test:e2e
++# Publicación independiente: dist, con API HTTPS fija durante el build
++APP_API_BASE_PATH=https://api.example.test/api npm run build
++# Desarrollo y E2E anteriores: copia explícita a recursos Spring
++npm run build:integrated
+ ```
+ 
+-E2E requiere Docker y el JAR construido del backend; crea MySQL/Mailpit/API propios y los elimina al terminar. Chrome instalado puede seleccionarse con `PW_CHANNEL=chrome npm run test:e2e`. No se usa el backend de desarrollo.
++`APP_API_BASE_PATH` es pública y no se carga automáticamente desde .env. Nunca incluir claves. El cliente mantiene Bearer en memoria, usa `credentials: include` y admite /api o una URL HTTPS validada sin usuario, contraseña, fragmento ni query. El backend debe permitir exactamente el origen del frontend.
++
++`npm run test:e2e` requiere Docker y un JAR integrado construido después de `build:integrated`; crea y elimina MySQL/Mailpit/API sintéticos. `PW_CHANNEL=chrome` usa Chrome instalado. `node tests/separate-origins.mjs` verifica el build independiente en dos orígenes HTTPS locales del mismo sitio; solo su navegador acepta el certificado autofirmado de prueba.
++
++Consultar [publicación gratuita](../documentacion/actividad/PUBLICACION_GRATUITA.md).
+--- a/frontend/package.json
++++ b/frontend/package.json
+@@ -6,6 +6,7 @@
+   "engines": { "node": ">=24" },
+   "scripts": {
+     "build": "node scripts/build.mjs",
++    "build:integrated": "node scripts/build.mjs --integrated",
+     "test": "node --test tests/unit/*.test.js",
+     "test:e2e": "playwright test",
+     "check": "npm run test && npm run build"
+--- a/frontend/scripts/build.mjs
++++ b/frontend/scripts/build.mjs
+@@ -2,18 +2,27 @@
+ import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
+ import { fileURLToPath } from 'node:url';
+ import path from 'node:path';
++import { validateApiBase } from '../src/api-base.js';
+ const root = fileURLToPath(new URL('../', import.meta.url));
+-const output = path.resolve(root, '../sistema-m01-m02/src/main/resources/static');
+-const apiBase = process.env.APP_API_BASE_PATH || '/api';
+-if (!/^\/(?!\/)[A-Za-z0-9/_-]+$/.test(apiBase) || apiBase.endsWith('/')) {
+-  throw new Error('APP_API_BASE_PATH debe ser una ruta del mismo origen, sin barra final');
+-}
++const integrated = process.argv.includes('--integrated');
++const output = path.resolve(root, integrated ? '../sistema-m01-m02/src/main/resources/static' : 'dist');
++const apiBase = validateApiBase(process.env.APP_API_BASE_PATH || '/api');
+ await mkdir(output, { recursive: true });
+ await build({ entryPoints: [path.join(root, 'src/app.js')], outfile: path.join(output, 'app.js'),
+-  bundle: true, format: 'iife', target: ['es2022'], minify: false, sourcemap: false,
++  bundle: true, format: 'iife', target: ['es2022'], minify: true, sourcemap: false,
+   define: { __API_BASE__: JSON.stringify(apiBase) }, legalComments: 'none' });
+ const html = await readFile(path.join(root, 'public/index.html'), 'utf8');
+ await writeFile(path.join(output, 'index.html'), html);
+ await writeFile(path.join(output, 'reset-password.html'), html);
+ await copyFile(path.join(root, 'src/styles.css'), path.join(output, 'styles.css'));
+-console.log('Frontend compilado hacia recursos Spring (API del mismo origen).');
++if (!integrated) {
++  const connect = apiBase.startsWith('https:') ? ` 'self' ${new URL(apiBase).origin}` : " 'self'";
++  await writeFile(path.join(output, '_headers'), `/*
++  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; connect-src${connect}; form-action 'self'; base-uri 'none'; frame-ancestors 'none'
++  X-Content-Type-Options: nosniff
++  Referrer-Policy: no-referrer
++  Permissions-Policy: camera=(), microphone=(), geolocation=()
++  Cache-Control: no-store
++`);
++}
++console.log(`Frontend compilado: ${integrated ? 'integrado (desarrollo)' : 'dist (publicación independiente)'}`);
+--- /dev/null
++++ b/frontend/src/api-base.js
+@@ -0,0 +1,12 @@
++// La URL queda fijada durante el build; nunca se acepta desde formularios o querystrings.
++export function validateApiBase(base) {
++  if (typeof base !== 'string') throw new Error('Base de API inválida');
++  if (/^\/(?!\/)[A-Za-z0-9/_-]+$/.test(base) && !base.endsWith('/')) return base;
++  try {
++    const u = new URL(base);
++    if (u.protocol === 'https:' && !u.username && !u.password && !u.search && !u.hash
++        && /^\/[A-Za-z0-9/_-]+$/.test(u.pathname) && !u.pathname.endsWith('/')
++        && u.href === base) return base;
++  } catch {}
++  throw new Error('Base de API inválida: usa /api o una URL HTTPS sin credenciales, query ni barra final');
++}
+--- a/frontend/src/api-client.js
++++ b/frontend/src/api-client.js
+@@ -1,3 +1,4 @@
++import { validateApiBase } from './api-base.js';
+ const publicAuth = /^\/auth\/(register|login|refresh|logout|forgot-password|reset-password)$/;
+ export class ApiError extends Error {
+   constructor(message, status = 0, code = 'NETWORK_ERROR') { super(message); this.name = 'ApiError'; this.status = status; this.code = code; }
+@@ -13,7 +14,7 @@
+     && Array.isArray(value.permissions) && value.permissions.every(v => typeof v === 'string');
+ }
+ export function createApiClient({ fetchImpl = globalThis.fetch, base = '/api', timeout = 20000, onSessionEnd = () => {}, refreshLock = task => globalThis.navigator?.locks ? globalThis.navigator.locks.request('examenerik-refresh', task) : task() } = {}) {
+-  if (!/^\/(?!\/)[A-Za-z0-9/_-]+$/.test(base) || base.endsWith('/')) throw new Error('Base de API inválida');
++  validateApiBase(base);
+   let accessToken = null;
+   let refreshPending = null;
+   const clear = () => { accessToken = null; onSessionEnd(); };
+@@ -24,7 +25,7 @@
+       const headers = {};
+       if (data !== undefined) headers['Content-Type'] = 'application/json';
+       if (accessToken && protectedRequest) headers.Authorization = `Bearer ${accessToken}`;
+-      const response = await fetchImpl(`${base}${path}`, { method, headers, credentials: 'same-origin',
++      const response = await fetchImpl(`${base}${path}`, { method, headers, credentials: 'include',
+         signal: controller.signal, body: data === undefined ? undefined : JSON.stringify(data) });
+       let body = null;
+       if (response.status !== 204) {
+--- a/frontend/tests/e2e/environment.js
++++ b/frontend/tests/e2e/environment.js
+@@ -45,7 +45,7 @@
+     docker('build', '-q', '-t', name, path.join(root, 'sistema-m01-m02')); image = true;
+     const application = docker('run', '-d', '--network', name, '-p', `127.0.0.1:${new URL(base).port}:8080`, '--read-only', '--tmpfs', '/tmp', '--env-file', envfile('app.env', {
+       SPRING_PROFILES_ACTIVE: 'local', DB_URL: 'jdbc:mysql://mysql:3306/identity_e2e?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false', DB_USERNAME: 'identity_e2e', DB_PASSWORD: password,
+-      JWT_SIGNING_KEY: randomBytes(48).toString('base64'), APP_ALLOWED_ORIGINS: base, APP_COOKIE_SECURE: 'false', APP_RECOVERY_MODE: 'development', APP_RECOVERY_BASE_URL: `${base}/reset-password.html`,
++      JWT_SIGNING_KEY: randomBytes(48).toString('base64'), APP_ALLOWED_ORIGINS: [base, process.env.E2E_ADDITIONAL_ORIGIN].filter(Boolean).join(','), APP_COOKIE_SECURE: process.env.E2E_COOKIE_SECURE || 'false', APP_RECOVERY_MODE: 'development', APP_RECOVERY_BASE_URL: `${base}/reset-password.html`,
+       SMTP_HOST: 'mailpit', SMTP_PORT: '1025', SMTP_AUTH: 'false', SMTP_STARTTLS: 'false', SMTP_FROM: 'noreply@example.test',
+       APP_BOOTSTRAP_ENABLED: 'true', APP_BOOTSTRAP_EMAIL: 'qa-admin@gmail.com', APP_BOOTSTRAP_PASSWORD: adminPassword,
+       AUTH_REQUESTS_PER_MINUTE: '10000', MAX_FAILED_ATTEMPTS: '3'
+--- /dev/null
++++ b/frontend/tests/separate-origins.mjs
+@@ -0,0 +1,66 @@
++// Prueba local de despliegue separado: dos orígenes HTTPS, API y MySQL sintéticos.
++import { createServer } from 'node:https';
++import http from 'node:http';
++import { execFileSync } from 'node:child_process';
++import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
++import { tmpdir } from 'node:os';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++import { chromium, expect } from '@playwright/test';
++import setup from './e2e/environment.js';
++const root = fileURLToPath(new URL('../../', import.meta.url));
++const scratch = mkdtempSync(path.join(tmpdir(), 'examenerik-tls-'));
++const servers = []; let cleanup, browser;
++const listen = async handler => {
++  const server = createServer({key:readFileSync(path.join(scratch,'key.pem')),cert:readFileSync(path.join(scratch,'cert.pem'))}, handler);
++  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve)); servers.push(server);return server.address().port;
++};
++try {
++  execFileSync('openssl',['req','-x509','-newkey','rsa:2048','-nodes','-days','1','-subj','/CN=examenerik.test','-addext','subjectAltName=DNS:app.examenerik.test,DNS:api.examenerik.test','-keyout',path.join(scratch,'key.pem'),'-out',path.join(scratch,'cert.pem')],{stdio:'ignore'});
++  const apiPort = await listen((req,res)=>{
++    const upstream=http.request(process.env.E2E_BASE_URL+req.url,{method:req.method,headers:{...req.headers,host:new URL(process.env.E2E_BASE_URL).host}},response=>{
++      res.writeHead(response.statusCode,response.headers);response.pipe(res);
++    });upstream.on('error',()=>{res.writeHead(502);res.end();});req.pipe(upstream);
++  });
++  let headers = '';
++  const frontPort = await listen((req,res)=>{
++    const file = {'/':'index.html','/index.html':'index.html','/reset-password.html':'reset-password.html','/app.js':'app.js','/styles.css':'styles.css'}[req.url.split('?')[0]];
++    if(!file){res.writeHead(404);res.end();return;}
++    res.setHeader('Content-Type',file.endsWith('.js')?'text/javascript':file.endsWith('.css')?'text/css':'text/html');
++    res.setHeader('Content-Security-Policy',headers);
++    res.end(readFileSync(path.join(root,'frontend/dist',file)));
++  });
++  const origin=`https://app.examenerik.test:${frontPort}`; const apiOrigin=`https://api.examenerik.test:${apiPort}`;
++  process.env.E2E_ADDITIONAL_ORIGIN=origin;process.env.E2E_COOKIE_SECURE='true';
++  execFileSync('npm',['--prefix',path.join(root,'frontend'),'run','build'],{env:{...process.env,APP_API_BASE_PATH:apiOrigin+'/api'},stdio:'ignore'});
++  headers=readFileSync(path.join(root,'frontend/dist/_headers'),'utf8').split('Content-Security-Policy: ')[1].split('\n')[0];
++  cleanup=await setup();
++  browser=await chromium.launch({channel:'chrome',args:['--host-resolver-rules=MAP app.examenerik.test 127.0.0.1, MAP api.examenerik.test 127.0.0.1','--no-proxy-server']});
++  const context=await browser.newContext({ignoreHTTPSErrors:true});const page=await context.newPage();
++  const responses=[];page.on('response',r=>{if(r.url().startsWith(apiOrigin))responses.push({path:new URL(r.url()).pathname,status:r.status()});});
++  await page.goto(origin+'/#login');
++  await page.locator('#login').getByLabel('Correo',{exact:true}).fill('qa-admin@gmail.com');
++  await page.locator('#login').getByLabel('Contraseña',{exact:true}).fill(process.env.E2E_ADMIN_PASSWORD);
++  await page.locator('#login').getByRole('button',{name:'Entrar',exact:true}).click();
++  await expect(page.locator('#view-account')).toBeVisible();
++  const cookies=await context.cookies(apiOrigin+'/api/auth/refresh');
++  const refresh=cookies.find(c=>c.name==='refresh_token');
++  expect(refresh).toBeTruthy();expect(refresh.httpOnly).toBe(true);expect(refresh.secure).toBe(true);expect(refresh.sameSite).toBe('Strict');
++  expect(refresh.domain).toBe('api.examenerik.test');expect(refresh.path).toBe('/api/auth');
++  await page.reload();await expect(page.locator('#view-account')).toBeVisible();
++  expect(responses.some(r=>r.path==='/api/auth/refresh'&&r.status===200)).toBe(true);
++  const forbidden=await page.evaluate(async api=>{const r=await fetch(api+'/api/auth/refresh',{method:'POST',credentials:'include',headers:{'Content-Type':'application/json'},body:'{}'});return r.status;},apiOrigin);
++  expect(forbidden).toBe(200);
++  expect(await page.evaluate(()=>document.cookie.includes('refresh_token'))).toBe(false);
++  await page.screenshot({path:path.join(root,'documentacion/actividad/evidencia/origenes-https.png'),fullPage:true});
++  const proof={local_synthetic_only:true,tls:'Self-signed certificate accepted ONLY in this test browser', frontend_origin:origin,api_origin:apiOrigin,
++    cookie:{httpOnly:refresh.httpOnly,secure:refresh.secure,sameSite:refresh.sameSite,domain:refresh.domain,path:refresh.path},
++    reload_refresh_success:true,responses,passed:true};
++  writeFileSync(path.join(root,'documentacion/actividad/evidencia/origenes-https.json'),JSON.stringify(proof,null,2));
++  console.log('PASS: login, cookie HttpOnly/Secure/Strict y refresh al recargar desde otro origen HTTPS del mismo sitio.');
++} finally {
++  await browser?.close();for(const server of servers)await new Promise(resolve=>server.close(resolve));
++  if(cleanup)await cleanup();rmSync(scratch,{recursive:true,force:true});
++  // Build neutro sin direcciones efímeras del laboratorio.
++  execFileSync('npm',['--prefix',path.join(root,'frontend'),'run','build'],{env:{...process.env,APP_API_BASE_PATH:'/api'},stdio:'ignore'});
++}
+--- a/frontend/tests/unit/api-client.test.js
++++ b/frontend/tests/unit/api-client.test.js
+@@ -4,11 +4,11 @@
+ const access = { accessToken: 'synthetic-access', tokenType: 'Bearer', expiresIn: 900 };
+ const user = { id: 'test', email: 'test@gmail.com', displayName: 'Test', status: 'ACTIVE', roles: ['USER'], permissions: ['profile:read'] };
+ const response = (body, status = 200) => new Response(body === null ? null : JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });
+-test('envía Bearer solo a operaciones protegidas y mantiene cookie same-origin', async () => {
++test('envía Bearer solo a operaciones protegidas y mantiene cookie entre orígenes autorizados', async () => {
+   const calls = []; const api = createApiClient({ fetchImpl: async (url, options) => { calls.push({ url, options }); return response(user); } });
+   api.setSession(access); await api.request('/users/me', undefined, 'GET'); await api.request('/auth/logout', {});
+   assert.equal(calls[0].options.headers.Authorization, 'Bearer synthetic-access'); assert.equal(calls[1].options.headers.Authorization, undefined);
+-  assert.equal(calls[1].options.credentials, 'same-origin'); assert.equal(calls[1].options.headers['Content-Type'], 'application/json');
++  assert.equal(calls[1].options.credentials, 'include'); assert.equal(calls[1].options.headers['Content-Type'], 'application/json');
+ });
+ test('contraseña actual incorrecta no renueva ni borra la sesión', async () => {
+   let ended = 0; const calls = [];
+@@ -46,8 +46,8 @@
+   const api = createApiClient({ fetchImpl: async () => response({ email: 'incomplete' }) });
+   assert.throws(() => api.setSession({ accessToken: 1 }), /inválida/); await assert.rejects(api.profile(), /Perfil inválido/);
+ });
+-test('no admite URL externa para evitar fuga de tokens y no reintenta fallos de red', async () => {
+-  assert.throws(() => createApiClient({ base: 'https://external.test/api' }));
++test('rechaza HTTP externo y no reintenta fallos de red', async () => {
++  assert.throws(() => createApiClient({ base: 'http://external.test/api' }));
+   let calls = 0; const api = createApiClient({ fetchImpl: async () => { calls++; throw new TypeError('private-network-details'); } });
+   await assert.rejects(api.request('/auth/login', {}), error => error.code === 'NETWORK_ERROR' && !error.message.includes('private-network')); assert.equal(calls, 1);
+ });
+@@ -55,3 +55,14 @@
+   let locked = 0; const api = createApiClient({ refreshLock: async task => { locked++; return task(); }, fetchImpl: async () => response(access) });
+   await api.refresh(); assert.equal(locked, 1);
+ });
++
++test('API HTTPS fija permite CORS con credenciales y rechaza destinos ambiguos', async () => {
++  const api = createApiClient({ base: 'https://api.example.test/api', fetchImpl: async (url, options) => {
++    assert.equal(url, 'https://api.example.test/api/users/me');
++    assert.equal(options.credentials, 'include');
++    return response(user);
++  } });
++  await api.profile();
++  for (const base of ['//evil.test/api', 'https://u:p@evil.test/api', 'https://api.test/api?x=1', 'https://api.test/api#x', 'https://api.test/api/'])
++    assert.throws(() => createApiClient({ base }));
++});
+--- a/scripts/verificar.sh
++++ b/scripts/verificar.sh
+@@ -4,6 +4,7 @@
+ # Ejecutar secuencialmente: todas las verificaciones usan el mismo target de construcción.
+ npm --prefix frontend ci
+ npm --prefix frontend run check
++npm --prefix frontend run build:integrated
+ sistema-m01-m02/scripts/verify-java21.sh
+ python3 sistema-m01-m02/scripts/smoke-isolated.py
+ npm --prefix frontend run test:e2e
+--- /dev/null
++++ b/seguridad/README.md
+@@ -0,0 +1,5 @@
++# Laboratorio sintético RESTler
++
++[Instrucciones, resultados y límites](../documentacion/actividad/RESTLER.md).
++
++El ejecutor no admite destino externo: crea su API/MySQL/Mailpit nuevos. Requiere un JAR integrado Java21 recién construido, Docker activo y RESTler compilado. `private/` contiene registros y secretos desechables, no se publica. Evidencia pública en documentacion/actividad/evidencia. El análisis se marca incompleto si ResultsAnalyzer falla aunque el proceso principal termine con código 0.
+--- /dev/null
++++ b/seguridad/ejecutar_restler.py
+@@ -0,0 +1,186 @@
++#!/usr/bin/env python3
++"""Crea y destruye SOLO contenedores propios. Nunca acepta URL externa ni credenciales reales."""
++import argparse
++import base64
++from datetime import datetime, timezone
++import hashlib
++import json
++import os
++import re
++from collections import Counter
++from pathlib import Path
++import secrets
++import shutil
++import subprocess
++import sys
++import time
++import urllib.request
++import urllib.error
++import uuid
++
++ROOT = Path(__file__).resolve().parents[1]
++
++def docker(*args):
++    return subprocess.check_output(["docker", *args], text=True, stderr=subprocess.PIPE).strip()
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--restler-drop", type=Path, required=True)
++    parser.add_argument("--source-commit", required=True)
++    parser.add_argument("--minutes", type=int, default=1)
++    args = parser.parse_args()
++    if not 1 <= args.minutes <= 10: raise SystemExit("Duración permitida: 1–10 minutos")
++    drop = args.restler_drop.resolve()
++    binary = drop / "restler/Restler.dll"
++    if not binary.is_file(): raise SystemExit("Compila RESTler primero")
++    name = "examenerik-fuzz-" + uuid.uuid4().hex[:8]
++    private = ROOT / "seguridad/private" / name; private.mkdir(parents=True, mode=0o700)
++    public = ROOT / "documentacion/actividad/evidencia" / name; public.mkdir(parents=True)
++    resources = []; network = False; image = False
++    report = {"started_utc": datetime.now(timezone.utc).isoformat(), "run_id": name,
++              "restler_source_commit": args.source_commit,
++              "restler_binary_sha256": hashlib.sha256(binary.read_bytes()).hexdigest(),
++              "scope": "MySQL 8.4 + API Java21 + Mailpit, red Docker interna, datos sintéticos, loopback",
++              "spec_source_sha256": hashlib.sha256((ROOT/'docs/integracion/openapi.json').read_bytes()).hexdigest(),
++              "commands_exit_codes": {}, "completed": False}
++    def envfile(filename, values):
++        file = private / filename
++        file.write_text("".join(f"{k}={v}\n" for k,v in values.items())); file.chmod(0o600)
++        return str(file)
++    def request(base, path, data=None, token=None, origin=None, method=None, extra=None):
++        headers = {"Content-Type":"application/json"}
++        if token: headers["Authorization"] = "Bearer " + token
++        if origin: headers["Origin"] = origin
++        headers.update(extra or {})
++        req = urllib.request.Request(base+path, data=None if data is None else json.dumps(data).encode(), headers=headers, method=method)
++        try: return urllib.request.urlopen(req, timeout=10)
++        except urllib.error.HTTPError as e: return e
++    def restler(mode, arguments):
++        log = private / (mode + '.txt')
++        with log.open('w') as stream:
++            result = subprocess.run(['dotnet', str(binary), mode, *arguments], cwd=private, stdout=stream, stderr=subprocess.STDOUT, timeout=480)
++        report['commands_exit_codes'][mode] = result.returncode
++        if result.returncode: raise RuntimeError(f"RESTler {mode} falló; revisar registro privado")
++    try:
++        docker('network','create','--internal',name); network=True
++        docker('network','create',name+'-entry')
++        pw = secrets.token_urlsafe(24); adminpw=secrets.token_urlsafe(24)
++        resources.append(docker('run','-d','--network',name,'--network-alias','mysql','--tmpfs','/var/lib/mysql:rw,size=768m', '--env-file',envfile('mysql.env',{
++            'MYSQL_DATABASE':'identity_synthetic','MYSQL_USER':'synthetic','MYSQL_PASSWORD':pw,'MYSQL_ROOT_PASSWORD':secrets.token_urlsafe(24)}),'mysql:8.4'))
++        for _ in range(90):
++            try: docker('exec',resources[0],'mysqladmin','ping','-h','127.0.0.1','--silent'); break
++            except subprocess.CalledProcessError: time.sleep(1)
++        else: raise RuntimeError('MySQL sintético no disponible')
++        resources.append(docker('run','-d','--network',name,'--network-alias','mailpit','axllent/mailpit:v1.27'))
++        subprocess.run(['docker','build','-q','-t',name,str(ROOT/'sistema-m01-m02')],check=True,stdout=subprocess.DEVNULL)
++        image=True
++        resources.append(docker('run','-d','--network',name,'-p','127.0.0.1::8080','--read-only','--tmpfs','/tmp','--env-file',envfile('app.env',{
++            'SPRING_PROFILES_ACTIVE':'local','DB_URL':'jdbc:mysql://mysql:3306/identity_synthetic?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC',
++            'DB_USERNAME':'synthetic','DB_PASSWORD':pw,'JWT_SIGNING_KEY':base64.b64encode(secrets.token_bytes(48)).decode(),
++            'APP_ALLOWED_ORIGINS':'http://localhost:5173','APP_COOKIE_SECURE':'false','APP_RECOVERY_MODE':'development',
++            'APP_RECOVERY_BASE_URL':'http://localhost:5173/reset-password.html','ALLOWED_EMAIL_DOMAINS':'example.test',
++            'SMTP_HOST':'mailpit','SMTP_PORT':'1025','SMTP_AUTH':'false','SMTP_STARTTLS':'false','SMTP_FROM':'noreply@example.test',
++            'APP_BOOTSTRAP_ENABLED':'true','APP_BOOTSTRAP_EMAIL':'admin@example.test','APP_BOOTSTRAP_PASSWORD':adminpw,
++            'AUTH_REQUESTS_PER_MINUTE':'10000','MAX_FAILED_ATTEMPTS':'100'}), name))
++        docker('network','connect',name+'-entry',resources[-1])
++        for _ in range(10):
++            try:
++                port=docker('port',resources[-1],'8080/tcp').split(':')[-1]; break
++            except subprocess.CalledProcessError: time.sleep(1)
++        else: raise RuntimeError('Puerto loopback no publicado')
++        base='http://127.0.0.1:'+port
++        admin=None
++        for _ in range(90):
++            try:
++                resp=request(base,'/api/auth/login',{'email':'admin@example.test','password':adminpw})
++                if resp.status==200: admin=json.load(resp)['accessToken']; break
++            except (OSError, ValueError): pass
++            time.sleep(1)
++        if not admin: raise RuntimeError('API sintética no disponible')
++        # Esta cuenta es prescindible: las mutaciones jamás afectan al administrador del laboratorio.
++        request(base,'/api/auth/register',{'email':'target@example.test','password':pw,'displayName':'Synthetic target'})
++        targets=json.load(request(base,'/api/admin/users',token=admin))
++        target=next(u['id'] for u in targets if u['email']=='target@example.test')
++        report['preflight']={}
++        report['preflight']['profile_admin']=request(base,'/api/users/me',token=admin).status
++        report['preflight']['refresh_bad_origin']=request(base,'/api/auth/refresh',{},origin='https://evil.example.test').status
++        report['preflight']['refresh_missing_origin']=request(base,'/api/auth/refresh',{}).status
++        login=request(base,'/api/auth/login',{'email':'target@example.test','password':pw})
++        cookie=login.headers.get('Set-Cookie').split(';')[0]
++        refreshed=request(base,'/api/auth/refresh',{},origin='http://localhost:5173',extra={'Cookie':cookie})
++        report['preflight']['refresh_allowed_origin']=refreshed.status
++        report['preflight']['preflight_allowed_origin']=request(base,'/api/users/me',origin='http://localhost:5173',method='OPTIONS',extra={'Access-Control-Request-Method':'GET','Access-Control-Request-Headers':'authorization'}).status
++        spec=json.loads((ROOT/'docs/integracion/openapi.json').read_text())
++        spec['openapi']='3.0.3'; spec['servers']=[{'url':base}]
++        # Orden explícito register -> login. JWT válido se aporta mediante autenticación de RESTler.
++        spec['x-restler-global-annotations']=[{'producer_endpoint':'/api/auth/register','producer_method':'POST','consumer_endpoint':'/api/auth/login','consumer_method':'POST'}]
++        # El diccionario fija un usuario sintético consumible, y evita invalidar el token del fuzzer.
++        dictionary={'restler_fuzzable_string':['fuzzstring','',"' OR 1=1 --",'<script>alert(1)</script>'],
++            'restler_fuzzable_int':['0','-1','2147483647'],
++            'restler_custom_payload':{'email':['flow@example.test'],'password':[pw], 'displayName':['Synthetic fuzz'], 'id':[target]},
++            'restler_custom_payload_header':{'Origin':['http://localhost:5173']}}
++        (private/'spec.json').write_text(json.dumps(spec,indent=2))
++        (private/'dictionary.json').write_text(json.dumps(dictionary,indent=2))
++        config={'SwaggerSpecFilePath':[str(private/'spec.json')], 'CustomDictionaryFilePath':str(private/'dictionary.json'),
++                'ResolveBodyDependencies':True,'ResolveQueryDependencies':True,'ResolveHeaderDependencies':True,
++                'AllowGetProducers':False,'DataFuzzing':True,'UseBodyExamples':True}
++        (private/'compiler.json').write_text(json.dumps(config,indent=2))
++        restler('compile',[str(private/'compiler.json')])
++        # Location evita interpolar comandos o imprimir credenciales. Los logs completos quedan privados.
++        (private/'token.txt').write_text("{'app':{}}\nAuthorization: Bearer "+admin+"\n")
++        (private/'token.txt').chmod(0o600)
++        settings={'target_ip':'127.0.0.1','target_port':int(port),'use_ssl':False,
++            'max_combinations':4,'max_request_execution_time':10,'max_sequence_length':3,'fuzzing_mode':'bfs-cheap',
++            'authentication':{'token':{'location':str(private/'token.txt'),'token_refresh_interval':30}}}
++        (private/'settings.json').write_text(json.dumps(settings,indent=2))
++        common=['--grammar_file',str(private/'Compile/grammar.py'),'--dictionary_file',str(private/'Compile/dict.json'), '--settings',str(private/'settings.json'),'--no_ssl']
++        restler('test',common)
++        restler('fuzz',common+['--time_budget',str(args.minutes/60)])
++        for file in private.rglob('testing_summary.json'):
++            dest=public/(file.parts[len(private.parts)]+'-testing_summary.json');shutil.copy2(file,dest)
++        # Cobertura contiene requests; solo exportar el resultado agregado y dejar cuerpos/tokens privados.
++        for file in private.rglob('runSummary.json'):
++            dest=public/(file.parts[len(private.parts)]+'-runSummary.json');shutil.copy2(file,dest)
++        for file in private.rglob('bug_buckets.txt'):
++            report.setdefault('bug_bucket_summaries',[]).append({'phase':file.parts[len(private.parts)],'text':file.read_text()[:4000]})
++        report['grammar_sha256']=hashlib.sha256((private/'Compile/grammar.py').read_bytes()).hexdigest()
++        report['dependency_files']=[str(p.relative_to(private)) for p in (private/'Compile').glob('*dependenc*')]
++        report['analyzer_errors'] = []
++        for phase in ['Test', 'Fuzz']:
++            err = private/phase/'ResultsAnalyzerStdErr.txt'
++            text = err.read_text() if err.exists() else ''
++            if 'exception' in text.lower() or 'failed' in text.lower():
++                report['analyzer_errors'].append(phase)
++            counts=Counter(); sent=0
++            for log in (private/phase).rglob('network.*.txt'):
++                for line in log.read_text(errors='replace').splitlines():
++                    if 'Sending: ' in line: sent+=1
++                    match=re.search(r"Received: [\"']HTTP/1[.][01] ([0-9]{3})", line)
++                    if match: counts[match[1]] += 1
++            (public/(phase+'-http-counts.json')).write_text(json.dumps({'source':'Independent count of raw HTTP status lines; includes checkers and rerenders', 'sending_lines':sent,'received_status_lines':dict(counts)},indent=2))
++        report['analysis_complete'] = not report['analyzer_errors']
++        report['completed']=True
++    except Exception as exc:
++        report['error']=f'{type(exc).__name__}: {exc}'
++        raise
++    finally:
++        cleanup=[]
++        for container in reversed(resources):
++            try: docker('rm','-f','-v',container);cleanup.append(True)
++            except Exception: cleanup.append(False)
++        if network:
++            for network_name in [name, name+'-entry']:
++                try: docker('network','rm',network_name)
++                except Exception: cleanup.append(False)
++        if image:
++            try: docker('image','rm',name)
++            except Exception: cleanup.append(False)
++        report['cleanup_success']=all(cleanup)
++        report['finished_utc']=datetime.now(timezone.utc).isoformat()
++        (public/'resumen.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))
++        # Archivos privados contienen SOLO secretos efímeros; no adjuntarlos a exposición ni repositorio.
++        for file in private.rglob('*'):
++            if file.is_file(): file.chmod(0o600)
++        print(public)
++
++if __name__=='__main__': main()
+--- /dev/null
++++ b/seguridad/instalar-restler.sh
+@@ -0,0 +1,14 @@
++#!/bin/sh
++set -eu
++cd "$(dirname "$0")/.."
++# Uso opcional; no instala Python/.NET globalmente ni sobrescribe directorios.
++command -v python3.12 >/dev/null || { echo "Instala Python 3.12 según documentación oficial y vuelve a ejecutar"; exit 1; }
++command -v dotnet >/dev/null || { echo "Se requiere .NET SDK 8"; exit 1; }
++test ! -e work/restler-fuzzer || { echo "work/restler-fuzzer ya existe; conservar o mover explícitamente antes de repetir"; exit 1; }
++mkdir -p work
++python3.12 -m venv work/restler-venv
++. work/restler-venv/bin/activate
++git clone --no-checkout https://github.com/microsoft/restler-fuzzer.git work/restler-fuzzer
++git -C work/restler-fuzzer checkout --detach 6d984deedbc54aad957fa3da0c7e9e5df23a2aee
++python work/restler-fuzzer/build-restler.py --dest_dir "$PWD/work/restler-bin"
++echo "Compilado. Activa work/restler-venv antes de ejecutar el laboratorio para que RESTler encuentre Python 3.12."
+--- /dev/null
++++ b/seguridad/probar_tls.py
+@@ -0,0 +1,50 @@
++from pathlib import Path
++import subprocess,tempfile,secrets,base64,json,time,urllib.request
++r=Path(__file__).resolve().parents[1];name='examenerik-tls-'+secrets.token_hex(4);containers=[];network=False;volume=False
++proof={'synthetic':True,'image':'examenerik-actividad-api','memory_limit_mb':512}
++def docker(*a):return subprocess.check_output(['docker',*a],text=True,stderr=subprocess.PIPE).strip()
++try:
++ with tempfile.TemporaryDirectory(prefix='examenerik-tls-') as td:
++  d=Path(td);tls=d/'tls';subprocess.run(['python3',str(r/'deploy/mysql/generar-tls.py'),'db.examenerik.test',str(tls)],check=True,stdout=subprocess.DEVNULL)
++  docker('network','create',name);network=True;docker('volume','create',name);volume=True
++  docker('run','--rm','-v',name+':/tls','-v',str(tls/'server')+':/source:ro','--entrypoint','sh','mysql:8.4','-c','cp /source/* /tls/ && chown -R mysql:mysql /tls && chmod 600 /tls/server-key.pem')
++  pw=secrets.token_urlsafe(24)
++  def env(file,values):
++   p=d/file;p.write_text(''.join(f'{k}={v}\n' for k,v in values.items()));p.chmod(0o600);return str(p)
++  db=docker('run','-d','--network',name,'--network-alias','db.examenerik.test','--tmpfs','/var/lib/mysql:rw,size=768m','-v',name+':/etc/mysql/tls:ro','-v',str(r/'deploy/mysql/tls.cnf')+':/etc/mysql/conf.d/tls.cnf:ro','--env-file',env('db.env',{'MYSQL_DATABASE':'identity','MYSQL_USER':'identity_app','MYSQL_PASSWORD':pw,'MYSQL_ROOT_PASSWORD':secrets.token_urlsafe(24)}),'mysql:8.4');containers.append(db)
++  for _ in range(60):
++   try:docker('exec',db,'mysqladmin','ping','--silent');break
++   except subprocess.CalledProcessError:time.sleep(1)
++  else:raise RuntimeError('MySQL no arrancó')
++  api=docker('run','-d','--network',name,'--memory','512m','-p','127.0.0.1::8080','--read-only','--tmpfs','/tmp','--env-file',env('api.env',{
++   'DB_URL':'jdbc:mysql://db.examenerik.test:3306/identity?sslMode=VERIFY_IDENTITY&serverTimezone=UTC','DB_USERNAME':'identity_app','DB_PASSWORD':pw,
++   'DB_CA_CERT_BASE64':base64.b64encode((tls/'server/ca.pem').read_bytes()).decode(),'JWT_SIGNING_KEY':base64.b64encode(secrets.token_bytes(48)).decode(),
++   'APP_ALLOWED_ORIGINS':'https://app.examenerik.test','APP_RECOVERY_BASE_URL':'https://app.examenerik.test/reset-password.html',
++   'SMTP_HOST':'smtp.invalid','SMTP_FROM':'noreply@example.test','SMTP_AUTH':'true','SMTP_STARTTLS':'true','APP_COOKIE_SECURE':'true'}),'examenerik-actividad-api');containers.append(api)
++  port=docker('port',api,'8080/tcp').split(':')[-1]
++  for _ in range(90):
++   try:
++    with urllib.request.urlopen('http://127.0.0.1:'+port+'/api/health',timeout=2) as response:
++     if response.status==200:proof['health']=json.load(response);break
++   except Exception:pass
++   time.sleep(1)
++  else:raise RuntimeError('API TLS no arrancó')
++  proof['mysql_tls']=docker('exec','-e','MYSQL_PWD='+pw,db,'mysql','--batch','--skip-column-names','-h','db.examenerik.test','-u','identity_app','--ssl-mode=VERIFY_IDENTITY','--ssl-ca=/etc/mysql/tls/ca.pem','-e',"SELECT VERSION(); SHOW STATUS LIKE 'Ssl_cipher'; SELECT version,success FROM identity.flyway_schema_history ORDER BY installed_rank;")
++  bad=subprocess.run(['docker','exec','-e','MYSQL_PWD='+pw,db,'mysql','-h','127.0.0.1','-u','identity_app','--ssl-mode=VERIFY_IDENTITY','--ssl-ca=/etc/mysql/tls/ca.pem','-e','SELECT 1'],capture_output=True,text=True)
++  assert bad.returncode!=0
++  proof['wrong_hostname_rejected']=True;proof['wrong_hostname_error']=bad.stderr.strip()
++  badca=subprocess.run(['docker','exec','-e','MYSQL_PWD='+pw,db,'mysql','-h','db.examenerik.test','-u','identity_app','--ssl-mode=VERIFY_IDENTITY','--ssl-ca=/etc/ssl/certs/ca-certificates.crt','-e','SELECT 1'],capture_output=True,text=True)
++  assert badca.returncode!=0;proof['untrusted_ca_rejected']=True
++  plain=subprocess.run(['docker','exec','-e','MYSQL_PWD='+pw,db,'mysql','-h','db.examenerik.test','-u','identity_app','--ssl-mode=DISABLED','-e','SELECT 1'],capture_output=True,text=True)
++  assert plain.returncode!=0;proof['plaintext_rejected']=True
++  try:urllib.request.urlopen('http://127.0.0.1:'+port+'/',timeout=2);raise RuntimeError('API-only sirvió frontend inesperadamente')
++  except urllib.error.HTTPError as e:proof['frontend_root_status']=e.code
++  proof['smtp_tested']=False;proof['passed']=True
++finally:
++ for c in reversed(containers):
++  try:docker('rm','-f','-v',c)
++  except Exception:pass
++ if volume:docker('volume','rm',name)
++ if network:docker('network','rm',name)
++ (r/'documentacion/actividad/evidencia/mysql-tls.json').write_text(json.dumps(proof,indent=2))
++print('PASS: API Java21 en 512MB, CA propia, VERIFY_IDENTITY, Flyway V1/V2, rechazo de hostname/CA ajenos y conexión sin TLS.')
+--- a/sistema-m01-m02/pom.xml
++++ b/sistema-m01-m02/pom.xml
+@@ -80,6 +80,15 @@
+             <scope>test</scope>
+         </dependency>
+     </dependencies>
++    <profiles>
++        <profile>
++            <id>api-only</id>
++            <build><resources><resource>
++                <directory>src/main/resources</directory>
++                <excludes><exclude>static/**</exclude></excludes>
++            </resource></resources></build>
++        </profile>
++    </profiles>
+     <build>
+         <plugins>
+             <plugin>
+--- a/sistema-m01-m02/src/main/java/com/sistemam01m02/config/AppSecurityProperties.java
++++ b/sistema-m01-m02/src/main/java/com/sistemam01m02/config/AppSecurityProperties.java
+@@ -15,6 +15,7 @@
+     @NotNull Duration passwordResetTtl,
+     @Pattern(regexp = "[A-Za-z0-9_-]{1,64}") String refreshCookieName,
+     boolean refreshCookieSecure,
++    @Pattern(regexp = "Strict|Lax|None") String refreshCookieSameSite,
+     @NotEmpty Set<@NotBlank String> allowedOrigins,
+     @Min(1) @Max(100) int maxFailedAttempts,
+     @NotNull Duration lockDuration,
+--- a/sistema-m01-m02/src/main/java/com/sistemam01m02/identity/api/AuthController.java
++++ b/sistema-m01-m02/src/main/java/com/sistemam01m02/identity/api/AuthController.java
+@@ -93,7 +93,7 @@
+         ResponseCookie.from(p.refreshCookieName(), value)
+             .httpOnly(true)
+             .secure(p.refreshCookieSecure())
+-            .sameSite("Strict")
++            .sameSite(p.refreshCookieSameSite())
+             .path("/api/auth")
+             .maxAge(seconds)
+             .build()
+--- a/sistema-m01-m02/src/main/java/com/sistemam01m02/identity/security/SecurityConfig.java
++++ b/sistema-m01-m02/src/main/java/com/sistemam01m02/identity/security/SecurityConfig.java
+@@ -46,6 +46,8 @@
+     if (key.length < 32)
+       throw new IllegalStateException("JWT_SIGNING_KEY requiere al menos 256 bits");
+     boolean local = env.matchesProfiles("local", "test");
++    if ("None".equals(p.refreshCookieSameSite()) && !p.refreshCookieSecure())
++      throw new IllegalStateException("SameSite=None requiere cookie Secure");
+     URI url = URI.create(recovery.baseUrl());
+     if (url.getHost() == null
+         || url.getRawQuery() != null
+--- a/sistema-m01-m02/src/main/resources/application.yml
++++ b/sistema-m01-m02/src/main/resources/application.yml
+@@ -33,6 +33,7 @@
+       mail.smtp.auth: ${SMTP_AUTH:true}
+       mail.smtp.starttls.enable: ${SMTP_STARTTLS:true}
+       mail.smtp.starttls.required: ${SMTP_STARTTLS:true}
++      mail.smtp.ssl.checkserveridentity: true
+       mail.smtp.connectiontimeout: 5000
+       mail.smtp.timeout: 5000
+       mail.smtp.writetimeout: 5000
+@@ -41,7 +42,7 @@
+       max-request-size: 1MB
+       max-file-size: 1MB
+ server:
+-  port: ${SERVER_PORT:8080}
++  port: ${PORT:${SERVER_PORT:8080}}
+   error:
+     include-message: never
+     include-stacktrace: never
+@@ -60,6 +61,7 @@
+     password-reset-ttl: ${PASSWORD_RESET_TTL:PT15M}
+     refresh-cookie-name: ${REFRESH_COOKIE_NAME:refresh_token}
+     refresh-cookie-secure: ${APP_COOKIE_SECURE:true}
++    refresh-cookie-same-site: ${APP_COOKIE_SAME_SITE:Strict}
+     allowed-origins: ${APP_ALLOWED_ORIGINS:http://localhost:5173}
+     max-failed-attempts: ${MAX_FAILED_ATTEMPTS:5}
+     lock-duration: ${LOCK_DURATION:PT15M}
+--- a/sistema-m01-m02/src/test/java/com/sistemam01m02/identity/security/GuardAndConfigurationTest.java
++++ b/sistema-m01-m02/src/test/java/com/sistemam01m02/identity/security/GuardAndConfigurationTest.java
+@@ -18,6 +18,7 @@
+         Duration.ofMinutes(15),
+         "refresh_token",
+         secure,
++        "Strict",
+         Set.of("https://example.test"),
+         5,
+         Duration.ofMinutes(15),

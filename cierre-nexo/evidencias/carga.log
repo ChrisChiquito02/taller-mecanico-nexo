@@ -1,0 +1,1 @@
+{'seconds': 69.49, 'accounts': 6, 'states': Counter({'DONE': 148, 'MODEL_BUSY': 59}), 'median': 0.1845, 'p95': 2.6546999999999996, 'saved': [48, 48, 48, 48, 52, 52], 'quota': Counter({'200': 30, 'CHAT_LIMIT': 30, 'NEXO_RATE_LIMIT': 2})}

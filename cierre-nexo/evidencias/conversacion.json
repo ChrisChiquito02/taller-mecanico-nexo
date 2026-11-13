@@ -1,0 +1,8 @@
+{
+  "turns": 40,
+  "messages": 80,
+  "recall": "El nombre de tu proyecto ficticio es CEDRO-374.",
+  "foreign_http": 404,
+  "cap_http": 429,
+  "cap_code": "CHAT_FULL"
+}

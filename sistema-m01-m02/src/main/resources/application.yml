@@ -1,0 +1,86 @@
+spring:
+  application:
+    name: sistema-m01-m02
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:10}
+      minimum-idle: ${DB_POOL_MIN_IDLE:2}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:30000}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        type:
+          preferred_instant_jdbc_type: TIMESTAMP
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+    validate-on-migrate: true
+    clean-disabled: true
+  mail:
+    host: ${SMTP_HOST}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail.smtp.auth: ${SMTP_AUTH:true}
+      mail.smtp.starttls.enable: ${SMTP_STARTTLS:true}
+      mail.smtp.starttls.required: ${SMTP_STARTTLS:true}
+      mail.smtp.ssl.checkserveridentity: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+  servlet:
+    multipart:
+      max-request-size: 1MB
+      max-file-size: 1MB
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+  error:
+    include-message: never
+    include-stacktrace: never
+    include-binding-errors: never
+  max-http-request-header-size: 16KB
+app:
+  bootstrap:
+    enabled: ${APP_BOOTSTRAP_ENABLED:false}
+    email: ${APP_BOOTSTRAP_EMAIL:}
+    password: ${APP_BOOTSTRAP_PASSWORD:}
+  security:
+    jwt-signing-key: ${JWT_SIGNING_KEY}
+    issuer: sistema-m01-m02
+    access-token-ttl: ${ACCESS_TOKEN_TTL:PT15M}
+    refresh-token-ttl: ${REFRESH_TOKEN_TTL:P7D}
+    password-reset-ttl: ${PASSWORD_RESET_TTL:PT15M}
+    refresh-cookie-name: ${REFRESH_COOKIE_NAME:refresh_token}
+    refresh-cookie-secure: ${APP_COOKIE_SECURE:true}
+    refresh-cookie-same-site: ${APP_COOKIE_SAME_SITE:Strict}
+    allowed-origins: ${APP_ALLOWED_ORIGINS:http://localhost:5173}
+    max-failed-attempts: ${MAX_FAILED_ATTEMPTS:5}
+    lock-duration: ${LOCK_DURATION:PT15M}
+    allowed-email-domains: ${ALLOWED_EMAIL_DOMAINS:gmail.com,hotmail.com,outlook.com}
+    requests-per-minute: ${AUTH_REQUESTS_PER_MINUTE:30}
+  recovery:
+    mode: ${APP_RECOVERY_MODE:smtp}
+    base-url: ${APP_RECOVERY_BASE_URL}
+    from: ${SMTP_FROM}
+logging:
+  level:
+    org.springframework.security: INFO
+    org.hibernate.orm.jdbc.error: OFF
+nexo:
+  provider: ${NEXO_PROVIDER:ollama}
+  base-url: ${NEXO_BASE_URL:http://127.0.0.1:11434}
+  model: ${NEXO_MODEL:qwen2.5-coder:7b}
+  timeout-seconds: ${NEXO_TIMEOUT_SECONDS:180}
+  max-tokens: ${NEXO_MAX_TOKENS:700}
+  retention-days: ${NEXO_RETENTION_DAYS:7}
+  requests-per-minute: ${NEXO_REQUESTS_PER_MINUTE:8}
+  turns-per-day: ${NEXO_TURNS_PER_DAY:100}

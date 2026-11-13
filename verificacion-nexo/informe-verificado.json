@@ -1,0 +1,15 @@
+{
+  "http": 200,
+  "passed": true,
+  "metadata": {
+    "tool": "report",
+    "model": "qwen2.5-coder:7b",
+    "provider": "ollama",
+    "generated": false,
+    "advisory": true,
+    "references": [],
+    "origin": "report"
+  },
+  "answer": "Informe de trabajo\n\nDatos e instrucciones aportados\nRedacta informe con un título y tres puntos sobre 2 pruebas aprobadas y 1 fallida.\n\nVerificación\nLos datos aportados quedan pendientes de corroborar con evidencias.\n\nSiguiente paso\nAnota la fuente, la fecha y el resultado verificable de cada punto.",
+  "persisted": 2
+}

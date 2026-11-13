@@ -1,0 +1,25 @@
+{
+  "implementacion": 89.3,
+  "verificado": 65.21,
+  "estados": {
+    "FUNCIONAL": 24,
+    "PARCIAL": 6,
+    "NO FUNCIONAL": 5,
+    "NO VERIFICADA": 5,
+    "SIMULADA": 1
+  },
+  "bateria": {
+    "PASS": 45,
+    "FAIL": 2
+  },
+  "coherencia": 96.67,
+  "tabla": [
+    "| LLM | 20 % | 4 | 4 | 0 | 0 | 100.0 % | 100.0 % |",
+    "| Coherencia | 20 % | 5 | 3 | 2 | 0 | 90.0 % | 60.0 % |",
+    "| Memoria | 15 % | 5 | 3 | 1 | 1 | 90.0 % | 60.0 % |",
+    "| Agente | 15 % | 11 | 7 | 4 | 0 | 90.9 % | 63.6 % |",
+    "| Frontend/backend | 10 % | 6 | 4 | 2 | 0 | 91.7 % | 66.7 % |",
+    "| Persistencia/seguridad | 10 % | 5 | 2 | 1 | 2 | 90.0 % | 40.0 % |",
+    "| Estabilidad | 10 % | 5 | 2 | 1 | 2 | 60.0 % | 40.0 % |"
+  ]
+}

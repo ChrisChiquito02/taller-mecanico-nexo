@@ -1,0 +1,6 @@
+{
+  "id": "UI-offline",
+  "modelo": "○ No disponible · qwen2.5-coder:7b · local",
+  "errorVisible": "Ollama no completó la respuesta. Comprueba el modelo y su conexión local; no se generó una respuesta de reemplazo.",
+  "status": "PASS"
+}

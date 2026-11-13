@@ -1,0 +1,2 @@
+Unhandled exception. System.Exception: Unexpected response without prior request at 08/11/2026 2:29:52 pm: { version = "HTTP/1.1"
+El lanzador terminó con código 0; el análisis de respuestas no fue completo.

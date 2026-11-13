@@ -1,0 +1,163 @@
+{
+  "project": "ExamenErik",
+  "agent": "NEXO-Δ AI",
+  "exported_at": "2026-11-13T00:12:31.930Z",
+  "messages": [
+    {
+      "speaker": "user",
+      "content": "Explica este cambio hipotético, sus riesgos, la alternativa y el plan de reversión. Distingue hechos e incertidumbres."
+    },
+    {
+      "speaker": "assistant",
+      "content": "### Cambio Hipotético Explícito\n\nEl cambio hipotético consiste en cambiar el rol del usuario \"objetivo\" de \"ADMIN\" a \"USER\". Esto implica que el usuario pierde los permisos de lectura y escritura de usuarios (`users:read` y `users:write`) y solo mantiene el permiso de lectura de perfil (`profile:read`).\n\n### Riesgos del Cambio\n\n1. **Riesgo de Disrupción de Sesiones**: El cambio implica la invalidación de una sesión, lo que podría causar una interrupción de servicio para el usuario \"objetivo\".\n2. **Riesgo de Ausencia de Escritores Activos**: Si el snapshot completo no tiene escritores activos, el cambio podría no tener un impacto significativo en los permisos.\n\n### Alternativa Calculada\n\nLa alternativa de menor privilegio calculada usa EXACTAMENTE estos roles: [\"USER\"]. Su puntaje es 45, frente al solicitado 45. No ofrece reducción cuando ambos puntajes coinciden. Conservar otros roles no es la alternativa calculada; toda decisión requiere revisión humana.\n\n### Plan de Reversión\n\n1. **Revisión Humana**: Antes de revertir cualquier cambio, es necesario realizar una revisión humana para asegurarse de que el cambio es necesario y seguro.\n2. **Restaurar Roles o Permisos Anteriores**: Si se decide revertir el cambio, se debe restaurar los roles y permisos anteriores del usuario \"objetivo\". Esto implica que el usuario \"objetivo\" debe regresar a su rol de \"ADMIN\" y recuperar los permisos de lectura y escritura de usuarios (`users:read` y `users:write`).\n3. **Ningún Cambio Ha sido Ejecutado**: Es importante recordar que ningún cambio ha sido ejecutado en el sistema, por lo que la reversión es posible sin riesgo de pérdida de datos o tokens.\n\n### Hechos e Incertidumbres\n\n**Hechos**:\n- El cambio hipotético implica la invalidación de una sesión.\n- La alternativa calculada usa EXACTAMENTE estos roles: [\"USER\"].\n- Ningún cambio ha sido ejecutado en el sistema.\n\n**Incertidumbres**:\n- El número real de JWT reales es desconocido; solo refresh vigentes conocidos.\n- El snapshot completo al instante de lectura puede ser sujeto a concurrencia posterior.\n- Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.\n- No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.\n\n### Conclusión\n\nEl cambio hipotético implica un riesgo de disrupción de sesiones y la ausencia de escritores activos. La alternativa calculada usa EXACTAMENTE estos roles: [\"USER\"] y no ofrece reducción cuando ambos puntajes coinciden. El plan de reversión implica una revisión humana y la restauración de los roles y permisos anteriores del usuario \"objetivo\". Es importante recordar que ningún cambio ha sido ejecutado en el sistema,",
+      "metadata": "{\"tool\":\"simulation\",\"model\":\"qwen2.5-coder:7b\",\"provider\":\"ollama\",\"generated\":true,\"advisory\":true,\"references\":[{\"id\":\"laboratorio\",\"title\":\"Predictive Access Lab: método y límites\",\"source\":\"agente-nexo/nexo.py; nexo/service/AccessLab.java\"},{\"id\":\"arquitectura\",\"title\":\"Arquitectura de ExamenErik\",\"source\":\"pom.xml; frontend/package.json; src/main/resources/application.yml\"},{\"id\":\"operacion\",\"title\":\"Operación y publicación distribuida\",\"source\":\"documentacion/actividad/PUBLICACION_GRATUITA.md; deploy/Dockerfile.api\"}],\"simulation\":{\"agent\":\"NEXO-Δ Predictive Access Lab\",\"mode\":\"simulation_only\",\"source\":\"authorized_live_read\",\"at_minute\":5,\"snapshot_complete\":true,\"required_permissions\":[\"profile:read\"],\"requested\":{\"remaining_active_writers\":0,\"risk\":{\"session_disruption_points\":5,\"no_writer_points\":40,\"label\":\"medio\",\"privilege_gain_points\":0,\"score\":45},\"rollback_proposal_only\":{\"assignments\":{\"objetivo\":[\"ADMIN\"]},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"permission_patch\":{}},\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}]},\"least_privilege_candidates\":[{\"extra_weight\":0,\"extra_permissions\":[],\"roles\":[\"USER\"]},{\"extra_weight\":50,\"extra_permissions\":[\"users:read\",\"users:write\"],\"roles\":[\"ADMIN\"]},{\"extra_weight\":50,\"extra_permissions\":[\"users:read\",\"users:write\"],\"roles\":[\"ADMIN\",\"USER\"]}],\"alternative_evaluated\":{\"change\":{\"objetivo\":[\"USER\"]},\"no_change_needed\":false,\"simulation\":{\"remaining_active_writers\":0,\"risk\":{\"session_disruption_points\":5,\"no_writer_points\":40,\"label\":\"medio\",\"privilege_gain_points\":0,\"score\":45},\"rollback_proposal_only\":{\"assignments\":{\"objetivo\":[\"ADMIN\"]},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"permission_patch\":{}},\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}]}},\"limitations\":[\"Rúbrica educativa, no probabilidad ni certificación.\",\"Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.\",\"Snapshot completo al instante de lectura, sujeto a concurrencia posterior.\",\"Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.\",\"No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.\"]},\"review\":\"Explicación de IA no verificada semánticamente. Los puntajes, cambios y alternativas válidos son los del informe determinista.\",\"consistency_check\":\"heuristic_only_not_proof\"}"
+    }
+  ],
+  "simulation": {
+    "agent": "NEXO-Δ Predictive Access Lab",
+    "mode": "simulation_only",
+    "source": "authorized_live_read",
+    "at_minute": 5,
+    "snapshot_complete": true,
+    "required_permissions": [
+      "profile:read"
+    ],
+    "requested": {
+      "remaining_active_writers": 0,
+      "risk": {
+        "session_disruption_points": 5,
+        "no_writer_points": 40,
+        "label": "medio",
+        "privilege_gain_points": 0,
+        "score": 45
+      },
+      "rollback_proposal_only": {
+        "assignments": {
+          "objetivo": [
+            "ADMIN"
+          ]
+        },
+        "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+        "permission_patch": {}
+      },
+      "affected": [
+        {
+          "user": "objetivo",
+          "before_roles": [
+            "ADMIN"
+          ],
+          "proposed_roles": [
+            "USER"
+          ],
+          "before_permissions": [
+            "profile:read",
+            "users:read",
+            "users:write"
+          ],
+          "proposed_permissions": [
+            "profile:read"
+          ],
+          "gained": [],
+          "lost": [
+            "users:read",
+            "users:write"
+          ],
+          "resources_exposed": [],
+          "sessions_invalidated_by_change": 1,
+          "sessions_still_valid": 0
+        }
+      ]
+    },
+    "least_privilege_candidates": [
+      {
+        "extra_weight": 0,
+        "extra_permissions": [],
+        "roles": [
+          "USER"
+        ]
+      },
+      {
+        "extra_weight": 50,
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "roles": [
+          "ADMIN"
+        ]
+      },
+      {
+        "extra_weight": 50,
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "roles": [
+          "ADMIN",
+          "USER"
+        ]
+      }
+    ],
+    "alternative_evaluated": {
+      "change": {
+        "objetivo": [
+          "USER"
+        ]
+      },
+      "no_change_needed": false,
+      "simulation": {
+        "remaining_active_writers": 0,
+        "risk": {
+          "session_disruption_points": 5,
+          "no_writer_points": 40,
+          "label": "medio",
+          "privilege_gain_points": 0,
+          "score": 45
+        },
+        "rollback_proposal_only": {
+          "assignments": {
+            "objetivo": [
+              "ADMIN"
+            ]
+          },
+          "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+          "permission_patch": {}
+        },
+        "affected": [
+          {
+            "user": "objetivo",
+            "before_roles": [
+              "ADMIN"
+            ],
+            "proposed_roles": [
+              "USER"
+            ],
+            "before_permissions": [
+              "profile:read",
+              "users:read",
+              "users:write"
+            ],
+            "proposed_permissions": [
+              "profile:read"
+            ],
+            "gained": [],
+            "lost": [
+              "users:read",
+              "users:write"
+            ],
+            "resources_exposed": [],
+            "sessions_invalidated_by_change": 1,
+            "sessions_still_valid": 0
+          }
+        ]
+      }
+    },
+    "limitations": [
+      "Rúbrica educativa, no probabilidad ni certificación.",
+      "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+      "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+      "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+      "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+    ]
+  }
+}

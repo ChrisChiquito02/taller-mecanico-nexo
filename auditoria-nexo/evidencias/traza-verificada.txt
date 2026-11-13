@@ -1,0 +1,9 @@
+d4eef0b2928d434ca22dc2a38a0d684424765253c570d3bdfff48c2ee1109b2d coincidencias: 1 texto DOM idéntico: True longitud DOM: 1898
+Modelo: qwen2.5-coder:7b tokens: 451 fin: stop
+Referencias permitidas: ['arquitectura', 'laboratorio'] citas fuera del conjunto: []
+26e1c15681175da593dc53d315f095d9033115ff79949af74a8519a7208c877a coincidencias: 1 texto DOM idéntico: True longitud DOM: 227
+Modelo: qwen2.5-coder:7b tokens: 53 fin: stop
+Referencias permitidas: ['arquitectura', 'seguridad'] citas fuera del conjunto: []
+c87a5ff7d8952bbec045cfb940ca9b77d07ed45c6e0630feacfb579ca7030b7b coincidencias: 1 texto DOM idéntico: True longitud DOM: 2697
+Modelo: qwen2.5-coder:7b tokens: 700 fin: length
+Referencias permitidas: ['arquitectura', 'laboratorio', 'operacion'] citas fuera del conjunto: []

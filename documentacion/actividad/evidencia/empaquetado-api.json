@@ -1,0 +1,8 @@
+{
+  "image_id": "sha256:fabd415f4894c131f9732b96472b70c1c0eb0c35ea1c68dc9ee3f847bbaa19cd",
+  "java_version": "openjdk version \"21.0.13\" 2026-10-20 LTS\nOpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)\n",
+  "frontend_static_entries": 0,
+  "flyway_v1_v2_present": true,
+  "nonroot_user": "app",
+  "entrypoint": "[\"/app/start-api.sh\"]"
+}

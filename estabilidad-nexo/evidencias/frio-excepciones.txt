@@ -1,0 +1,210 @@
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "org.apache.tomcat.util.net.SocketBufferHandler"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "Zip 'Central Directory File Header Record' not found at position 3613469"
+  thrownClass = java.io.IOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.io.IOException.<init>(String) line: 57
+    org.springframework.boot.loader.zip.ZipCentralDirectoryFileHeaderRecord.load(DataBlock, long) line: 203
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 259
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.UncheckedIOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.RuntimeException.<init>(Throwable) line: 97
+    java.io.UncheckedIOException.<init>(IOException) line: 63
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 265
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "org.apache.tomcat.util.net.SocketBufferHandler"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    java.net.URLClassLoader.findClass(String) line: 377
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "org/apache/tomcat/util/net/SocketBufferHandler"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(SocketChannel) line: 568
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "org/apache/tomcat/util/net/SocketBufferHandler"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(SocketChannel) line: 568
+    org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(Object) line: 71
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(SocketChannel) line: 592
+    org.apache.tomcat.util.net.NioEndpoint.setSocketOptions(Object) line: 71
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.942 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.943 (2026-11-12)
+  message = "Zip 'Central Directory File Header Record' not found at position 283786"
+  thrownClass = java.io.IOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.io.IOException.<init>(String) line: 57
+    org.springframework.boot.loader.zip.ZipCentralDirectoryFileHeaderRecord.load(DataBlock, long) line: 203
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 259
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.943 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.UncheckedIOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.RuntimeException.<init>(Throwable) line: 97
+    java.io.UncheckedIOException.<init>(IOException) line: 63
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 265
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.943 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    java.net.URLClassLoader.findClass(String) line: 377
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.943 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:38.943 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8091-Acceptor" (javaThreadId = 68)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:05:39.013 (2026-11-12)
+  message = "For input string: "cold""
+  thrownClass = java.lang.NumberFormatException (classLoader = bootstrap)
+  eventThread = "Attach Listener" (javaThreadId = 72)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    java.lang.NumberFormatException.<init>(String) line: 54
+    ...
+  ]
+}
+

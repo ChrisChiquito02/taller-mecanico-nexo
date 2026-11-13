@@ -1,0 +1,100 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.api
+#1 transferring dockerfile: 497B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre
+#3 DONE 0.8s
+
+#4 [1/4] FROM docker.io/library/eclipse-temurin:21-jdk@sha256:23cc5734ff46e776f51ce66eb9ee08444fd47caabec0a95b7eb6e94be2d3696d
+#4 resolve docker.io/library/eclipse-temurin:21-jdk@sha256:23cc5734ff46e776f51ce66eb9ee08444fd47caabec0a95b7eb6e94be2d3696d done
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 231B done
+#5 DONE 0.0s
+
+#6 [stage-1 1/5] FROM docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a
+#6 resolve docker.io/library/eclipse-temurin:21-jre@sha256:0b99b3376fbb50dbf9c0af8535fdd5b8eb0d3fdfc8b1e4967f383b6919f6901a 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 160.52kB done
+#7 DONE 0.0s
+
+#8 [build 2/4] WORKDIR /src
+#8 CACHED
+
+#9 [build 3/4] COPY sistema-m01-m02/ .
+#9 DONE 0.0s
+
+#10 [build 4/4] RUN chmod +x mvnw && ./mvnw -B -ntp -Papi-only clean package -DskipTests
+#10 1.410 [INFO] Scanning for projects...
+#10 4.725 [INFO] 
+#10 4.725 [INFO] ---------------------< com.sistemam01m02:backend >----------------------
+#10 4.725 [INFO] Building sistema-m01-m02 0.1.0-SNAPSHOT
+#10 4.725 [INFO]   from pom.xml
+#10 4.725 [INFO] --------------------------------[ jar ]---------------------------------
+#10 31.91 [INFO] 
+#10 31.91 [INFO] --- clean:3.5.0:clean (default-clean) @ backend ---
+#10 32.10 [INFO] 
+#10 32.10 [INFO] --- resources:3.5.0:resources (default-resources) @ backend ---
+#10 34.00 [INFO] Copying 13 resources from src/main/resources to target/classes
+#10 34.00 [INFO] 
+#10 34.00 [INFO] --- compiler:3.15.0:compile (default-compile) @ backend ---
+#10 37.46 [INFO] Recompiling the module because of changed source code.
+#10 37.46 [INFO] Compiling 48 source files with javac [debug parameters release 21] to target/classes
+#10 38.05 [INFO] 
+#10 38.05 [INFO] --- resources:3.5.0:testResources (default-testResources) @ backend ---
+#10 38.05 [INFO] Copying 2 resources from src/test/resources to target/test-classes
+#10 38.05 [INFO] 
+#10 38.05 [INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ backend ---
+#10 38.06 [INFO] Recompiling the module because of changed dependency.
+#10 38.06 [INFO] Compiling 10 source files with javac [debug parameters release 21] to target/test-classes
+#10 38.32 [INFO] 
+#10 38.32 [INFO] --- surefire:3.5.6:test (default-test) @ backend ---
+#10 42.31 [INFO] Tests are skipped.
+#10 42.31 [INFO] 
+#10 42.31 [INFO] --- jar:3.5.1:jar (default-jar) @ backend ---
+#10 48.64 [INFO] Building jar: /src/target/backend-0.1.0-SNAPSHOT.jar
+#10 48.66 [INFO] 
+#10 48.66 [INFO] --- spring-boot:4.1.1:repackage (repackage) @ backend ---
+#10 61.93 [INFO] Replacing main artifact /src/target/backend-0.1.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#10 61.93 [INFO] The original artifact has been renamed to /src/target/backend-0.1.0-SNAPSHOT.jar.original
+#10 61.93 [INFO] ------------------------------------------------------------------------
+#10 61.93 [INFO] BUILD SUCCESS
+#10 61.93 [INFO] ------------------------------------------------------------------------
+#10 61.94 [INFO] Total time:  01:00 min
+#10 61.94 [INFO] Finished at: 2026-11-09T01:06:27Z
+#10 61.94 [INFO] ------------------------------------------------------------------------
+#10 DONE 62.0s
+
+#11 [stage-1 2/5] RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+#11 CACHED
+
+#12 [stage-1 3/5] WORKDIR /app
+#12 CACHED
+
+#13 [stage-1 4/5] COPY --from=build --chown=app:app /src/target/backend-0.1.0-SNAPSHOT.jar app.jar
+#13 DONE 0.1s
+
+#14 [stage-1 5/5] COPY --chmod=755 deploy/start-api.sh /app/start-api.sh
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 1.0s done
+#15 exporting manifest sha256:edb2a4a31d587ceaf458c028c2c715e148208ad175cac81993621fd4c7b0d08e done
+#15 exporting config sha256:4260771de6df4ad495daeabc1365291b696401ca932371fb48afb77f00731d74 done
+#15 exporting attestation manifest sha256:133148203ca7561f0c9b36f9ab3b4f2b9320125b998feb6438e5330d634ee464 done
+#15 exporting manifest list sha256:48a73ecc9b0a4ff9a978a90a7777f25608d374680659016ae9b97a8aa9b30de0 done
+#15 naming to docker.io/library/examenerik-actividad-api:latest done
+#15 unpacking to docker.io/library/examenerik-actividad-api:latest
+#15 unpacking to docker.io/library/examenerik-actividad-api:latest 0.2s done
+#15 DONE 1.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/5svwwmawviv6gyq724xp6z88s

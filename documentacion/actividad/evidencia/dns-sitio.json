@@ -1,0 +1,10 @@
+{
+  "synthetic_names_only": true,
+  "resolver": "tldts installed frontend dependency, allowPrivateDomains=true",
+  "frontend": "tu-identificador.is-a.dev",
+  "api": "api.tu-identificador.is-a.dev",
+  "registrable_domain_frontend": "tu-identificador.is-a.dev",
+  "registrable_domain_api": "tu-identificador.is-a.dev",
+  "same_site_if_both_https": true,
+  "dns_registered_or_deployed": false
+}

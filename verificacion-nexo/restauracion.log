@@ -1,0 +1,6 @@
+mysqldump: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+audit	360	764266044121
+restored	360	764266044121

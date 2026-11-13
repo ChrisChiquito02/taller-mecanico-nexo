@@ -1,0 +1,50 @@
+name: examenerik-nexo-dev
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: nexo_local
+      MYSQL_USER: nexo_local
+      MYSQL_PASSWORD: ${DB_PASSWORD:?}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?}
+    volumes:
+      - nexo-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 3s
+      retries: 40
+  mailpit:
+    image: axllent/mailpit:v1.27
+  backend:
+    image: examenerik-nexo-local
+    ports:
+      - "127.0.0.1:8090:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      DB_URL: jdbc:mysql://mysql:3306/nexo_local?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      DB_USERNAME: nexo_local
+      DB_PASSWORD: ${DB_PASSWORD:?}
+      JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?}
+      APP_ALLOWED_ORIGINS: http://localhost:8090,http://127.0.0.1:8090
+      APP_COOKIE_SECURE: "false"
+      APP_RECOVERY_MODE: development
+      APP_RECOVERY_BASE_URL: http://localhost:8090/reset-password.html
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_AUTH: "false"
+      SMTP_STARTTLS: "false"
+      SMTP_FROM: noreply@example.test
+      APP_BOOTSTRAP_ENABLED: ${NEXO_BOOTSTRAP_ENABLED:-false}
+      APP_BOOTSTRAP_EMAIL: demo-admin@example.test
+      APP_BOOTSTRAP_PASSWORD: ${DEMO_PASSWORD:?}
+      ALLOWED_EMAIL_DOMAINS: example.test,gmail.com,hotmail.com,outlook.com
+      NEXO_BASE_URL: http://host.docker.internal:11434
+      NEXO_REQUESTS_PER_MINUTE: 20
+    read_only: true
+    tmpfs:
+      - /tmp
+volumes:
+  nexo-data:

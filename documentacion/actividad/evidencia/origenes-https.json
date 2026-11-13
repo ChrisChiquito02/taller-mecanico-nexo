@@ -1,0 +1,49 @@
+{
+  "local_synthetic_only": true,
+  "tls": "Self-signed certificate accepted ONLY in this test browser",
+  "frontend_origin": "https://app.examenerik.test:57966",
+  "api_origin": "https://api.examenerik.test:57965",
+  "cookie": {
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "Strict",
+    "domain": "api.examenerik.test",
+    "path": "/api/auth"
+  },
+  "reload_refresh_success": true,
+  "responses": [
+    {
+      "path": "/api/auth/refresh",
+      "status": 401
+    },
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/users/me",
+      "status": 200
+    },
+    {
+      "path": "/api/auth/refresh",
+      "status": 200
+    },
+    {
+      "path": "/api/users/me",
+      "status": 200
+    },
+    {
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "path": "/api/auth/refresh",
+      "status": 200
+    }
+  ],
+  "passed": true
+}

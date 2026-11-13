@@ -1,0 +1,3 @@
+DB-restart True
+MEM-restart True
+TTL-purge True

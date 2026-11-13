@@ -1,0 +1,98 @@
+[
+  {
+    "port": 8090,
+    "path": "/health",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 20.42
+  },
+  {
+    "port": 8090,
+    "path": "/nexo/conversations",
+    "method": "POST",
+    "http": 200,
+    "code": null,
+    "ms": 32.16
+  },
+  {
+    "port": 8090,
+    "path": "/nexo/conversations",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 8.88
+  },
+  {
+    "port": 8091,
+    "path": "/health",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 116.07
+  },
+  {
+    "port": 8091,
+    "path": "/nexo/conversations",
+    "method": "POST",
+    "http": 200,
+    "code": null,
+    "ms": 50.57
+  },
+  {
+    "port": 8091,
+    "path": "/nexo/conversations",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 9.99
+  },
+  {
+    "port": 8090,
+    "path": "/health",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 6.81
+  },
+  {
+    "port": 8090,
+    "path": "/nexo/conversations",
+    "method": "POST",
+    "http": 200,
+    "code": null,
+    "ms": 12.03
+  },
+  {
+    "port": 8090,
+    "path": "/nexo/conversations",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 6.11
+  },
+  {
+    "port": 8091,
+    "path": "/health",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 7.06
+  },
+  {
+    "port": 8091,
+    "path": "/nexo/conversations",
+    "method": "POST",
+    "http": 200,
+    "code": null,
+    "ms": 13.31
+  },
+  {
+    "port": 8091,
+    "path": "/nexo/conversations",
+    "method": "GET",
+    "http": 200,
+    "code": null,
+    "ms": 6.5
+  }
+]

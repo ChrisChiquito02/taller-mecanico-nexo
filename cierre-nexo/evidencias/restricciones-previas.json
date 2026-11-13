@@ -1,0 +1,224 @@
+[
+  {
+    "case": "words",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "words",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "words",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "lines",
+    "passed": true,
+    "http": 200,
+    "text": "Red  \nBlue",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "lines",
+    "passed": true,
+    "http": 200,
+    "text": "Red  \nBlue",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "lines",
+    "passed": true,
+    "http": 200,
+    "text": "Red  \nBlue",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "mixed",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "mixed",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "mixed",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "single",
+    "passed": true,
+    "http": 200,
+    "text": "Perro, Rojo",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "single",
+    "passed": true,
+    "http": 200,
+    "text": "Perro - Rojo",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "single",
+    "passed": true,
+    "http": 200,
+    "text": "Perro, Rojo",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "outputConstraintsVerified": true
+    }
+  },
+  {
+    "case": "incompatible",
+    "passed": true,
+    "http": 200,
+    "text": "Las restricciones «al menos 3 lineas» y «como maximo 1 linea» son incompatibles. ¿Cuál debo seguir?",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "origin": "clarification",
+      "generated": false
+    }
+  },
+  {
+    "case": "incompatible",
+    "passed": true,
+    "http": 200,
+    "text": "Las restricciones «al menos 3 lineas» y «como maximo 1 linea» son incompatibles. ¿Cuál debo seguir?",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "origin": "clarification",
+      "generated": false
+    }
+  },
+  {
+    "case": "incompatible",
+    "passed": true,
+    "http": 200,
+    "text": "Las restricciones «al menos 3 lineas» y «como maximo 1 linea» son incompatibles. ¿Cuál debo seguir?",
+    "error": null,
+    "saved": 2,
+    "metadata": {
+      "tool": "general",
+      "origin": "clarification",
+      "generated": false
+    }
+  },
+  {
+    "case": "impossible_content",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "impossible_content",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  },
+  {
+    "case": "impossible_content",
+    "passed": true,
+    "http": 200,
+    "text": "",
+    "error": "OUTPUT_CONSTRAINT_UNMET",
+    "saved": 0,
+    "metadata": null
+  }
+]

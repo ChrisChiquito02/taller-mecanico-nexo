@@ -1,0 +1,19 @@
+[INFO] Compiling 39 source files with javac [debug parameters release 21] to target/classes
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.668 s -- in com.sistemam01m02.ArchitectureTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 s -- in com.sistemam01m02.identity.security.GuardAndConfigurationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.sistemam01m02.identity.entity.AppUserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.397 s -- in com.sistemam01m02.config.HealthControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.sistemam01m02.RecoveryRequestsTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in com.sistemam01m02.shared.persistence.UuidV7GeneratorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.sistemam01m02.shared.error.GlobalExceptionHandlerTest
+2026-11-04T21:41:47.374Z  INFO 181 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : Starting SystemIntegrationTest using Java 21.0.12.1 with PID 181 (started by root in /workspace)
+2026-11-04T21:41:48.214Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "1 - identity baseline"
+2026-11-04T21:41:48.264Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "2 - sessions and rbac"
+2026-11-04T21:41:48.298Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `identity_test`, now at version v2 (execution time 00:00.061s)
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.87 s -- in com.sistemam01m02.SystemIntegrationTest
+[INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  19.127 s
+[INFO] Finished at: 2026-11-04T21:41:57Z
+PASS: bootstrap repetido rechazado; JAR Java 21, MySQL vacío, Flyway, bootstrap ADMIN, interfaz HTTP, registro, login, RBAC, refresh y logout.

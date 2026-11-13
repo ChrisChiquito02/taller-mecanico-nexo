@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/cierre-nexo/evidencias/carga.py", line 66, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/cierre-nexo/evidencias/carga.py", line 63, in main
+    assert len(successful)>=12 and quota=={'200':30,'CHAT_LIMIT':30,'NEXO_RATE_LIMIT':2},quota
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Counter({'INTERNAL_ERROR': 31, '200': 30, 'CHAT_LIMIT': 1})

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "bounds-es",
+    "passed": true,
+    "answer": "Las restricciones «exactamente tres lineas» y «al menos cinco lineas» son incompatibles. ¿Cuál debo seguir?",
+    "events": [],
+    "metadata": {
+      "tool": "general",
+      "origin": "clarification",
+      "generated": false
+    }
+  },
+  {
+    "id": "bounds-en",
+    "passed": true,
+    "answer": "The requirements “exactly 3 sentences” and “at most 1 sentence” conflict. Which should I follow?",
+    "events": [],
+    "metadata": {
+      "tool": "general",
+      "origin": "clarification",
+      "generated": false
+    }
+  },
+  {
+    "id": "compatible",
+    "passed": true,
+    "answer": "Hola. ¿Cómo estás?",
+    "events": [],
+    "metadata": {
+      "tool": "general",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": []
+    }
+  },
+  {
+    "id": "report",
+    "passed": true,
+    "answer": "Informe de incidencias\n\nDatos aportados\n\n1. La prueba Beta falló por timeout.\n2. Prepara un informe de resultados.\n3. La prueba Alfa pasó.\n4. La prueba Gamma pasó.\n\nVerificación pendiente: comprueba los datos aportados con sus fuentes.",
+    "events": [],
+    "metadata": {
+      "tool": "report",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "origin": "report"
+    }
+  },
+  {
+    "id": "report-mixed",
+    "passed": true,
+    "answer": "Informe de resultados\n\nDatos aportados\n\n1. Redacta informe con un título y tres puntos sobre 2 pruebas aprobadas y 1 fallida.\n\nVerificación pendiente: comprueba los datos aportados con sus fuentes.",
+    "events": [],
+    "metadata": {
+      "tool": "report",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "origin": "report"
+    }
+  },
+  {
+    "id": "sim",
+    "passed": true,
+    "answer": "Revisa primero qué tokens vigentes conocidos se verían afectados y a qué horizonte.\n\nEscenario solicitado: riesgo alto, 60/100.\n2 tokens de renovación (refresh) vigentes conocidos afectados en la hipótesis. El total de sesiones y de JWT de acceso es desconocido.\nAlternativa: conservar el estado actual, 0/100.\nReversión propuesta: revisar roles y permisos y solicitar un nuevo inicio de sesión. La simulación no aplica cambios.",
+    "events": [],
+    "metadata": {
+      "tool": "simulate_self",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "generated": true,
+      "advisory": true,
+      "references": [],
+      "simulation": {
+        "agent": "NEXO-Δ Predictive Access Lab",
+        "mode": "simulation_only",
+        "source": "authorized_live_read",
+        "at_minute": 0,
+        "snapshot_complete": false,
+        "required_permissions": [
+          "profile:read"
+        ],
+        "requested": {
+          "affected": [
+            {
+              "user": "objetivo",
+              "before_roles": [
+                "USER"
+              ],
+              "proposed_roles": [
+                "ADMIN"
+              ],
+              "before_permissions": [
+                "profile:read"
+              ],
+              "proposed_permissions": [
+                "profile:read",
+                "users:read",
+                "users:write"
+              ],
+              "gained": [
+                "users:read",
+                "users:write"
+              ],
+              "lost": [],
+              "resources_exposed": [
+                "GET /api/admin/users",
+                "PUT /api/admin/users/{id}/roles; DELETE /api/admin/users/{id}"
+              ],
+              "sessions_invalidated_by_change": 2,
+              "sessions_still_valid": 0
+            }
+          ],
+          "rollback_proposal_only": {
+            "assignments": {
+              "objetivo": [
+                "USER"
+              ]
+            },
+            "permission_patch": {},
+            "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+          },
+          "risk": {
+            "privilege_gain_points": 50,
+            "label": "alto",
+            "no_writer_points": 0,
+            "session_disruption_points": 10,
+            "score": 60
+          },
+          "remaining_active_writers": "unknown"
+        },
+        "least_privilege_candidates": [
+          {
+            "extra_permissions": [],
+            "extra_weight": 0,
+            "roles": [
+              "USER"
+            ]
+          },
+          {
+            "extra_permissions": [
+              "users:read",
+              "users:write"
+            ],
+            "extra_weight": 50,
+            "roles": [
+              "ADMIN"
+            ]
+          },
+          {
+            "extra_permissions": [
+              "users:read",
+              "users:write"
+            ],
+            "extra_weight": 50,
+            "roles": [
+              "ADMIN",
+              "USER"
+            ]
+          }
+        ],
+        "alternative_evaluated": {
+          "change": {},
+          "no_change_needed": true,
+          "simulation": {
+            "affected": [],
+            "rollback_proposal_only": {
+              "assignments": {},
+              "permission_patch": {},
+              "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+            },
+            "risk": {
+              "privilege_gain_points": 0,
+              "label": "bajo",
+              "no_writer_points": 0,
+              "session_disruption_points": 0,
+              "score": 0
+            },
+            "remaining_active_writers": "unknown"
+          }
+        },
+        "limitations": [
+          "Rúbrica educativa, no probabilidad ni certificación.",
+          "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+          "Snapshot propio parcial: no determina último administrador.",
+          "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+          "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+        ]
+      },
+      "origin": "simulation"
+    }
+  }
+]

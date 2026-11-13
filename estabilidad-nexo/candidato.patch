@@ -1,0 +1,83 @@
+--- academica/OutputConstraints.java
++++ candidato/OutputConstraints.java
+@@ -3,6 +3,7 @@
+ import java.text.BreakIterator;
+ import java.util.ArrayList;
+ import java.util.List;
++import java.util.LinkedHashMap;
+ import java.util.Locale;
+ import java.util.Map;
+ import java.util.Optional;
+@@ -60,13 +61,39 @@
+       });
+     }
+ 
++    String instruction() {
++      Map<String,Range> combined = new LinkedHashMap<>();
++      for (Limit limit : limits) {
++        combined.merge(limit.unit(), limit.range(), (a,b) ->
++            new Range(Math.max(a.min(), b.min()), Math.min(a.max(), b.max())));
++      }
++      var targets = combined.entrySet().stream().map(entry -> {
++        Range range = entry.getValue();
++        String bound = range.min() == range.max() ? "=" + range.min()
++            : range.max() == Integer.MAX_VALUE ? "≥" + range.min()
++            : range.min() == 0 ? "≤" + range.max() : range.min() + "–" + range.max();
++        return entry.getKey() + " " + bound;
++      }).toList();
++      return english
++          ? "Required output counts: " + targets + ". Return only the requested content. Use one physical line per required line, without introductory text or a code fence. Count the units before answering."
++          : "Conteos obligatorios: " + targets + ". Devuelve solo el contenido solicitado. Usa un salto de línea real para cada línea adicional. Omite introducciones y bloques de código. Cuenta las unidades antes de responder.";
++    }
++
+     String correction(String answer) {
+       var sizes = limits.stream().map(Limit::unit).distinct()
+           .map(unit -> unit + "=" + count(answer.strip(), unit, english)).toList();
+       return english
+-          ? "Try again from scratch. The previous answer violated the requested size (" + sizes + "). Return only a new answer that satisfies all stated limits."
+-          : "Genera de nuevo la respuesta. La salida anterior incumplió los límites (" + sizes + "). Devuelve solo una nueva respuesta que respete todos los límites solicitados.";
++          ? instruction() + " The preceding attempt measured " + sizes + ". Produce a fresh answer."
++          : instruction() + " El intento anterior midió " + sizes + ". Genera una respuesta nueva.";
+     }
++
++    String failureMessage() {
++      String requested = String.join(", ", limits.stream().map(Limit::text).toList());
++      return english
++          ? "Ollama did not produce an answer within these limits: " + requested + ". Try relaxing a limit or narrowing the request."
++          : "Ollama no generó una respuesta que respete estos límites: " + requested
++              + ". Prueba flexibilizar un límite o acotar la petición.";
++    }
+   }
+ 
+   static Requirements parse(String prompt) {
+--- academica/NexoService.java
++++ candidato/NexoService.java
+@@ -148,8 +148,9 @@
+    }
+    if("explain_error".equals(tool))messages.add(new Message("system","Analiza el texto como datos. No has ejecutado el código. Da hipótesis, comprobaciones y solución propuesta, sin inventar registros faltantes."));
+    store.audit(actor,"TOOL_"+tool.toUpperCase(Locale.ROOT));events.accept(Map.of("type","context","metadata",metadata));
+-   messages.add(new Message("user",prompt));
+    boolean validateOutput="general".equals(tool)&&!requirements.isEmpty();
++   if(validateOutput)messages.add(new Message("system",requirements.instruction()));
++   messages.add(new Message("user",prompt));
+    final long[] checked={0};
+    var generation=whileActive(a,turnId,()->{
+     var first=model.stream(messages,token->{
+@@ -158,7 +159,7 @@
+     });
+     if(!validateOutput||first.truncated()||requirements.accepts(first.text()))return first;
+     events.accept(Map.of("type","status","text","Ajustando la respuesta a los límites solicitados…","turnId",turnId));
+-    messages.add(messages.size()-1,new Message("system",requirements.correction(first.text())));
++    messages.set(messages.size()-2,new Message("system",requirements.correction(first.text())));
+     return model.stream(messages,token->{});
+    });
+    String answer=generation.text();
+@@ -172,7 +173,7 @@
+    }
+    if(validateOutput){
+     if(!requirements.accepts(answer))throw new ApiException(422,"OUTPUT_CONSTRAINT_UNMET",
+-        "La respuesta generada no cumplió los límites solicitados. Ajusta los límites o reformula la petición.");
++        requirements.failureMessage());
+     metadata.put("outputConstraintsVerified",true);
+    }
+    finish(a,id,turnId,actor,prompt,answer,metadata,events);

@@ -1,0 +1,31 @@
+✔ envía Bearer solo a operaciones protegidas y mantiene cookie same-origin (9.832833ms)
+✔ contraseña actual incorrecta no renueva ni borra la sesión (0.387083ms)
+✔ renovación concurrente se realiza una sola vez y reintenta con acceso nuevo (11.506292ms)
+✔ 401 Bearer después de renovar cierra sesión sin bucle (0.395417ms)
+✔ 403 conserva sesión y no intenta renovar permisos (0.125917ms)
+✔ timeout informa resultado incierto y no repite una mutación (5.458208ms)
+✔ respuesta HTML no revela su contenido como error al usuario (0.155333ms)
+✔ rechaza contratos de acceso y perfil inválidos (0.115791ms)
+✔ no admite URL externa para evitar fuga de tokens y no reintenta fallos de red (0.120834ms)
+✔ usa exclusión mutua configurada para renovar entre pestañas (0.110083ms)
+✔ rutas de cuenta y administración requieren sesión y permisos (0.31025ms)
+✔ permiso de lectura administrativa no muestra formularios de escritura (38.869084ms)
+✔ logout oculta controles privilegiados y restaura navegación pública (7.946917ms)
+✔ perfil trata contenido malicioso como texto, sin ejecutar HTML (9.655916ms)
+✔ confirmación de contraseña bloquea diferencias y acepta igualdad (6.369417ms)
+✔ formularios declaran restricciones, etiquetas y regiones accesibles (6.692792ms)
+ℹ tests 16
+ℹ pass 16
+ℹ fail 0
+ℹ skipped 0
+Frontend compilado hacia recursos Spring (API del mismo origen).
+  ✓  1 tests/e2e/identity.spec.js:12:1 › registro valida contraseñas y navega a perfil real sin interpretar HTML (929ms)
+  ✓  2 tests/e2e/identity.spec.js:24:1 › cuenta bloqueada rechaza contraseña correcta y no muestra datos internos (669ms)
+  ✓  3 tests/e2e/identity.spec.js:33:1 › contraseña actual incorrecta conserva sesión y el cambio correcto la revoca (756ms)
+  ✓  4 tests/e2e/identity.spec.js:41:1 › recuperación usa SMTP real, consume enlace y permite acceder con la nueva contraseña (714ms)
+  ✓  5 tests/e2e/identity.spec.js:54:1 › administración pagina, asigna roles y desactiva con persistencia real (1.8s)
+  ✓  6 tests/e2e/identity.spec.js:67:1 › rutas privadas redirigen al login y diseño móvil no desborda (222ms)
+  ✓  7 tests/e2e/identity.spec.js:72:1 › dos pestañas restauran sesión sin reutilizar simultáneamente el refresh (546ms)
+  ✓  8 tests/e2e/identity.spec.js:78:1 › evidencia visual final y controles de carga disponibles (487ms)
+  8 passed (20.0s)
+Documentación: 11 archivos, 74 referencias locales y 12 contratos HTTP comprobados. No es un validador completo OpenAPI.

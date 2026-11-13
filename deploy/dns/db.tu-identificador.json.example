@@ -1,0 +1,10 @@
+{
+  "owner": {
+    "username": "REEMPLAZAR_USUARIO_GITHUB"
+  },
+  "records": {
+    "A": [
+      "REEMPLAZAR_IP_ORACLE"
+    ]
+  }
+}

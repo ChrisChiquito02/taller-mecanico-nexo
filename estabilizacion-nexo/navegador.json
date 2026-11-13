@@ -1,0 +1,672 @@
+[
+  {
+    "browser": "157.0.8103.39"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/refresh",
+    "status": 401
+  },
+  {
+    "event": "console",
+    "type": "error",
+    "message": "Failed to load resource: the server responded with a status of 401 ()"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/health",
+    "status": 200
+  },
+  {
+    "id": "UI01",
+    "name": "Raíz y protección de enlace directo",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/users/me",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "id": "UI02",
+    "name": "Login con cuenta sintética y navegación",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/tools",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/tools",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI03",
+    "name": "Comprobar modelo",
+    "status": "PASS",
+    "details": "● Conectado · qwen2.5-coder:7b · local"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/tools",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI04",
+    "name": "Tres sugerencias rellenan el mensaje",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/a2967a9f-7301-4dc4-87d3-43aaf485c318/messages",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "auto",
+    "evidence": {
+      "answer": "[arquitectura] Arquitectura de ExamenErik\nExamenErik tiene una aplicación backend Spring Boot modular que agrupa identidad y NEXO. La interfaz puede servirse desde esa aplicación o publicarse por separado. MySQL y Ollama son servicios de datos e inferencia, respectivamente.\n\nExamenErik gestiona identidad y acceso: registro, login, perfil, refresh, logout, cambio y recuperación de contraseña, administración por roles. No tiene ventas, pagos ni inventario. Usa Java 21, Spring Boot 4.1.1, MySQL 8.4, Flyway, HTML/CSS/JavaScript modular y esbuild. El frontend compila a frontend/dist; build:integrated conserva el desarrollo local. NEXO-Δ AI añade conversación real con un modelo Ollama local, herramientas limitadas y Predictive Access Lab. Su inteligencia usa un modelo preentrenado; no se entrenó un modelo fundacional propio. Java controla la autorización y los cálculos. El contenido generado puede ser incorrecto; distinguir datos, hipótesis y recomendaciones. El historial pertenece al usuario, caduca por configuración y puede borrarse.",
+      "visible": "[arquitectura] Arquitectura de ExamenErik\nExamenErik tiene una aplicación backend Spring Boot modular que agrupa identidad y NEXO. La interfaz puede servirse desde esa aplicación o publicarse por separado. MySQL y Ollama son servicios de datos e inferencia, respectivamente.\n\nExamenErik gestiona identidad y acceso: registro, login, perfil, refresh, logout, cambio y recuperación de contraseña, administración por roles. No tiene ventas, pagos ni inventario. Usa Java 21, Spring Boot 4.1.1, MySQL 8.4, Flyway, HTML/CSS/JavaScript modular y esbuild. El frontend compila a frontend/dist; build:integrated conserva el desarrollo local. NEXO-Δ AI añade conversación real con un modelo Ollama local, herramientas limitadas y Predictive Access Lab. Su inteligencia usa un modelo preentrenado; no se entrenó un modelo fundacional propio. Java controla la autorización y los cálculos. El contenido generado puede ser incorrecto; distinguir datos, hipótesis y recomendaciones. El historial pertenece al usuario, caduca por configuración y puede borrarse.",
+      "sha256": "272ca9daefdbad1ef966419dc8dfbdf787aeab4bf8ceadae56846a984ad957ed",
+      "metadata": {
+        "tool": "search_docs",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": false,
+        "advisory": true,
+        "references": [
+          {
+            "title": "Arquitectura de ExamenErik",
+            "id": "arquitectura",
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml"
+          }
+        ],
+        "origin": "documentation"
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI05",
+    "name": "Auto, estado de espera, inferencia y documentación",
+    "status": "PASS",
+    "details": "272ca9daefdbad1ef966419dc8dfbdf787aeab4bf8ceadae56846a984ad957ed"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/a2967a9f-7301-4dc4-87d3-43aaf485c318/messages",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "general",
+    "evidence": {
+      "answer": "23 * 17 = 391",
+      "visible": "23 * 17 = 391",
+      "sha256": "6da1b93d3f54f04101b551cd6b5087c99b010e2b1d01f65d402b766423562f6a",
+      "metadata": {
+        "tool": "general",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": []
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI18",
+    "name": "Inferencia auténtica en chat general",
+    "status": "PASS",
+    "details": "6da1b93d3f54f04101b551cd6b5087c99b010e2b1d01f65d402b766423562f6a"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/documents/arquitectura",
+    "status": 200
+  },
+  {
+    "id": "UI06",
+    "name": "Abrir y cerrar fuente",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/a2967a9f-7301-4dc4-87d3-43aaf485c318/messages",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "general",
+    "evidence": {
+      "answer": "Código de inventario: CIRUELA-761",
+      "visible": "Código de inventario: CIRUELA-761",
+      "sha256": "410b7fe8d145e754ff2cd10f1b06a0742cb61a010bdb522ef43c0d4fc669ffa0",
+      "metadata": {
+        "tool": "read_attachment",
+        "attachmentName": "inventario.txt",
+        "origin": "attachment",
+        "generated": false
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI07",
+    "name": "Analizar archivo de texto adjunto",
+    "status": "PASS",
+    "details": "410b7fe8d145e754ff2cd10f1b06a0742cb61a010bdb522ef43c0d4fc669ffa0"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/refresh",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/users/me",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/health",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/tools",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/tools",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations/a2967a9f-7301-4dc4-87d3-43aaf485c318",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI08",
+    "name": "Historial tras recarga",
+    "status": "PASS"
+  },
+  {
+    "id": "UI09",
+    "name": "Nueva conversación y vista vacía",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "id": "UI10",
+    "name": "Tres escenarios sintéticos etiquetados y con resultado",
+    "status": "PASS",
+    "details": {
+      "ascenso": 60,
+      "consulta": 60,
+      "compartido": 70
+    }
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "id": "UI11",
+    "name": "Lectura IAM, modo alterno y controles de administrador",
+    "status": "PASS",
+    "details": {
+      "score": 50,
+      "privilege_gain_points": 0,
+      "label": "medio",
+      "no_writer_points": 40,
+      "session_disruption_points": 10
+    }
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/33e74551-c7a7-4ca0-ab29-b23243b9b38e/messages",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "auto",
+    "evidence": {
+      "answer": "Compara primero el escenario solicitado con la alternativa del catálogo.\n\nEscenario solicitado: riesgo medio, 50/100.\n2 tokens de renovación (refresh) vigentes conocidos afectados en la hipótesis. El total de sesiones y de JWT de acceso es desconocido.\nAlternativa: [\"USER\"], 50/100.\nReversión propuesta: revisar roles y permisos y solicitar un nuevo inicio de sesión. La simulación no aplica cambios.",
+      "visible": "Compara primero el escenario solicitado con la alternativa del catálogo.\n\nEscenario solicitado: riesgo medio, 50/100.\n2 tokens de renovación (refresh) vigentes conocidos afectados en la hipótesis. El total de sesiones y de JWT de acceso es desconocido.\nAlternativa: [\"USER\"], 50/100.\nReversión propuesta: revisar roles y permisos y solicitar un nuevo inicio de sesión. La simulación no aplica cambios.",
+      "sha256": "58dbf1d9817dfde342d671e0a0dd09c8e0b59ef16242accb31a34b2ac8462dc0",
+      "metadata": {
+        "tool": "simulation",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [],
+        "simulation": {
+          "agent": "NEXO-Δ Predictive Access Lab",
+          "mode": "simulation_only",
+          "source": "authorized_live_read",
+          "at_minute": 5,
+          "snapshot_complete": true,
+          "required_permissions": [
+            "profile:read"
+          ],
+          "requested": {
+            "remaining_active_writers": 0,
+            "affected": [
+              {
+                "user": "objetivo",
+                "before_roles": [
+                  "ADMIN"
+                ],
+                "proposed_roles": [
+                  "USER"
+                ],
+                "before_permissions": [
+                  "profile:read",
+                  "users:read",
+                  "users:write"
+                ],
+                "proposed_permissions": [
+                  "profile:read"
+                ],
+                "gained": [],
+                "lost": [
+                  "users:read",
+                  "users:write"
+                ],
+                "resources_exposed": [],
+                "sessions_invalidated_by_change": 2,
+                "sessions_still_valid": 0
+              }
+            ],
+            "rollback_proposal_only": {
+              "assignments": {
+                "objetivo": [
+                  "ADMIN"
+                ]
+              },
+              "permission_patch": {},
+              "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+            },
+            "risk": {
+              "score": 50,
+              "privilege_gain_points": 0,
+              "label": "medio",
+              "no_writer_points": 40,
+              "session_disruption_points": 10
+            }
+          },
+          "least_privilege_candidates": [
+            {
+              "extra_permissions": [],
+              "extra_weight": 0,
+              "roles": [
+                "USER"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN",
+                "USER"
+              ]
+            }
+          ],
+          "alternative_evaluated": {
+            "change": {
+              "objetivo": [
+                "USER"
+              ]
+            },
+            "no_change_needed": false,
+            "simulation": {
+              "remaining_active_writers": 0,
+              "affected": [
+                {
+                  "user": "objetivo",
+                  "before_roles": [
+                    "ADMIN"
+                  ],
+                  "proposed_roles": [
+                    "USER"
+                  ],
+                  "before_permissions": [
+                    "profile:read",
+                    "users:read",
+                    "users:write"
+                  ],
+                  "proposed_permissions": [
+                    "profile:read"
+                  ],
+                  "gained": [],
+                  "lost": [
+                    "users:read",
+                    "users:write"
+                  ],
+                  "resources_exposed": [],
+                  "sessions_invalidated_by_change": 2,
+                  "sessions_still_valid": 0
+                }
+              ],
+              "rollback_proposal_only": {
+                "assignments": {
+                  "objetivo": [
+                    "ADMIN"
+                  ]
+                },
+                "permission_patch": {},
+                "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+              },
+              "risk": {
+                "score": 50,
+                "privilege_gain_points": 0,
+                "label": "medio",
+                "no_writer_points": 40,
+                "session_disruption_points": 10
+              }
+            }
+          },
+          "limitations": [
+            "Rúbrica educativa, no probabilidad ni certificación.",
+            "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+            "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+            "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+            "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+          ]
+        },
+        "origin": "simulation"
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI12",
+    "name": "Explicar simulación con IA",
+    "status": "PASS",
+    "details": "58dbf1d9817dfde342d671e0a0dd09c8e0b59ef16242accb31a34b2ac8462dc0"
+  },
+  {
+    "id": "UI13",
+    "name": "Exportar JSON real",
+    "status": "PASS",
+    "details": {
+      "messages": 2,
+      "simulation": "authorized_live_read"
+    }
+  },
+  {
+    "id": "UI14",
+    "name": "Vista móvil sin desbordamiento general",
+    "status": "PASS",
+    "details": {
+      "w": 375,
+      "scroll": 375
+    }
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/1a2aadc2-e103-4257-aed8-b82c7a384bd0/messages",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "DELETE",
+    "path": "/api/nexo/conversations/1a2aadc2-e103-4257-aed8-b82c7a384bd0/turns/20f8fbe1-5403-4a04-9a33-56ed8e5372e9",
+    "status": 204
+  },
+  {
+    "event": "requestfailed",
+    "path": "/api/nexo/conversations/1a2aadc2-e103-4257-aed8-b82c7a384bd0/messages",
+    "error": {
+      "errorText": "net::ERR_ABORTED"
+    }
+  },
+  {
+    "event": "cancel-check",
+    "count": 0,
+    "status": 200
+  },
+  {
+    "id": "UI15",
+    "name": "Detener generación y comprobar historial",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "DELETE",
+    "path": "/api/nexo/conversations/1a2aadc2-e103-4257-aed8-b82c7a384bd0",
+    "status": 204
+  },
+  {
+    "id": "UI16",
+    "name": "Eliminar únicamente chat sintético",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/logout",
+    "status": 204
+  },
+  {
+    "id": "UI17",
+    "name": "Logout y bloqueo de NEXO",
+    "status": "PASS"
+  }
+]

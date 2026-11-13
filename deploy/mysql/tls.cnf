@@ -1,0 +1,9 @@
+[mysqld]
+require_secure_transport=ON
+ssl_ca=/etc/mysql/tls/ca.pem
+ssl_cert=/etc/mysql/tls/server-cert.pem
+ssl_key=/etc/mysql/tls/server-key.pem
+tls_version=TLSv1.2,TLSv1.3
+mysqlx=0
+max_connections=30
+local_infile=OFF

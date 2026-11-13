@@ -1,0 +1,17 @@
+{"directory":"/Users/andrickeliasleonchavez/Downloads/ExamenErik/documentacion/nexo-ai/evidencia/live-2026-11-09T00-52-20.093Z","passed":false,"turns":0,"checks":[]}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:8090/#login
+Call log:
+[2m  - navigating to "http://localhost:8090/#login", waiting until "load"[22m
+
+    at /Users/andrickeliasleonchavez/Downloads/ExamenErik/frontend/tests/nexo-live.mjs:35:13 {
+  log: [
+    '  - navigating to "http://localhost:8090/#login", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.16.0

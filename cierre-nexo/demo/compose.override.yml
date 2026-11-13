@@ -1,0 +1,3 @@
+services:
+  backend:
+    image: examenerik-nexo-demo-cierre:local

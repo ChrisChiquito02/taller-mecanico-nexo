@@ -1,0 +1,381 @@
+{
+  "summary": {
+    "200": 30,
+    "CHAT_LIMIT": 30,
+    "NEXO_RATE_LIMIT": 2
+  },
+  "rows": [
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 83.51
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 91.58
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 48.24
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 56.89
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 51.5
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 52.99
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 40.62
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 48.11
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 39.94
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 50.98
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 41.89
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 42.68
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 38.91
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 47.21
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 49.3
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 53.06
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 51.92
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 64.08
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 48.45
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 64.23
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 42.53
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 49.15
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 43.18
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 41.53
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 43.17
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 40.87
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 35.05
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 48.2
+    },
+    {
+      "port": 8090,
+      "http": 200,
+      "code": null,
+      "ms": 34.03
+    },
+    {
+      "port": 8091,
+      "http": 200,
+      "code": null,
+      "ms": 49.39
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 31.38
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 43.38
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 33.55
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 36.61
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 32.04
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 40.39
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 48.27
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 49.92
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 50.21
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 56.07
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 37.37
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 40.13
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 33.0
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 50.56
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 33.88
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 36.16
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 30.04
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 39.08
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 36.07
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 32.3
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 29.76
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 34.31
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 32.49
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 31.65
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 43.82
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 39.07
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 29.2
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 32.85
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 28.79
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "CHAT_LIMIT",
+      "ms": 42.78
+    },
+    {
+      "port": 8090,
+      "http": 429,
+      "code": "NEXO_RATE_LIMIT",
+      "ms": 22.27
+    },
+    {
+      "port": 8091,
+      "http": 429,
+      "code": "NEXO_RATE_LIMIT",
+      "ms": 32.01
+    }
+  ]
+}

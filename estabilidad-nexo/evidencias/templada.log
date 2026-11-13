@@ -1,0 +1,20 @@
+18421:
+Started recording 1. No limit specified, using maxsize=250MB as default.
+
+Use jcmd 18421 JFR.dump name=warm filename=FILEPATH to copy recording data to file.
+18421:
+com.sun.tools.attach.AttachNotSupportedException: pid: 18421, state is not ready to participate in attach handshake!
+	at jdk.attach/sun.tools.attach.VirtualMachineImpl.checkCatchesAndSendQuitTo(Native Method)
+	at jdk.attach/sun.tools.attach.VirtualMachineImpl.<init>(VirtualMachineImpl.java:95)
+	at jdk.attach/sun.tools.attach.AttachProviderImpl.attachVirtualMachine(AttachProviderImpl.java:56)
+	at jdk.attach/com.sun.tools.attach.VirtualMachine.attach(VirtualMachine.java:201)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.executeCommandForPid(JCmd.java:113)
+	at jdk.jcmd/sun.tools.jcmd.JCmd.main(JCmd.java:97)
+Traceback (most recent call last):
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/replica-templada.py", line 25, in <module>
+    subprocess.run(['jcmd',pid,'JFR.dump','name=warm','filename='+str(d.resolve()/'templada.jfr')],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['jcmd', '18421', 'JFR.dump', 'name=warm', 'filename=/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/evidencias/templada.jfr']' returned non-zero exit status 1.

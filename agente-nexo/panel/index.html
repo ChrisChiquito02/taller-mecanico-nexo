@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NEXO-Δ · ExamenErik</title><link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script></head>
+<body>
+<header class="top"><a href="/" class="brand" aria-label="NEXO Delta, inicio"><span class="mark">Δ</span><span>NEXO-Δ<small>EXAMENERIK</small></span></a><span class="pill"><span class="dot"></span>Laboratorio local</span></header>
+<main>
+<section class="intro"><p class="eyebrow">ANTES DE CAMBIAR UN ACCESO</p><h1>Explora el cambio.<br><span>Anticipa sus efectos.</span></h1><p class="lede">Simula cambios de roles y permisos, compara alternativas y revisa el impacto en las sesiones antes de tomar una decisión.</p><p class="boundary">Todos los escenarios usan datos sintéticos. Las cuentas y los permisos reales permanecen intactos.</p></section>
+<div class="workspace">
+<section class="setup card" aria-labelledby="scenario-title"><div class="section-heading"><span class="step">01</span><h2 id="scenario-title">Elige un escenario</h2></div>
+<form id="simulation">
+<fieldset><legend class="sr-only">Escenario de simulación</legend>
+<label class="choice"><input type="radio" name="scenario" value="ascenso" checked><span><strong>Un usuario se vuelve administrador</strong><small>u-2 pasa de USER a ADMIN, aunque solo necesita consultar su perfil.</small></span><span class="arrow">↗</span></label>
+<label class="choice"><input type="radio" name="scenario" value="consulta"><span><strong>Solo necesita consultar usuarios</strong><small>Comprueba si el catálogo actual permite dar acceso de lectura sin escritura.</small></span><span class="arrow">↗</span></label>
+<label class="choice"><input type="radio" name="scenario" value="compartido"><span><strong>Un permiso compartido cambia</strong><small>Simula agregar escritura a USER y sus efectos en todos los usuarios de ese rol.</small></span><span class="arrow">↗</span></label>
+</fieldset>
+<div class="settings"><label class="minute" for="minute">Momento del cambio<small>Minutos desde el estado inicial</small><input id="minute" name="at_minute" type="number" min="0" max="10080" step="1" value="5" required></label><label class="ai-switch"><input id="use-ai" type="checkbox" checked><span><strong>Explicación con IA local</strong><small>Qwen2.5-Coder · Ollama</small></span></label></div>
+<button id="analyze" class="primary" type="submit">Analizar escenario <span aria-hidden="true">→</span></button>
+<p class="form-note">NEXO calcula el impacto y compara opciones. La IA explica los resultados para tu revisión.</p>
+</form></section>
+<section class="output card" aria-labelledby="result-title" aria-busy="false"><div class="section-heading"><span class="step">02</span><h2 id="result-title">Revisa las consecuencias</h2></div>
+<p id="message" role="status" aria-live="polite"></p>
+<div id="empty" class="empty"><span class="empty-symbol" aria-hidden="true">Δ</span><h3>Una decisión mejor informada</h3><p>Elige un escenario y descubre qué cambiaría, qué sesiones se perderían y qué alternativa requiere menos privilegios.</p><div class="empty-tags"><span>Permisos</span><span>Sesiones</span><span>Alternativas</span></div></div>
+<div id="results" hidden>
+<div class="metrics"><article class="metric"><span>Riesgo del cambio</span><strong id="risk-score"></strong><small id="risk-label"></small></article><article class="metric"><span>Usuarios afectados</span><strong id="affected-count"></strong><small>en este escenario</small></article><article class="metric"><span>Tokens invalidados</span><strong id="session-count"></strong><small>acceso y renovación</small></article></div>
+<p class="rubric">El puntaje usa una rúbrica educativa de 0 a 100. No expresa una probabilidad de ataque.</p>
+<div class="result-section"><h3>Impacto por usuario</h3><div id="affected"></div></div>
+<div class="alternative result-section"><span class="eyebrow">ALTERNATIVA EVALUADA</span><h3 id="alternative-title"></h3><p id="alternative-body"></p><p id="catalog-gap" hidden>El catálogo V2 no tiene un rol que permita consultar usuarios sin conceder también escritura. Un rol de lectura sería una ampliación futura que necesita revisión.</p></div>
+<div class="result-section"><h3>Propuesta de vuelta atrás</h3><div id="rollback"></div><p class="note">Restaurar roles no restaura sesiones revocadas. Se necesita iniciar sesión de nuevo.</p></div>
+<div class="ai-result result-section"><div class="ai-title"><h3>Lectura de NEXO-Δ</h3><span id="ai-status" class="small-pill"></span></div><p id="explanation"></p><p id="review"></p><small id="ai-meta"></small></div>
+<button id="download" type="button" class="secondary">Descargar informe JSON ↓</button>
+</div></section>
+</div>
+</main><footer><span>NEXO-Δ · Asesor de autorización</span><span>Simular → comparar → revisar</span></footer>
+</body></html>

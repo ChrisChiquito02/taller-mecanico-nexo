@@ -1,0 +1,10 @@
+Starting task Fuzz...
+Using python: 'python3' (Python 3.14.7)
+
+ERROR: Results analyzer for logs in /Users/andrickeliasleonchavez/Downloads/ExamenErik/seguridad/private/examenerik-fuzz-cea23c80/Fuzz failed.
+
+Request coverage (successful / total): 12 / 12
+Attempted requests: 12 / 12
+No bugs were found.
+Task Fuzz succeeded.
+Collecting logs...

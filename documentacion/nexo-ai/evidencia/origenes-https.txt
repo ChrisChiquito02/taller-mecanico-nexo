@@ -1,0 +1,1 @@
+PASS: login, cookie HttpOnly/Secure/Strict y refresh al recargar desde otro origen HTTPS del mismo sitio.

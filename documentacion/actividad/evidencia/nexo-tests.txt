@@ -1,0 +1,12 @@
+test_assignment_revokes_access_and_refresh_without_mutating_input (test_nexo.NexoTest.test_assignment_revokes_access_and_refresh_without_mutating_input) ... ok
+test_expired_sessions_are_not_counted_as_change_damage (test_nexo.NexoTest.test_expired_sessions_are_not_counted_as_change_damage) ... ok
+test_last_writer_loss_scores_lockout (test_nexo.NexoTest.test_last_writer_loss_scores_lockout) ... ok
+test_least_privilege_uses_real_catalog (test_nexo.NexoTest.test_least_privilege_uses_real_catalog) ... ok
+test_no_readonly_admin_role_is_invented (test_nexo.NexoTest.test_no_readonly_admin_role_is_invented) ... ok
+test_permission_patch_changes_authorities_without_revoking_sessions (test_nexo.NexoTest.test_permission_patch_changes_authorities_without_revoking_sessions) ... ok
+test_rejects_personal_fields_and_unknown_permissions (test_nexo.NexoTest.test_rejects_personal_fields_and_unknown_permissions) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

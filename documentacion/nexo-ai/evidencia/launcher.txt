@@ -1,0 +1,3 @@
+Preparando la interfaz y el backend Java 21. Puede tardar unos minutos.
+Iniciando únicamente los servicios locales de NEXO…
+No se pudo abrir NEXO: El backend no respondió. Consulta el estado con docker compose y la guía local.

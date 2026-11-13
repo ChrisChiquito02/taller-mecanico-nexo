@@ -1,0 +1,139 @@
+{
+  "agent": "NEXO-Δ",
+  "project": "ExamenErik",
+  "mode": "simulation_only",
+  "input_sha256": "f725e749b5c2f1249a6fa8e1fc312f74a1048167ff66bd59dd03208480c554ba",
+  "required_permissions": [
+    "users:read"
+  ],
+  "requested": {
+    "at_minute": 5,
+    "affected": [
+      {
+        "user": "u-2",
+        "before_roles": [
+          "USER"
+        ],
+        "proposed_roles": [
+          "ADMIN"
+        ],
+        "gained": [
+          "users:read",
+          "users:write"
+        ],
+        "lost": [],
+        "sessions_valid_at_horizon_before": 2,
+        "sessions_invalidated_by_change": 2,
+        "sessions_still_valid": 0
+      }
+    ],
+    "remaining_active_writers": 2,
+    "risk": {
+      "score": 60,
+      "label": "alto",
+      "privilege_gain_points": 50,
+      "session_disruption_points": 10,
+      "no_writer_points": 0
+    },
+    "rollback_proposal_only": {
+      "assignments": {
+        "u-2": [
+          "USER"
+        ]
+      },
+      "permission_patch": {},
+      "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+    }
+  },
+  "least_privilege_candidates": [
+    {
+      "roles": [
+        "ADMIN"
+      ],
+      "extra_permissions": [
+        "profile:read",
+        "users:write"
+      ],
+      "extra_weight": 37
+    },
+    {
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
+      "extra_permissions": [
+        "profile:read",
+        "users:write"
+      ],
+      "extra_weight": 37
+    }
+  ],
+  "alternative_evaluated": {
+    "change": {
+      "assignments": {
+        "u-2": [
+          "ADMIN"
+        ]
+      },
+      "permission_patch": {}
+    },
+    "no_change_needed": false,
+    "simulation": {
+      "at_minute": 5,
+      "affected": [
+        {
+          "user": "u-2",
+          "before_roles": [
+            "USER"
+          ],
+          "proposed_roles": [
+            "ADMIN"
+          ],
+          "gained": [
+            "users:read",
+            "users:write"
+          ],
+          "lost": [],
+          "sessions_valid_at_horizon_before": 2,
+          "sessions_invalidated_by_change": 2,
+          "sessions_still_valid": 0
+        }
+      ],
+      "remaining_active_writers": 2,
+      "risk": {
+        "score": 60,
+        "label": "alto",
+        "privilege_gain_points": 50,
+        "session_disruption_points": 10,
+        "no_writer_points": 0
+      },
+      "rollback_proposal_only": {
+        "assignments": {
+          "u-2": [
+            "USER"
+          ]
+        },
+        "permission_patch": {},
+        "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+      }
+    }
+  },
+  "limitations": [
+    "Snapshot sintético; no predice ataques ni disponibilidad real.",
+    "permission_patch es una hipótesis de catálogo: no existe endpoint para editarlo en el IAM.",
+    "Estado LOCKED se trata como no activo; no se modela vencimiento del bloqueo.",
+    "No modela carreras de concurrencia ni reutilización de refresh consumido (que revoca todas las sesiones).",
+    "El puntaje es una rúbrica educativa, no una probabilidad ni certificación."
+  ],
+  "ai": {
+    "status": "executed",
+    "provider": "Ollama loopback",
+    "model": "qwen2.5-coder:7b",
+    "created_at": "2026-11-08T23:52:42.13497Z",
+    "eval_count": 227,
+    "advisory_untrusted": {
+      "explanation": "El contrafactual calculado sugiere que el usuario 'u-2' se le asigna el rol de 'ADMIN', lo que le concede tanto 'users:read' como 'users:write'. Esto es una alta privacidad, ya que permite al usuario leer y modificar cualquier usuario en el sistema. El riesgo asociado a este cambio es alto, ya que aumenta significativamente la capacidad del usuario para causar daño o alterar el estado del sistema. No existe una alternativa de menor privilegio que cubra la necesidad de leer usuarios, ya que el rol 'ADMIN' ya incluye 'users:write'. Por lo tanto, se recomienda no realizar este cambio y posponer el diseño de un rol de lectura futuro.",
+      "human_review": "Recomendamos no realizar el cambio sugerido y posponer el diseño de un rol de lectura futuro. El cambio actual aumenta significativamente el riesgo y no existe una alternativa de menor privilegio que cubra la necesidad de leer usuarios."
+    }
+  }
+}

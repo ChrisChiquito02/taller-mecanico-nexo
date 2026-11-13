@@ -1,0 +1,113 @@
+{
+  "source": "Independent count of HTTP status lines in RESTler network logs; includes rerenders/checkers",
+  "sending_lines": 18088,
+  "received_status_lines": {
+    "200": 1641,
+    "400": 5601,
+    "202": 1396,
+    "401": 712,
+    "404": 3
+  },
+  "by_route": {
+    "GET /api/health": {
+      "200": 557,
+      "400": 84
+    },
+    "POST /api/auth/register": {
+      "202": 864,
+      "400": 707
+    },
+    "POST /api/auth/refresh": {
+      "401": 106,
+      "400": 262
+    },
+    "POST /api/auth/logout": {
+      "400": 389
+    },
+    "POST /api/auth/forgot-password": {
+      "202": 532,
+      "400": 402
+    },
+    "POST /api/auth/reset-password": {
+      "400": 888,
+      "401": 6
+    },
+    "POST /api/auth/change-password": {
+      "401": 526,
+      "400": 376
+    },
+    "GET /api/users/me": {
+      "200": 526,
+      "400": 84
+    },
+    "GET /api/admin/users": {
+      "400": 958,
+      "200": 558
+    },
+    "PUT /api/admin/users/{id}/roles": {
+      "400": 850
+    },
+    "PUT /api/admin/users//roles": {
+      "401": 2
+    },
+    "PUT /api/admin/users//tWtfQe\\\\\\'|V3T{n^\\x0cAaW1/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/AEh&": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/KBp0Uml/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/L\">8DtK3>IuoniOnZwWV\\x0b~7F1R%x/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}": {
+      "400": 10
+    },
+    "PUT /api/admin/users/{id}/m4v\\x0by#[[}XNx)/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/*F}\\x0bxS!z[;`y34Kz-n$Hq<}\\r(O6ZokS642Q\\\\7F,K/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/umwt#rEFf/roles": {
+      "400": 2
+    },
+    "PUT /api/admin/users/{id}/)t!/_~Aha/#k\\';muaD/roles": {
+      "400": 2
+    },
+    "DELETE /api/admin/users/{id}": {
+      "400": 348
+    },
+    "DELETE /api/admin/users/": {
+      "404": 3,
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/AEh&": {
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/KBp0Uml": {
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/L\">8DtK3>IuoniOnZwWV\\x0b~7F1R%x": {
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/m4v\\x0by#[[}XNx)": {
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/umwt#rEFf": {
+      "400": 3
+    },
+    "DELETE /api/admin/users/{id}/)t!/_~Aha/#k\\';muaD": {
+      "400": 3
+    },
+    "POST /api/auth/login": {
+      "401": 72,
+      "400": 204
+    }
+  }
+}

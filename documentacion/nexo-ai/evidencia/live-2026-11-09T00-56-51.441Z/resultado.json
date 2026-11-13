@@ -1,0 +1,2076 @@
+{
+  "started_at": "2026-11-09T00:56:51.441Z",
+  "synthetic_only": true,
+  "provider": "Ollama real",
+  "model": "qwen2.5-coder:7b",
+  "turns": [
+    {
+      "prompt": "La palabra de nuestro ejercicio es albahaca. Explícame en dos frases qué es una base de datos relacional.",
+      "tool": "general",
+      "latency_ms": 4316,
+      "deltas": 99,
+      "answer": "Una base de datos relacional es un tipo de sistema de gestión de datos que organiza y almacena información en tablas, donde cada tabla consta de filas y columnas. Cada fila representa un registro o entidad, mientras que las columnas definen los atributos o características de esas entidades. Las relaciones entre las tablas se establecen mediante claves primarias y foráneas, permitiendo la integridad y coherencia de los datos.",
+      "metadata": {
+        "tool": "general",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "id": "arquitectura",
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik"
+          },
+          {
+            "id": "identidad",
+            "source": "identity/security/DatabaseJwtAuthentication.java; identity/service/UserAdministrationService.java; db/migration/V2__sessions_and_rbac.sql",
+            "title": "Autenticación, roles y sesiones"
+          },
+          {
+            "id": "laboratorio",
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites"
+          }
+        ]
+      }
+    },
+    {
+      "prompt": "¿Cuál es la palabra del ejercicio que te dije en mi mensaje anterior? Responde con esa palabra.",
+      "tool": "general",
+      "latency_ms": 701,
+      "deltas": 10,
+      "answer": "La palabra del ejercicio es \"albahaca\".",
+      "metadata": {
+        "tool": "general",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "id": "seguridad",
+            "source": "documentacion/actividad/RESTLER.md; documentacion/actividad/EVIDENCIA.md",
+            "title": "Pruebas y seguridad verificable"
+          }
+        ]
+      }
+    },
+    {
+      "prompt": "Explica los roles y la autenticación de ExamenErik. Cita documentos autorizados.",
+      "tool": "auto",
+      "latency_ms": 6303,
+      "deltas": 316,
+      "answer": "En ExamenErik, los roles y la autenticación están gestionados por un sistema de identidad y acceso (IAM) que permite diferentes niveles de acceso y operaciones según el rol del usuario. Los roles disponibles son USER y ADMIN.\n\n- **USER**: Este rol tiene permisos limitados. Puede leer su propio perfil y cambiar su contraseña. No tiene permisos para gestionar otros usuarios ni roles.\n\n- **ADMIN**: Este rol tiene permisos más amplios. Puede leer y listar todos los usuarios, así como asignar roles y desactivar cuentas. El administrador es el único que puede realizar estas operaciones.\n\nLa autenticación en ExamenErik se realiza a través de tokens JWT (JSON Web Tokens). Cada petición al servidor debe incluir un token JWT que valida el emisor, la expiración, el estado de la cuenta y la versión de la sesión. Las autoridades del usuario se calculan a partir de los roles activos que tiene en ese momento. Asignar roles incrementa la versión de la sesión y consume tokens, incluso si se asignan los mismos roles.\n\nEl refresh de tokens se realiza mediante una cookie HttpOnly, Path=/api/auth y SameSite=Strict por defecto. El logout cierra todas las sesiones del usuario. La recuperación de contraseñas se realiza a través de SMTP.\n\nPara más detalles sobre la autenticación y gestión de roles en ExamenErik, te recomiendo consultar la documentación oficial del sistema [id].",
+      "metadata": {
+        "tool": "search_docs",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "id": "arquitectura",
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik"
+          },
+          {
+            "id": "identidad",
+            "source": "identity/security/DatabaseJwtAuthentication.java; identity/service/UserAdministrationService.java; db/migration/V2__sessions_and_rbac.sql",
+            "title": "Autenticación, roles y sesiones"
+          },
+          {
+            "id": "laboratorio",
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites"
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    "Ollama disponible a través del backend autenticado",
+    "Memoria real de dos turnos",
+    "Plan de herramienta generado por modelo y RAG con fuentes",
+    "Simulación sintética 60 y alternativa 0",
+    "Snapshot IAM idéntico antes/después: cuentas, roles, permisos y tokens",
+    "Explicación de simulación con inferencia real",
+    "Exportación de conversación e informe",
+    "Historial restaurado tras refresh real",
+    "Vista móvil sin desbordamiento horizontal"
+  ],
+  "errors": [],
+  "passed": true,
+  "iam_unchanged": true,
+  "simulation_explanation": [
+    {
+      "text": "Consultando el modelo y validando herramientas…",
+      "type": "status"
+    },
+    {
+      "type": "context",
+      "metadata": {
+        "tool": "simulation",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "id": "laboratorio",
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites"
+          },
+          {
+            "id": "arquitectura",
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik"
+          },
+          {
+            "id": "operacion",
+            "source": "documentacion/actividad/PUBLICACION_GRATUITA.md; deploy/Dockerfile.api",
+            "title": "Operación y publicación distribuida"
+          }
+        ],
+        "simulation": {
+          "agent": "NEXO-Δ Predictive Access Lab",
+          "mode": "simulation_only",
+          "source": "authorized_live_read",
+          "at_minute": 0,
+          "snapshot_complete": true,
+          "required_permissions": [
+            "profile:read"
+          ],
+          "requested": {
+            "affected": [
+              {
+                "user": "objetivo",
+                "before_roles": [
+                  "ADMIN"
+                ],
+                "proposed_roles": [
+                  "USER"
+                ],
+                "before_permissions": [
+                  "profile:read",
+                  "users:read",
+                  "users:write"
+                ],
+                "proposed_permissions": [
+                  "profile:read"
+                ],
+                "gained": [],
+                "lost": [
+                  "users:read",
+                  "users:write"
+                ],
+                "resources_exposed": [],
+                "sessions_invalidated_by_change": 3,
+                "sessions_still_valid": 0
+              }
+            ],
+            "rollback_proposal_only": {
+              "assignments": {
+                "objetivo": [
+                  "ADMIN"
+                ]
+              },
+              "permission_patch": {},
+              "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+            },
+            "risk": {
+              "label": "medio",
+              "no_writer_points": 40,
+              "session_disruption_points": 15,
+              "score": 55,
+              "privilege_gain_points": 0
+            },
+            "remaining_active_writers": 0
+          },
+          "least_privilege_candidates": [
+            {
+              "extra_permissions": [],
+              "extra_weight": 0,
+              "roles": [
+                "USER"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN",
+                "USER"
+              ]
+            }
+          ],
+          "alternative_evaluated": {
+            "change": {
+              "objetivo": [
+                "USER"
+              ]
+            },
+            "no_change_needed": false,
+            "simulation": {
+              "affected": [
+                {
+                  "user": "objetivo",
+                  "before_roles": [
+                    "ADMIN"
+                  ],
+                  "proposed_roles": [
+                    "USER"
+                  ],
+                  "before_permissions": [
+                    "profile:read",
+                    "users:read",
+                    "users:write"
+                  ],
+                  "proposed_permissions": [
+                    "profile:read"
+                  ],
+                  "gained": [],
+                  "lost": [
+                    "users:read",
+                    "users:write"
+                  ],
+                  "resources_exposed": [],
+                  "sessions_invalidated_by_change": 3,
+                  "sessions_still_valid": 0
+                }
+              ],
+              "rollback_proposal_only": {
+                "assignments": {
+                  "objetivo": [
+                    "ADMIN"
+                  ]
+                },
+                "permission_patch": {},
+                "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+              },
+              "risk": {
+                "label": "medio",
+                "no_writer_points": 40,
+                "session_disruption_points": 15,
+                "score": 55,
+                "privilege_gain_points": 0
+              },
+              "remaining_active_writers": 0
+            }
+          },
+          "limitations": [
+            "Rúbrica educativa, no probabilidad ni certificación.",
+            "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+            "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+            "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+            "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+          ]
+        }
+      }
+    },
+    {
+      "text": "**",
+      "type": "delta"
+    },
+    {
+      "text": "C",
+      "type": "delta"
+    },
+    {
+      "text": "ambio",
+      "type": "delta"
+    },
+    {
+      "text": " Hip",
+      "type": "delta"
+    },
+    {
+      "text": "ot",
+      "type": "delta"
+    },
+    {
+      "text": "ético",
+      "type": "delta"
+    },
+    {
+      "text": " Expl",
+      "type": "delta"
+    },
+    {
+      "text": "íc",
+      "type": "delta"
+    },
+    {
+      "text": "ito",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "**\n",
+      "type": "delta"
+    },
+    {
+      "text": "El",
+      "type": "delta"
+    },
+    {
+      "text": " cambio",
+      "type": "delta"
+    },
+    {
+      "text": " hip",
+      "type": "delta"
+    },
+    {
+      "text": "ot",
+      "type": "delta"
+    },
+    {
+      "text": "ético",
+      "type": "delta"
+    },
+    {
+      "text": " consist",
+      "type": "delta"
+    },
+    {
+      "text": "e",
+      "type": "delta"
+    },
+    {
+      "text": " en",
+      "type": "delta"
+    },
+    {
+      "text": " asign",
+      "type": "delta"
+    },
+    {
+      "text": "ar",
+      "type": "delta"
+    },
+    {
+      "text": " al",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "objet",
+      "type": "delta"
+    },
+    {
+      "text": "ivo",
+      "type": "delta"
+    },
+    {
+      "text": "\"",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " rol",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "USER",
+      "type": "delta"
+    },
+    {
+      "text": "\"",
+      "type": "delta"
+    },
+    {
+      "text": " en",
+      "type": "delta"
+    },
+    {
+      "text": " lugar",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "ADMIN",
+      "type": "delta"
+    },
+    {
+      "text": "\".",
+      "type": "delta"
+    },
+    {
+      "text": " Esto",
+      "type": "delta"
+    },
+    {
+      "text": " implic",
+      "type": "delta"
+    },
+    {
+      "text": "aría",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " pier",
+      "type": "delta"
+    },
+    {
+      "text": "de",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "isos",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "users",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "read",
+      "type": "delta"
+    },
+    {
+      "text": "\"",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "users",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "write",
+      "type": "delta"
+    },
+    {
+      "text": "\",",
+      "type": "delta"
+    },
+    {
+      "text": " mientras",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " m",
+      "type": "delta"
+    },
+    {
+      "text": "anti",
+      "type": "delta"
+    },
+    {
+      "text": "ene",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "iso",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "profile",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "read",
+      "type": "delta"
+    },
+    {
+      "text": "\".\n\n",
+      "type": "delta"
+    },
+    {
+      "text": "**",
+      "type": "delta"
+    },
+    {
+      "text": "R",
+      "type": "delta"
+    },
+    {
+      "text": "ies",
+      "type": "delta"
+    },
+    {
+      "text": "gos",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "**\n",
+      "type": "delta"
+    },
+    {
+      "text": "1",
+      "type": "delta"
+    },
+    {
+      "text": ".",
+      "type": "delta"
+    },
+    {
+      "text": " **",
+      "type": "delta"
+    },
+    {
+      "text": "R",
+      "type": "delta"
+    },
+    {
+      "text": "ies",
+      "type": "delta"
+    },
+    {
+      "text": "go",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " Dis",
+      "type": "delta"
+    },
+    {
+      "text": "rup",
+      "type": "delta"
+    },
+    {
+      "text": "ción",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " Ses",
+      "type": "delta"
+    },
+    {
+      "text": "iones",
+      "type": "delta"
+    },
+    {
+      "text": ":**",
+      "type": "delta"
+    },
+    {
+      "text": " El",
+      "type": "delta"
+    },
+    {
+      "text": " cambio",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " roles",
+      "type": "delta"
+    },
+    {
+      "text": " invalid",
+      "type": "delta"
+    },
+    {
+      "text": "aría",
+      "type": "delta"
+    },
+    {
+      "text": " ",
+      "type": "delta"
+    },
+    {
+      "text": "3",
+      "type": "delta"
+    },
+    {
+      "text": " ses",
+      "type": "delta"
+    },
+    {
+      "text": "iones",
+      "type": "delta"
+    },
+    {
+      "text": " del",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " lo",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " podría",
+      "type": "delta"
+    },
+    {
+      "text": " inter",
+      "type": "delta"
+    },
+    {
+      "text": "r",
+      "type": "delta"
+    },
+    {
+      "text": "ump",
+      "type": "delta"
+    },
+    {
+      "text": "ir",
+      "type": "delta"
+    },
+    {
+      "text": " su",
+      "type": "delta"
+    },
+    {
+      "text": " trabajo",
+      "type": "delta"
+    },
+    {
+      "text": " actual",
+      "type": "delta"
+    },
+    {
+      "text": ".\n",
+      "type": "delta"
+    },
+    {
+      "text": "2",
+      "type": "delta"
+    },
+    {
+      "text": ".",
+      "type": "delta"
+    },
+    {
+      "text": " **",
+      "type": "delta"
+    },
+    {
+      "text": "P",
+      "type": "delta"
+    },
+    {
+      "text": "é",
+      "type": "delta"
+    },
+    {
+      "text": "rd",
+      "type": "delta"
+    },
+    {
+      "text": "ida",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " Priv",
+      "type": "delta"
+    },
+    {
+      "text": "ile",
+      "type": "delta"
+    },
+    {
+      "text": "g",
+      "type": "delta"
+    },
+    {
+      "text": "ios",
+      "type": "delta"
+    },
+    {
+      "text": ":**",
+      "type": "delta"
+    },
+    {
+      "text": " El",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " perder",
+      "type": "delta"
+    },
+    {
+      "text": "ía",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "isos",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " lect",
+      "type": "delta"
+    },
+    {
+      "text": "ura",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " escrit",
+      "type": "delta"
+    },
+    {
+      "text": "ura",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " otros",
+      "type": "delta"
+    },
+    {
+      "text": " usuarios",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " lo",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " limit",
+      "type": "delta"
+    },
+    {
+      "text": "aría",
+      "type": "delta"
+    },
+    {
+      "text": " su",
+      "type": "delta"
+    },
+    {
+      "text": " capacidad",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " realizar",
+      "type": "delta"
+    },
+    {
+      "text": " ci",
+      "type": "delta"
+    },
+    {
+      "text": "ertas",
+      "type": "delta"
+    },
+    {
+      "text": " oper",
+      "type": "delta"
+    },
+    {
+      "text": "aciones",
+      "type": "delta"
+    },
+    {
+      "text": ".\n\n",
+      "type": "delta"
+    },
+    {
+      "text": "**",
+      "type": "delta"
+    },
+    {
+      "text": "Altern",
+      "type": "delta"
+    },
+    {
+      "text": "ativa",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "**\n",
+      "type": "delta"
+    },
+    {
+      "text": "La",
+      "type": "delta"
+    },
+    {
+      "text": " altern",
+      "type": "delta"
+    },
+    {
+      "text": "ativa",
+      "type": "delta"
+    },
+    {
+      "text": " sería",
+      "type": "delta"
+    },
+    {
+      "text": " mantener",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " rol",
+      "type": "delta"
+    },
+    {
+      "text": " del",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " como",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "ADMIN",
+      "type": "delta"
+    },
+    {
+      "text": "\",",
+      "type": "delta"
+    },
+    {
+      "text": " lo",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " m",
+      "type": "delta"
+    },
+    {
+      "text": "anti",
+      "type": "delta"
+    },
+    {
+      "text": "ene",
+      "type": "delta"
+    },
+    {
+      "text": " todos",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "isos",
+      "type": "delta"
+    },
+    {
+      "text": " act",
+      "type": "delta"
+    },
+    {
+      "text": "uales",
+      "type": "delta"
+    },
+    {
+      "text": ".\n\n",
+      "type": "delta"
+    },
+    {
+      "text": "**",
+      "type": "delta"
+    },
+    {
+      "text": "Plan",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " Re",
+      "type": "delta"
+    },
+    {
+      "text": "vers",
+      "type": "delta"
+    },
+    {
+      "text": "ión",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "**\n",
+      "type": "delta"
+    },
+    {
+      "text": "El",
+      "type": "delta"
+    },
+    {
+      "text": " plan",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " revers",
+      "type": "delta"
+    },
+    {
+      "text": "ión",
+      "type": "delta"
+    },
+    {
+      "text": " imp",
+      "type": "delta"
+    },
+    {
+      "text": "lica",
+      "type": "delta"
+    },
+    {
+      "text": " revert",
+      "type": "delta"
+    },
+    {
+      "text": "ir",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " cambio",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " roles",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " asign",
+      "type": "delta"
+    },
+    {
+      "text": "ando",
+      "type": "delta"
+    },
+    {
+      "text": " nue",
+      "type": "delta"
+    },
+    {
+      "text": "v",
+      "type": "delta"
+    },
+    {
+      "text": "amente",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " rol",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "ADMIN",
+      "type": "delta"
+    },
+    {
+      "text": "\"",
+      "type": "delta"
+    },
+    {
+      "text": " al",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " \"",
+      "type": "delta"
+    },
+    {
+      "text": "objet",
+      "type": "delta"
+    },
+    {
+      "text": "ivo",
+      "type": "delta"
+    },
+    {
+      "text": "\".",
+      "type": "delta"
+    },
+    {
+      "text": " Esto",
+      "type": "delta"
+    },
+    {
+      "text": " implic",
+      "type": "delta"
+    },
+    {
+      "text": "aría",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " rec",
+      "type": "delta"
+    },
+    {
+      "text": "up",
+      "type": "delta"
+    },
+    {
+      "text": "era",
+      "type": "delta"
+    },
+    {
+      "text": " todos",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "isos",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " tenía",
+      "type": "delta"
+    },
+    {
+      "text": " antes",
+      "type": "delta"
+    },
+    {
+      "text": " del",
+      "type": "delta"
+    },
+    {
+      "text": " cambio",
+      "type": "delta"
+    },
+    {
+      "text": ".",
+      "type": "delta"
+    },
+    {
+      "text": " El",
+      "type": "delta"
+    },
+    {
+      "text": " plan",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " revers",
+      "type": "delta"
+    },
+    {
+      "text": "ión",
+      "type": "delta"
+    },
+    {
+      "text": " también",
+      "type": "delta"
+    },
+    {
+      "text": " incl",
+      "type": "delta"
+    },
+    {
+      "text": "uye",
+      "type": "delta"
+    },
+    {
+      "text": " una",
+      "type": "delta"
+    },
+    {
+      "text": " advert",
+      "type": "delta"
+    },
+    {
+      "text": "encia",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " la",
+      "type": "delta"
+    },
+    {
+      "text": " revers",
+      "type": "delta"
+    },
+    {
+      "text": "ión",
+      "type": "delta"
+    },
+    {
+      "text": " requ",
+      "type": "delta"
+    },
+    {
+      "text": "iere",
+      "type": "delta"
+    },
+    {
+      "text": " una",
+      "type": "delta"
+    },
+    {
+      "text": " revis",
+      "type": "delta"
+    },
+    {
+      "text": "ión",
+      "type": "delta"
+    },
+    {
+      "text": " hum",
+      "type": "delta"
+    },
+    {
+      "text": "ana",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " un",
+      "type": "delta"
+    },
+    {
+      "text": " nuevo",
+      "type": "delta"
+    },
+    {
+      "text": " inicio",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " sesión",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " ya",
+      "type": "delta"
+    },
+    {
+      "text": " que",
+      "type": "delta"
+    },
+    {
+      "text": " no",
+      "type": "delta"
+    },
+    {
+      "text": " se",
+      "type": "delta"
+    },
+    {
+      "text": " puede",
+      "type": "delta"
+    },
+    {
+      "text": " restaur",
+      "type": "delta"
+    },
+    {
+      "text": "ar",
+      "type": "delta"
+    },
+    {
+      "text": " la",
+      "type": "delta"
+    },
+    {
+      "text": " versión",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " la",
+      "type": "delta"
+    },
+    {
+      "text": " sesión",
+      "type": "delta"
+    },
+    {
+      "text": " ni",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " tokens",
+      "type": "delta"
+    },
+    {
+      "text": " consum",
+      "type": "delta"
+    },
+    {
+      "text": "idos",
+      "type": "delta"
+    },
+    {
+      "text": ".\n\n",
+      "type": "delta"
+    },
+    {
+      "text": "**",
+      "type": "delta"
+    },
+    {
+      "text": "He",
+      "type": "delta"
+    },
+    {
+      "text": "chos",
+      "type": "delta"
+    },
+    {
+      "text": " e",
+      "type": "delta"
+    },
+    {
+      "text": " Inc",
+      "type": "delta"
+    },
+    {
+      "text": "ert",
+      "type": "delta"
+    },
+    {
+      "text": "id",
+      "type": "delta"
+    },
+    {
+      "text": "umb",
+      "type": "delta"
+    },
+    {
+      "text": "res",
+      "type": "delta"
+    },
+    {
+      "text": ":",
+      "type": "delta"
+    },
+    {
+      "text": "**\n",
+      "type": "delta"
+    },
+    {
+      "text": "-",
+      "type": "delta"
+    },
+    {
+      "text": " **",
+      "type": "delta"
+    },
+    {
+      "text": "He",
+      "type": "delta"
+    },
+    {
+      "text": "chos",
+      "type": "delta"
+    },
+    {
+      "text": ":**",
+      "type": "delta"
+    },
+    {
+      "text": " El",
+      "type": "delta"
+    },
+    {
+      "text": " cambio",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " roles",
+      "type": "delta"
+    },
+    {
+      "text": " invalid",
+      "type": "delta"
+    },
+    {
+      "text": "aría",
+      "type": "delta"
+    },
+    {
+      "text": " ",
+      "type": "delta"
+    },
+    {
+      "text": "3",
+      "type": "delta"
+    },
+    {
+      "text": " ses",
+      "type": "delta"
+    },
+    {
+      "text": "iones",
+      "type": "delta"
+    },
+    {
+      "text": " del",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " usuario",
+      "type": "delta"
+    },
+    {
+      "text": " perder",
+      "type": "delta"
+    },
+    {
+      "text": "ía",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " perm",
+      "type": "delta"
+    },
+    {
+      "text": "isos",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " lect",
+      "type": "delta"
+    },
+    {
+      "text": "ura",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " escrit",
+      "type": "delta"
+    },
+    {
+      "text": "ura",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " otros",
+      "type": "delta"
+    },
+    {
+      "text": " usuarios",
+      "type": "delta"
+    },
+    {
+      "text": ".\n",
+      "type": "delta"
+    },
+    {
+      "text": "-",
+      "type": "delta"
+    },
+    {
+      "text": " **",
+      "type": "delta"
+    },
+    {
+      "text": "In",
+      "type": "delta"
+    },
+    {
+      "text": "cert",
+      "type": "delta"
+    },
+    {
+      "text": "id",
+      "type": "delta"
+    },
+    {
+      "text": "umb",
+      "type": "delta"
+    },
+    {
+      "text": "res",
+      "type": "delta"
+    },
+    {
+      "text": ":**",
+      "type": "delta"
+    },
+    {
+      "text": " El",
+      "type": "delta"
+    },
+    {
+      "text": " número",
+      "type": "delta"
+    },
+    {
+      "text": " exact",
+      "type": "delta"
+    },
+    {
+      "text": "o",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " JWT",
+      "type": "delta"
+    },
+    {
+      "text": " re",
+      "type": "delta"
+    },
+    {
+      "text": "ales",
+      "type": "delta"
+    },
+    {
+      "text": " es",
+      "type": "delta"
+    },
+    {
+      "text": " descon",
+      "type": "delta"
+    },
+    {
+      "text": "oc",
+      "type": "delta"
+    },
+    {
+      "text": "ido",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " solo",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " refresh",
+      "type": "delta"
+    },
+    {
+      "text": " vig",
+      "type": "delta"
+    },
+    {
+      "text": "entes",
+      "type": "delta"
+    },
+    {
+      "text": " conoc",
+      "type": "delta"
+    },
+    {
+      "text": "idos",
+      "type": "delta"
+    },
+    {
+      "text": " al",
+      "type": "delta"
+    },
+    {
+      "text": " hor",
+      "type": "delta"
+    },
+    {
+      "text": "izont",
+      "type": "delta"
+    },
+    {
+      "text": "e",
+      "type": "delta"
+    },
+    {
+      "text": " se",
+      "type": "delta"
+    },
+    {
+      "text": " consider",
+      "type": "delta"
+    },
+    {
+      "text": "an",
+      "type": "delta"
+    },
+    {
+      "text": ".",
+      "type": "delta"
+    },
+    {
+      "text": " Además",
+      "type": "delta"
+    },
+    {
+      "text": ",",
+      "type": "delta"
+    },
+    {
+      "text": " el",
+      "type": "delta"
+    },
+    {
+      "text": " ries",
+      "type": "delta"
+    },
+    {
+      "text": "go",
+      "type": "delta"
+    },
+    {
+      "text": " par",
+      "type": "delta"
+    },
+    {
+      "text": "cial",
+      "type": "delta"
+    },
+    {
+      "text": " depend",
+      "type": "delta"
+    },
+    {
+      "text": "e",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " la",
+      "type": "delta"
+    },
+    {
+      "text": " dispon",
+      "type": "delta"
+    },
+    {
+      "text": "ibilidad",
+      "type": "delta"
+    },
+    {
+      "text": " de",
+      "type": "delta"
+    },
+    {
+      "text": " los",
+      "type": "delta"
+    },
+    {
+      "text": " recursos",
+      "type": "delta"
+    },
+    {
+      "text": " y",
+      "type": "delta"
+    },
+    {
+      "text": " la",
+      "type": "delta"
+    },
+    {
+      "text": " capacidad",
+      "type": "delta"
+    },
+    {
+      "text": " del",
+      "type": "delta"
+    },
+    {
+      "text": " servicio",
+      "type": "delta"
+    },
+    {
+      "text": ".",
+      "type": "delta"
+    },
+    {
+      "type": "done",
+      "metadata": {
+        "tool": "simulation",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "id": "laboratorio",
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites"
+          },
+          {
+            "id": "arquitectura",
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik"
+          },
+          {
+            "id": "operacion",
+            "source": "documentacion/actividad/PUBLICACION_GRATUITA.md; deploy/Dockerfile.api",
+            "title": "Operación y publicación distribuida"
+          }
+        ],
+        "simulation": {
+          "agent": "NEXO-Δ Predictive Access Lab",
+          "mode": "simulation_only",
+          "source": "authorized_live_read",
+          "at_minute": 0,
+          "snapshot_complete": true,
+          "required_permissions": [
+            "profile:read"
+          ],
+          "requested": {
+            "affected": [
+              {
+                "user": "objetivo",
+                "before_roles": [
+                  "ADMIN"
+                ],
+                "proposed_roles": [
+                  "USER"
+                ],
+                "before_permissions": [
+                  "profile:read",
+                  "users:read",
+                  "users:write"
+                ],
+                "proposed_permissions": [
+                  "profile:read"
+                ],
+                "gained": [],
+                "lost": [
+                  "users:read",
+                  "users:write"
+                ],
+                "resources_exposed": [],
+                "sessions_invalidated_by_change": 3,
+                "sessions_still_valid": 0
+              }
+            ],
+            "rollback_proposal_only": {
+              "assignments": {
+                "objetivo": [
+                  "ADMIN"
+                ]
+              },
+              "permission_patch": {},
+              "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+            },
+            "risk": {
+              "label": "medio",
+              "no_writer_points": 40,
+              "session_disruption_points": 15,
+              "score": 55,
+              "privilege_gain_points": 0
+            },
+            "remaining_active_writers": 0
+          },
+          "least_privilege_candidates": [
+            {
+              "extra_permissions": [],
+              "extra_weight": 0,
+              "roles": [
+                "USER"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN"
+              ]
+            },
+            {
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50,
+              "roles": [
+                "ADMIN",
+                "USER"
+              ]
+            }
+          ],
+          "alternative_evaluated": {
+            "change": {
+              "objetivo": [
+                "USER"
+              ]
+            },
+            "no_change_needed": false,
+            "simulation": {
+              "affected": [
+                {
+                  "user": "objetivo",
+                  "before_roles": [
+                    "ADMIN"
+                  ],
+                  "proposed_roles": [
+                    "USER"
+                  ],
+                  "before_permissions": [
+                    "profile:read",
+                    "users:read",
+                    "users:write"
+                  ],
+                  "proposed_permissions": [
+                    "profile:read"
+                  ],
+                  "gained": [],
+                  "lost": [
+                    "users:read",
+                    "users:write"
+                  ],
+                  "resources_exposed": [],
+                  "sessions_invalidated_by_change": 3,
+                  "sessions_still_valid": 0
+                }
+              ],
+              "rollback_proposal_only": {
+                "assignments": {
+                  "objetivo": [
+                    "ADMIN"
+                  ]
+                },
+                "permission_patch": {},
+                "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos."
+              },
+              "risk": {
+                "label": "medio",
+                "no_writer_points": 40,
+                "session_disruption_points": 15,
+                "score": 55,
+                "privilege_gain_points": 0
+              },
+              "remaining_active_writers": 0
+            }
+          },
+          "limitations": [
+            "Rúbrica educativa, no probabilidad ni certificación.",
+            "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+            "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+            "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+            "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+          ]
+        }
+      }
+    }
+  ],
+  "finished_at": "2026-11-09T00:57:14.084Z"
+}

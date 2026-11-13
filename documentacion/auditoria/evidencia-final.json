@@ -1,0 +1,276 @@
+{
+  "verified_at": "2026-11-04T15:43:45.496540-06:00",
+  "full_command": "PW_CHANNEL=chrome ./scripts/verificar.sh",
+  "full_sequence_exit_status": "success",
+  "baseline_backend_tests": 27,
+  "backend": {
+    "totals": {
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "suites": [
+      {
+        "name": "com.sistemam01m02.ArchitectureTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.RecoveryRequestsTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.SystemIntegrationTest",
+        "tests": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.config.HealthControllerTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.identity.entity.AppUserTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.identity.security.GuardAndConfigurationTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.shared.error.GlobalExceptionHandlerTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.sistemam01m02.shared.persistence.UuidV7GeneratorTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "java_class_major": 65,
+    "java_target": 21,
+    "spring_boot": "4.1.1",
+    "maven": "3.9.11"
+  },
+  "frontend": {
+    "node": "24.16.0",
+    "npm": "11.13.0",
+    "unit_tests": 16,
+    "failures": 0,
+    "skipped": 0,
+    "esbuild": "0.28.2",
+    "playwright": "1.64.1",
+    "jsdom": "30.1.3",
+    "npm_audit": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    }
+  },
+  "e2e": {
+    "startTime": "2026-11-04T21:42:11.774Z",
+    "duration": 19969.577,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0,
+    "browser": {
+      "version": "156.0.8078.82",
+      "channel": "chrome"
+    },
+    "environment": {
+      "isolated": true,
+      "mysql": "8.4",
+      "smtp": "Mailpit",
+      "containerUser": "app"
+    },
+    "global_errors": 0
+  },
+  "automated_tests_total": 65,
+  "smoke_passed": true,
+  "migration_sql_unchanged": true,
+  "jar_sha256": "7de638e5e17c42579ae826b4f9be61efc31917fde3f74b7c46149982109b0032",
+  "deployed_jar_sha256": "7de638e5e17c42579ae826b4f9be61efc31917fde3f74b7c46149982109b0032",
+  "frontend_resources_sha256": {
+    "app.js": "a4bdf47b818b38a941163b5d5e90d74ac8fa4517cf6f2050ff0a7be60042fef4",
+    "styles.css": "f07e3f8f59c6815de4b841802907c98cfe1caa1f798e5eca3a34fe418f1b3f24",
+    "index.html": "c54fe800627297dae451612b2bfbed957d41d259ecf93d27810992a21a781d8d",
+    "reset-password.html": "c54fe800627297dae451612b2bfbed957d41d259ecf93d27810992a21a781d8d"
+  },
+  "container_user": "app",
+  "health": {
+    "status": "UP"
+  },
+  "requirements": [
+    {
+      "id": "R01",
+      "status": "verificado"
+    },
+    {
+      "id": "R02",
+      "status": "verificado"
+    },
+    {
+      "id": "R03",
+      "status": "verificado"
+    },
+    {
+      "id": "R04",
+      "status": "verificado"
+    },
+    {
+      "id": "R05",
+      "status": "verificado"
+    },
+    {
+      "id": "R06",
+      "status": "verificado"
+    },
+    {
+      "id": "R07",
+      "status": "verificado"
+    },
+    {
+      "id": "R08",
+      "status": "verificado"
+    },
+    {
+      "id": "R09",
+      "status": "verificado"
+    },
+    {
+      "id": "R10",
+      "status": "verificado"
+    },
+    {
+      "id": "R11",
+      "status": "verificado"
+    },
+    {
+      "id": "R12",
+      "status": "verificado"
+    },
+    {
+      "id": "R13",
+      "status": "verificado"
+    },
+    {
+      "id": "R14",
+      "status": "verificado"
+    },
+    {
+      "id": "R15",
+      "status": "verificado"
+    },
+    {
+      "id": "R16",
+      "status": "verificado"
+    },
+    {
+      "id": "R17",
+      "status": "verificado"
+    },
+    {
+      "id": "R18",
+      "status": "verificado"
+    },
+    {
+      "id": "R19",
+      "status": "verificado"
+    },
+    {
+      "id": "R20",
+      "status": "verificado"
+    },
+    {
+      "id": "R21",
+      "status": "verificado"
+    },
+    {
+      "id": "R22",
+      "status": "verificado"
+    },
+    {
+      "id": "R23",
+      "status": "verificado"
+    },
+    {
+      "id": "R24",
+      "status": "verificado"
+    },
+    {
+      "id": "R25",
+      "status": "verificado"
+    },
+    {
+      "id": "R26",
+      "status": "verificado"
+    },
+    {
+      "id": "R27",
+      "status": "verificado"
+    },
+    {
+      "id": "R28",
+      "status": "verificado"
+    },
+    {
+      "id": "R29",
+      "status": "verificado"
+    },
+    {
+      "id": "R30",
+      "status": "parcial"
+    },
+    {
+      "id": "R31",
+      "status": "parcial"
+    },
+    {
+      "id": "R32",
+      "status": "pendiente"
+    }
+  ],
+  "requirements_summary": {
+    "total": 32,
+    "verified": 29,
+    "partial": 2,
+    "pending": 1,
+    "percent_verified": 90.625
+  },
+  "test_data_isolated": true,
+  "production_databases_migrated": false,
+  "external_email_sent": false,
+  "production_deployed": false,
+  "remote_ci_executed": false,
+  "notes": [
+    "Registro público 202 uniforme sin ID; contrato 0.2.0",
+    "SMTP asíncrono en memoria con cola acotada, sin garantía durable",
+    "SCA npm no equivale a SCA Maven",
+    "No se infiere funcionamiento de SMTP externo o HTTPS real a partir de plantillas"
+  ]
+}

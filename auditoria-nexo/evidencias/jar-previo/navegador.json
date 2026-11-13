@@ -1,0 +1,621 @@
+[
+  {
+    "browser": "157.0.8103.39"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/refresh",
+    "status": 401
+  },
+  {
+    "event": "console",
+    "type": "error",
+    "message": "Failed to load resource: the server responded with a status of 401 ()"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/health",
+    "status": 200
+  },
+  {
+    "id": "UI01",
+    "name": "Raíz y protección de enlace directo",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/users/me",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "id": "UI02",
+    "name": "Login con cuenta sintética y navegación",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI03",
+    "name": "Comprobar modelo",
+    "status": "PASS",
+    "details": "● Conectado · qwen2.5-coder:7b · local"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI04",
+    "name": "Tres sugerencias rellenan el mensaje",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/de81e97f-a539-4fa0-964a-b89b2b7547f3/messages",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "auto",
+    "evidence": {
+      "answer": "La arquitectura de ExamenErik se basa en una arquitectura de microservicios, lo que permite una escalabilidad y una separación de responsabilidades claras. Cada microservicio tiene una única responsabilidad y puede ser escrito en un lenguaje de programación diferente. En este caso, se utiliza Java 21 para la lógica de negocio y Spring Boot 4.1.1 para el desarrollo de aplicaciones basadas en Spring. La base de datos se gestiona con MySQL 8.4 y Flyway para el control de versiones de la base de datos. El frontend se compila a frontend/dist y se utiliza esbuild para la construcción. Esta arquitectura permite una separación clara de la lógica de negocio y la interfaz de usuario, facilitando el mantenimiento y la escalabilidad del sistema. [1]\n\n[1] Spring Framework Documentation. (n.d.). Microservices with Spring Boot. https://spring.io/guides/gs/microservices/",
+      "visible": "La arquitectura de ExamenErik se basa en una arquitectura de microservicios, lo que permite una escalabilidad y una separación de responsabilidades claras. Cada microservicio tiene una única responsabilidad y puede ser escrito en un lenguaje de programación diferente. En este caso, se utiliza Java 21 para la lógica de negocio y Spring Boot 4.1.1 para el desarrollo de aplicaciones basadas en Spring. La base de datos se gestiona con MySQL 8.4 y Flyway para el control de versiones de la base de datos. El frontend se compila a frontend/dist y se utiliza esbuild para la construcción. Esta arquitectura permite una separación clara de la lógica de negocio y la interfaz de usuario, facilitando el mantenimiento y la escalabilidad del sistema. [1]\n\n[1] Spring Framework Documentation. (n.d.). Microservices with Spring Boot. https://spring.io/guides/gs/microservices/",
+      "sha256": "290acf88e0b32e0df131e2c19d89b7d37bcfec2d16fe893c94e5a78b93e5253b",
+      "metadata": {
+        "tool": "search_docs",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik",
+            "id": "arquitectura"
+          },
+          {
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites",
+            "id": "laboratorio"
+          }
+        ]
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI05",
+    "name": "Auto, estado de espera, inferencia y documentación",
+    "status": "PASS",
+    "details": "290acf88e0b32e0df131e2c19d89b7d37bcfec2d16fe893c94e5a78b93e5253b"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/documents/arquitectura",
+    "status": 200
+  },
+  {
+    "id": "UI06",
+    "name": "Abrir y cerrar fuente",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/de81e97f-a539-4fa0-964a-b89b2b7547f3/messages",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "general",
+    "evidence": {
+      "answer": "Lo siento, pero no puedo leer o acceder a archivos adjuntos. Como asistente de IA, solo puedo procesar y responder a los datos proporcionados en el chat. No tengo la capacidad de interactuar con archivos en el sistema del usuario.",
+      "visible": "Lo siento, pero no puedo leer o acceder a archivos adjuntos. Como asistente de IA, solo puedo procesar y responder a los datos proporcionados en el chat. No tengo la capacidad de interactuar con archivos en el sistema del usuario.",
+      "sha256": "4c476508b001bc66ef2824c0b7015e16673d1f639e1ef72cb237ec0d68b218ae",
+      "metadata": {
+        "tool": "general",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik",
+            "id": "arquitectura"
+          },
+          {
+            "source": "documentacion/actividad/RESTLER.md; documentacion/actividad/EVIDENCIA.md",
+            "title": "Pruebas y seguridad verificable",
+            "id": "seguridad"
+          }
+        ]
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI07",
+    "name": "Analizar archivo de texto adjunto",
+    "status": "FAIL",
+    "error": "Error: Respuesta no satisface el criterio"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/refresh",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/users/me",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/health",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/status",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations/de81e97f-a539-4fa0-964a-b89b2b7547f3",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI08",
+    "name": "Historial tras recarga",
+    "status": "PASS"
+  },
+  {
+    "id": "UI09",
+    "name": "Nueva conversación y vista vacía",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "id": "UI10",
+    "name": "Tres escenarios sintéticos etiquetados y con resultado",
+    "status": "PASS",
+    "details": {
+      "ascenso": 60,
+      "consulta": 60,
+      "compartido": 70
+    }
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/simulate",
+    "status": 200
+  },
+  {
+    "id": "UI11",
+    "name": "Lectura IAM, modo alterno y controles de administrador",
+    "status": "PASS",
+    "details": {
+      "score": 45,
+      "privilege_gain_points": 0,
+      "label": "medio",
+      "no_writer_points": 40,
+      "session_disruption_points": 5
+    }
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/9dfeaca6-2b10-4a35-bc16-fa8ba94de189/messages",
+    "status": 200
+  },
+  {
+    "event": "turn",
+    "tool": "auto",
+    "evidence": {
+      "answer": "### Cambio Hipotético Explícito\n\nEl cambio hipotético consiste en reemplazar el rol \"ADMIN\" del usuario \"objetivo\" por el rol \"USER\". Esto implica que el usuario perderá los permisos \"users:read\" y \"users:write\" y solo mantendrá el permiso \"profile:read\".\n\n### Riesgos del Cambio\n\n1. **Privilegios Reducidos**: El usuario pierde los permisos \"users:read\" y \"users:write\", lo que significa que no podrá leer ni modificar información de otros usuarios. Esto puede limitar su capacidad de administración y gestión del sistema.\n   \n2. **Reversión Humana**: El cambio no puede ser revertido automáticamente. Requiere una revisión humana para restaurar los roles y permisos anteriores.\n\n3. **Sesiones Inválidad**: El cambio inválida una sesión, lo que significa que el usuario tendrá que iniciar sesión nuevamente para mantener su acceso.\n\n### Alternativa\n\nLa alternativa de menor privilegio calculada usa EXACTAMENTE estos roles: [\"USER\"]. Su puntaje es 45, frente al solicitado 45. No ofrece reducción cuando ambos puntajes coinciden. Conservar otros roles no es la alternativa calculada; toda decisión requiere revisión humana.\n\n### Plan de Reversión\n\n1. **Revisión Humana**: Antes de realizar cualquier cambio, es necesario una revisión humana para asegurar que el cambio es necesario y seguro.\n\n2. **Restauración de Roles y Permisos**: Si el cambio es revertido, se restaurarán los roles y permisos anteriores del usuario \"objetivo\". Esto implicará que el usuario \"objetivo\" regresarán a los roles [\"ADMIN\"] y los permisos [\"profile:read\", \"users:read\", \"users:write\"].\n\n3. **No Revivir Tokens**: No se revivirán tokens. Esto asegura que el cambio no tenga efectos secundarios indeseados.\n\n4. **Ningún Cambio Ejecutado**: Ningún cambio ha sido ejecutado en el sistema. El informe y la auditoría NEXO sí pueden persistirse.\n\n### Hechos e Incertidumbres\n\n**Hechos**:\n- El cambio hipotético implica que el usuario \"objetivo\" pierde los permisos \"users:read\" y \"users:write\".\n- El cambio inválida una sesión.\n- La alternativa de menor privilegio es [\"USER\"].\n- El cambio no puede ser revertido automáticamente y requiere revisión humana.\n\n**Incertidumbres**:\n- El número real de JWT (JSON Web Tokens) es desconocido; solo se consideran los refresh vigentes conocidos.\n- El riesgo es parcial debido a la concurrencia posterior y la naturaleza hipotética de los permisos del catálogo.\n- No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.",
+      "visible": "### Cambio Hipotético Explícito\n\nEl cambio hipotético consiste en reemplazar el rol \"ADMIN\" del usuario \"objetivo\" por el rol \"USER\". Esto implica que el usuario perderá los permisos \"users:read\" y \"users:write\" y solo mantendrá el permiso \"profile:read\".\n\n### Riesgos del Cambio\n\n1. **Privilegios Reducidos**: El usuario pierde los permisos \"users:read\" y \"users:write\", lo que significa que no podrá leer ni modificar información de otros usuarios. Esto puede limitar su capacidad de administración y gestión del sistema.\n   \n2. **Reversión Humana**: El cambio no puede ser revertido automáticamente. Requiere una revisión humana para restaurar los roles y permisos anteriores.\n\n3. **Sesiones Inválidad**: El cambio inválida una sesión, lo que significa que el usuario tendrá que iniciar sesión nuevamente para mantener su acceso.\n\n### Alternativa\n\nLa alternativa de menor privilegio calculada usa EXACTAMENTE estos roles: [\"USER\"]. Su puntaje es 45, frente al solicitado 45. No ofrece reducción cuando ambos puntajes coinciden. Conservar otros roles no es la alternativa calculada; toda decisión requiere revisión humana.\n\n### Plan de Reversión\n\n1. **Revisión Humana**: Antes de realizar cualquier cambio, es necesario una revisión humana para asegurar que el cambio es necesario y seguro.\n\n2. **Restauración de Roles y Permisos**: Si el cambio es revertido, se restaurarán los roles y permisos anteriores del usuario \"objetivo\". Esto implicará que el usuario \"objetivo\" regresarán a los roles [\"ADMIN\"] y los permisos [\"profile:read\", \"users:read\", \"users:write\"].\n\n3. **No Revivir Tokens**: No se revivirán tokens. Esto asegura que el cambio no tenga efectos secundarios indeseados.\n\n4. **Ningún Cambio Ejecutado**: Ningún cambio ha sido ejecutado en el sistema. El informe y la auditoría NEXO sí pueden persistirse.\n\n### Hechos e Incertidumbres\n\n**Hechos**:\n- El cambio hipotético implica que el usuario \"objetivo\" pierde los permisos \"users:read\" y \"users:write\".\n- El cambio inválida una sesión.\n- La alternativa de menor privilegio es [\"USER\"].\n- El cambio no puede ser revertido automáticamente y requiere revisión humana.\n\n**Incertidumbres**:\n- El número real de JWT (JSON Web Tokens) es desconocido; solo se consideran los refresh vigentes conocidos.\n- El riesgo es parcial debido a la concurrencia posterior y la naturaleza hipotética de los permisos del catálogo.\n- No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.",
+      "sha256": "44af085cab10b759857610fa7fca456ad9c80db0c7cf4dc391924e66fc4298a7",
+      "metadata": {
+        "tool": "simulation",
+        "model": "qwen2.5-coder:7b",
+        "provider": "ollama",
+        "generated": true,
+        "advisory": true,
+        "references": [
+          {
+            "source": "agente-nexo/nexo.py; nexo/service/AccessLab.java",
+            "title": "Predictive Access Lab: método y límites",
+            "id": "laboratorio"
+          },
+          {
+            "source": "pom.xml; frontend/package.json; src/main/resources/application.yml",
+            "title": "Arquitectura de ExamenErik",
+            "id": "arquitectura"
+          },
+          {
+            "source": "documentacion/actividad/PUBLICACION_GRATUITA.md; deploy/Dockerfile.api",
+            "title": "Operación y publicación distribuida",
+            "id": "operacion"
+          }
+        ],
+        "simulation": {
+          "agent": "NEXO-Δ Predictive Access Lab",
+          "mode": "simulation_only",
+          "source": "authorized_live_read",
+          "at_minute": 5,
+          "snapshot_complete": true,
+          "required_permissions": [
+            "profile:read"
+          ],
+          "requested": {
+            "affected": [
+              {
+                "user": "objetivo",
+                "before_roles": [
+                  "ADMIN"
+                ],
+                "proposed_roles": [
+                  "USER"
+                ],
+                "before_permissions": [
+                  "profile:read",
+                  "users:read",
+                  "users:write"
+                ],
+                "proposed_permissions": [
+                  "profile:read"
+                ],
+                "gained": [],
+                "lost": [
+                  "users:read",
+                  "users:write"
+                ],
+                "resources_exposed": [],
+                "sessions_invalidated_by_change": 1,
+                "sessions_still_valid": 0
+              }
+            ],
+            "rollback_proposal_only": {
+              "permission_patch": {},
+              "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+              "assignments": {
+                "objetivo": [
+                  "ADMIN"
+                ]
+              }
+            },
+            "risk": {
+              "score": 45,
+              "privilege_gain_points": 0,
+              "label": "medio",
+              "no_writer_points": 40,
+              "session_disruption_points": 5
+            },
+            "remaining_active_writers": 0
+          },
+          "least_privilege_candidates": [
+            {
+              "roles": [
+                "USER"
+              ],
+              "extra_permissions": [],
+              "extra_weight": 0
+            },
+            {
+              "roles": [
+                "ADMIN"
+              ],
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50
+            },
+            {
+              "roles": [
+                "ADMIN",
+                "USER"
+              ],
+              "extra_permissions": [
+                "users:read",
+                "users:write"
+              ],
+              "extra_weight": 50
+            }
+          ],
+          "alternative_evaluated": {
+            "change": {
+              "objetivo": [
+                "USER"
+              ]
+            },
+            "no_change_needed": false,
+            "simulation": {
+              "affected": [
+                {
+                  "user": "objetivo",
+                  "before_roles": [
+                    "ADMIN"
+                  ],
+                  "proposed_roles": [
+                    "USER"
+                  ],
+                  "before_permissions": [
+                    "profile:read",
+                    "users:read",
+                    "users:write"
+                  ],
+                  "proposed_permissions": [
+                    "profile:read"
+                  ],
+                  "gained": [],
+                  "lost": [
+                    "users:read",
+                    "users:write"
+                  ],
+                  "resources_exposed": [],
+                  "sessions_invalidated_by_change": 1,
+                  "sessions_still_valid": 0
+                }
+              ],
+              "rollback_proposal_only": {
+                "permission_patch": {},
+                "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+                "assignments": {
+                  "objetivo": [
+                    "ADMIN"
+                  ]
+                }
+              },
+              "risk": {
+                "score": 45,
+                "privilege_gain_points": 0,
+                "label": "medio",
+                "no_writer_points": 40,
+                "session_disruption_points": 5
+              },
+              "remaining_active_writers": 0
+            }
+          },
+          "limitations": [
+            "Rúbrica educativa, no probabilidad ni certificación.",
+            "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+            "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+            "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+            "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+          ]
+        },
+        "review": "Explicación de IA no verificada semánticamente. Los puntajes, cambios y alternativas válidos son los del informe determinista.",
+        "consistency_check": "heuristic_only_not_proof"
+      },
+      "events": [
+        "status",
+        "context",
+        "delta",
+        "done"
+      ],
+      "http": 200,
+      "errors": []
+    }
+  },
+  {
+    "id": "UI12",
+    "name": "Explicar simulación con IA",
+    "status": "PASS",
+    "details": "44af085cab10b759857610fa7fca456ad9c80db0c7cf4dc391924e66fc4298a7"
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "id": "UI13",
+    "name": "Exportar JSON real",
+    "status": "PASS",
+    "details": {
+      "messages": 2,
+      "simulation": "authorized_live_read"
+    }
+  },
+  {
+    "id": "UI14",
+    "name": "Vista móvil sin desbordamiento general",
+    "status": "PASS",
+    "details": {
+      "w": 375,
+      "scroll": 375
+    }
+  },
+  {
+    "event": "http",
+    "method": "GET",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations",
+    "status": 200
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/nexo/conversations/34bee3ce-2234-4393-9622-61fe9cb023fc/messages",
+    "status": 200
+  },
+  {
+    "event": "requestfailed",
+    "path": "/api/nexo/conversations/34bee3ce-2234-4393-9622-61fe9cb023fc/messages",
+    "error": {
+      "errorText": "net::ERR_ABORTED"
+    }
+  },
+  {
+    "event": "cancel-check",
+    "count": 0,
+    "status": 200
+  },
+  {
+    "id": "UI15",
+    "name": "Detener generación y comprobar historial",
+    "status": "PASS"
+  },
+  {
+    "event": "http",
+    "method": "DELETE",
+    "path": "/api/nexo/conversations/34bee3ce-2234-4393-9622-61fe9cb023fc",
+    "status": 409
+  },
+  {
+    "id": "UI16",
+    "name": "Eliminar únicamente chat sintético",
+    "status": "FAIL",
+    "error": "Error: DELETE 409"
+  },
+  {
+    "event": "console",
+    "type": "error",
+    "message": "Failed to load resource: the server responded with a status of 409 ()"
+  },
+  {
+    "event": "http",
+    "method": "POST",
+    "path": "/api/auth/logout",
+    "status": 204
+  },
+  {
+    "id": "UI17",
+    "name": "Logout y bloqueo de NEXO",
+    "status": "PASS"
+  }
+]

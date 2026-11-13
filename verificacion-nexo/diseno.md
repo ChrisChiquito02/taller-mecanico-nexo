@@ -1,0 +1,7 @@
+# Impacto del diseño antes de la implementación
+
+- Los adjuntos se procesan en Java como texto. La extracción será verificable contra la línea del archivo y los extractos irán como datos visibles. El texto del adjunto queda fuera del planificador, del generador y de los mensajes persistidos para inferencia. Esto cambia el análisis libre de adjuntos a extracción local y extractos acotados. El análisis generativo sigue disponible para preguntas y código que el usuario escribe directamente.
+- Las consultas documentales usarán texto de fuentes empaquetadas con ACL y citas asignadas por el servidor. El modo automático conserva su planificador de Ollama para rutas sin herramienta explícita. Las respuestas documentales indican su procedencia.
+- Un turno de chat conserva el endpoint y NDJSON. Se añade estado de truncamiento y un endpoint de cancelación por turno. La aplicación cancela la solicitud HTTP a Ollama en la instancia que atiende el chat. La CPU/GPU del servidor de inferencia queda bajo control de Ollama.
+- Una migración aditiva reserva un turno por cuenta en MySQL con caducidad para coordinar instancias. Se verifica la reserva antes de guardar. No se editan migraciones aplicadas ni tablas de identidad. Los datos anteriores de conversaciones siguen legibles y se excluye el texto de adjuntos históricos de la reconstrucción del prompt.
+- La memoria recupera fragmentos de turnos antiguos de la misma conversación autorizada, con límites explícitos. Se mantiene la política de retención y el aislamiento por propietario y autoridades.

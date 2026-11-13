@@ -1,0 +1,8 @@
+{
+  "idempotent_start_no_duplicate_containers": true,
+  "controlled_stop": true,
+  "restart_with_persistent_volume": true,
+  "unrelated_services_preserved": true,
+  "health_after_restart": 200,
+  "launcher_executable": true
+}

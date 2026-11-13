@@ -1,0 +1,49 @@
+{
+  "real_browser": true,
+  "full_page": false,
+  "viewport": 390,
+  "document": 390,
+  "elements": [
+    {
+      "name": "nexo-layout",
+      "width": 356,
+      "scroll": 356
+    },
+    {
+      "name": "nexo-sidebar",
+      "width": 356,
+      "scroll": 356
+    },
+    {
+      "name": "nexo-chats",
+      "width": 324,
+      "scroll": 664
+    },
+    {
+      "name": "nexo-workspace",
+      "width": 356,
+      "scroll": 356
+    },
+    {
+      "name": "nexo-bubble user",
+      "width": 306.53125,
+      "scroll": 305
+    },
+    {
+      "name": "nexo-bubble assistant",
+      "width": 316,
+      "scroll": 314
+    },
+    {
+      "name": "nexo-bubble user",
+      "width": 306.53125,
+      "scroll": 305
+    },
+    {
+      "name": "nexo-bubble assistant",
+      "width": 316,
+      "scroll": 314
+    }
+  ],
+  "note": "Capturas por viewport: la captura fullPage de Chrome anterior repetía franjas superiores; no se usa como evidencia visual móvil final."
+}

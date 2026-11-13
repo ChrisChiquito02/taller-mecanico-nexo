@@ -1,0 +1,19 @@
+
+> examenerik-frontend@0.1.0 test:e2e
+> playwright test
+
+
+Running 8 tests using 1 worker
+
+(node:63154) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/e2e/identity.spec.js:12:1 › registro valida contraseñas y navega a perfil real sin interpretar HTML (847ms)
+  ✓  2 tests/e2e/identity.spec.js:24:1 › cuenta bloqueada rechaza contraseña correcta y no muestra datos internos (631ms)
+  ✓  3 tests/e2e/identity.spec.js:33:1 › contraseña actual incorrecta conserva sesión y el cambio correcto la revoca (683ms)
+  ✓  4 tests/e2e/identity.spec.js:41:1 › recuperación usa SMTP real, consume enlace y permite acceder con la nueva contraseña (611ms)
+  ✓  5 tests/e2e/identity.spec.js:54:1 › administración pagina, asigna roles y desactiva con persistencia real (1.4s)
+  ✓  6 tests/e2e/identity.spec.js:67:1 › rutas privadas redirigen al login y diseño móvil no desborda (201ms)
+  ✓  7 tests/e2e/identity.spec.js:72:1 › dos pestañas restauran sesión sin reutilizar simultáneamente el refresh (553ms)
+  ✓  8 tests/e2e/identity.spec.js:78:1 › evidencia visual final y controles de carga disponibles (439ms)
+
+  8 passed (16.0s)

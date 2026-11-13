@@ -1,0 +1,14 @@
+{
+  "source": "Independent count of raw HTTP status lines; includes checkers and rerenders",
+  "sending_lines": 5608,
+  "received_status_lines": {
+    "200": 70,
+    "403": 1224,
+    "400": 2019,
+    "202": 119,
+    "401": 122,
+    "204": 5,
+    "404": 2,
+    "429": 12
+  }
+}

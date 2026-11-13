@@ -1,0 +1,1 @@
+PASS: API Java21 en 512MB, CA propia, VERIFY_IDENTITY, Flyway aplicado, rechazo de hostname/CA ajenos y conexión sin TLS.

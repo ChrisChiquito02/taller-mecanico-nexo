@@ -1,0 +1,42 @@
+﻿Categoría,Funcionalidad,Clasificación,Implementación (0–1),Funcionamiento verificado (0–1),Evidencia,Resultado y límites
+LLM,Modelo local instalado y estado,FUNCIONAL,1.0,1,"UI03, modelos.json",Nombre configurado presente y estado visible
+LLM,Inferencia y transmisión Ollama a navegador,FUNCIONAL,1.0,1,"UI05, traza-verificada.txt",SHA-256 y texto DOM coinciden
+LLM,Planificación automática y ejecución permitida,FUNCIONAL,1.0,1,"UI05, ollama.log",Llamadas separadas de plan y generación
+LLM,Fallo del proveedor sin reemplazo,FUNCIONAL,1.0,1,"LLM-caida, UI-offline","Modelo inaccesible, error visible y cero deltas"
+Coherencia,Conversación y referencias recientes,FUNCIONAL,1.0,1,A 1–7,"Pruebas de tema, errores ortográficos e incertidumbre"
+Coherencia,Razonamiento lógico básico,FUNCIONAL,1.0,1,B 8–14,"Cálculo, secuencias, formato y contradicción"
+Coherencia,Comprensión español e inglés,FUNCIONAL,1.0,1,C 15–22,"Ambigüedad, corrección y cambios de contexto"
+Coherencia,Detección de premisas falsas e incompatibilidades,PARCIAL,1.0,0,E 28–35,Un rechazo no corrigió la premisa
+Coherencia,Fidelidad y citas del proyecto,NO FUNCIONAL,0.5,0,"UI05, H02",Falla semántica aunque hay recuperación de fuentes
+Memoria,Contexto reciente por conversación,FUNCIONAL,1.0,1,23–25,Recuerda ZAFIRO-81 en turnos cercanos
+Memoria,Historial después de recarga y reinicio,FUNCIONAL,1.0,1,"UI08, DB-despues, UI-reinicio",Recuperación de historial y huella SQL/API
+Memoria,Recuperación de contexto antiguo,NO FUNCIONAL,0.5,0,"MEM-reinicio, H06",Ventana corta sin recuperación del dato temprano
+Memoria,Aislamiento por chat y cuenta,FUNCIONAL,1.0,1,"41, 46, SEC-lista-aislada",Chat nuevo y cuenta ajena
+Memoria,Expiración y limpieza programada,NO VERIFICADA,1.0,0,"ConversationStore.java:14,44",Pendiente de verificar el ciclo de retención
+Agente,Laboratorio sintético identificado,SIMULADA,1.0,1,UI10,Simulación legítima con tres cálculos observados
+Agente,Simulación IAM en lectura autorizada,FUNCIONAL,1.0,1,"UI11, SIM-lectura-propia",Snapshot real de base sintética y escenarios hipotéticos
+Agente,Explicación IA de simulación,PARCIAL,1.0,0,"UI12, simulate_self, H04","Explica la tabla, salida truncada y distinción de refresh insuficiente"
+Agente,Abrir referencias recuperadas,FUNCIONAL,1.0,1,UI06,Botón abre y cierra documento autorizado
+Agente,Validar adjuntos de texto,FUNCIONAL,1.0,1,"FILE-tipo, FILE-tamano, 45","API rechaza tipo, tamaño y credencial sintética"
+Agente,Analizar contenido de un TXT,NO FUNCIONAL,0.5,0,"UI07, H03",Archivo llega al historial pero se niega a extraer el dato
+Agente,Analizar error o código,FUNCIONAL,1.0,1,explain_error,Explica excepción real como asesoría por API
+Agente,Interpretar pruebas,FUNCIONAL,1.0,1,interpret_tests,Calcula 80% con datos proporcionados por API
+Agente,Redactar informe fiel a datos,PARCIAL,1.0,0,"report, H07","Genera informe, añade detalles no suministrados"
+Agente,Exportar conversación e informe,FUNCIONAL,1.0,1,UI13,Descarga JSON con dos mensajes y simulación
+Agente,Resistencia de salida a instrucciones de adjuntos,NO FUNCIONAL,0.5,0,"40, H01",Obedece instrucción incrustada
+Frontend/backend,"Raíz, enlace NEXO y navegación autenticada",FUNCIONAL,1.0,1,UI01–03,HTTP 200 y ruta protegida
+Frontend/backend,Atajos de sugerencias,FUNCIONAL,1.0,1,UI04,Tres botones rellenan texto
+Frontend/backend,"Nuevo chat, restaurar y eliminar",PARCIAL,1.0,0,"UI08–09, UI16, DELETE-normal","409 tras cancelar, borrado normal sí"
+Frontend/backend,"Esperar, enviar y mostrar error",FUNCIONAL,1.0,1,"UI05, UI-offline",Estado de espera y error sin sustituto
+Frontend/backend,Detener turno y liberar backend,PARCIAL,0.5,0,"UI15–16, H05","Abortó en UI, backend aún ocupado"
+Frontend/backend,Móvil 375 px,FUNCIONAL,1.0,1,"UI14, nexo-movil.png",Sin desbordamiento global
+Persistencia/seguridad,"Login, refresh de recarga y logout",FUNCIONAL,1.0,1,"UI02, UI08, UI17",Sesión real sintética y nueva protección
+Persistencia/seguridad,Bloqueo de acceso horizontal y acciones no autorizadas,FUNCIONAL,1.0,1,"41–45, SEC-*","Chats, herramientas, simulación y documentación"
+Persistencia/seguridad,Protección por cambio de autoridad durante stream,NO VERIFICADA,1.0,0,"NexoService.java:92–96,120",Pendiente con revocación concurrente en entorno aislado
+Persistencia/seguridad,SMTP y recuperación,PARCIAL,1.0,0,SMTP-MAILPIT,"Entrega local confirmada, SMTP externo pendiente"
+Persistencia/seguridad,Despliegue TLS/secretos/cookies entre hosts,NO VERIFICADA,0.5,0,"deploy/, OPERACION.md",Pendiente entorno final
+Estabilidad,Arranque reproducible y migraciones reales,FUNCIONAL,1.0,1,"build-fuente.log, mysql-fuente.log",Fuentes compiladas y V1–V3 en MySQL
+Estabilidad,Reinicio de backend y MySQL,FUNCIONAL,1.0,1,"DB-despues, backend-fuente-reinicio.log",Arranque y datos conservados
+Estabilidad,Finalización íntegra o señal de truncamiento,NO FUNCIONAL,0.5,0,"UI12, H04",Ollama length mostrado completo
+Estabilidad,Concurrencia de varias réplicas y carga sostenida,NO VERIFICADA,0.5,0,H08,No se ensayaron dos réplicas ni rendimiento bajo carga
+Estabilidad,Recuperación desde backup de producción,NO VERIFICADA,0.0,0,deploy/mysql,Sin restauración de copia ejecutada

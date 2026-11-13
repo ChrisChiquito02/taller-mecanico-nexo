@@ -1,0 +1,171 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.sistemam01m02:backend >----------------------
+[INFO] Building sistema-m01-m02 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ backend ---
+[INFO] Deleting /workspace/target
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 16 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 48 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ backend ---
+[INFO] Copying 2 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.sistemam01m02.ArchitectureTest
+01:01:05.048 [main] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 21.0.12.1
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.867 s -- in com.sistemam01m02.ArchitectureTest
+[INFO] Running com.sistemam01m02.nexo.AccessLabTest
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/root/.m2/repository/net/bytebuddy/byte-buddy-agent/1.18.11/byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.484 s -- in com.sistemam01m02.nexo.AccessLabTest
+[INFO] Running com.sistemam01m02.nexo.OllamaProviderTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s -- in com.sistemam01m02.nexo.OllamaProviderTest
+[INFO] Running com.sistemam01m02.identity.security.GuardAndConfigurationTest
+01:01:06.572 [main] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.1.3.Final
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s -- in com.sistemam01m02.identity.security.GuardAndConfigurationTest
+[INFO] Running com.sistemam01m02.identity.entity.AppUserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.sistemam01m02.identity.entity.AppUserTest
+[INFO] Running com.sistemam01m02.config.HealthControllerTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.100 s -- in com.sistemam01m02.config.HealthControllerTest
+[INFO] Running com.sistemam01m02.RecoveryRequestsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.sistemam01m02.RecoveryRequestsTest
+[INFO] Running com.sistemam01m02.shared.persistence.UuidV7GeneratorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.sistemam01m02.shared.persistence.UuidV7GeneratorTest
+[INFO] Running com.sistemam01m02.shared.error.GlobalExceptionHandlerTest
+01:01:06.857 [main] ERROR com.sistemam01m02.shared.error.GlobalExceptionHandler -- Fallo interno: IllegalStateException
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.sistemam01m02.shared.error.GlobalExceptionHandlerTest
+[INFO] Running com.sistemam01m02.SystemIntegrationTest
+01:01:06.896 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sistemam01m02.SystemIntegrationTest]: SystemIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:01:06.940 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sistemam01m02.SistemaApplication for test class com.sistemam01m02.SystemIntegrationTest
+01:01:06.973 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.sistemam01m02.SystemIntegrationTest]: SystemIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:01:06.974 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.sistemam01m02.SistemaApplication for test class com.sistemam01m02.SystemIntegrationTest
+01:01:07.001 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+01:01:07.003 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+01:01:07.012 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+01:01:07.262 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+01:01:07.262 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is host.docker.internal
+01:01:07.271 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.8.0
+  API Version: 1.56
+  Operating System: Docker Desktop
+  Total Memory: 7933 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/andrickeliasleonchavez/Library/Containers/com.docker.docker/Data/docker-cli.sock
+01:01:07.336 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+01:01:07.341 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.14.0, configFile: /root/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /root/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+01:01:07.395 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: f2f7a4d0a84c277ad0f017a1d7c82ca44ade8a7a14275e487ce955790777e066
+01:01:07.528 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.191737292S
+01:01:07.530 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+01:01:07.531 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+01:01:07.531 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+01:01:07.531 [main] INFO tc.mysql:8.4 -- Creating container for image: mysql:8.4
+01:01:07.560 [main] INFO tc.mysql:8.4 -- Container mysql:8.4 is starting: dbecf8d1d9aea3611c8c1d7a3251ee2be0e24688a31e8b23891a918c472de6c4
+01:01:07.647 [main] INFO tc.mysql:8.4 -- Waiting for database connection to become available at jdbc:mysql://host.docker.internal:62658/identity_test using query 'SELECT 1'
+01:01:11.990 [main] INFO tc.mysql:8.4 -- Container mysql:8.4 started in PT4.459146904S
+01:01:11.991 [main] INFO tc.mysql:8.4 -- Container is started (JDBC URL: jdbc:mysql://host.docker.internal:62658/identity_test)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-11-09T01:01:12.174Z  INFO 180 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : Starting SystemIntegrationTest using Java 21.0.12.1 with PID 180 (started by root in /workspace)
+2026-11-09T01:01:12.174Z  INFO 180 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : The following 1 profile is active: "test"
+2026-11-09T01:01:12.455Z  INFO 180 --- [sistema-m01-m02] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-09T01:01:12.486Z  INFO 180 --- [sistema-m01-m02] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 3 JPA repository interfaces.
+2026-11-09T01:01:12.759Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-11-09T01:01:12.765Z  INFO 180 --- [sistema-m01-m02] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-09T01:01:12.765Z  INFO 180 --- [sistema-m01-m02] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-11-09T01:01:12.800Z  INFO 180 --- [sistema-m01-m02] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 619 ms
+2026-11-09T01:01:12.839Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.boot.web.servlet.RegistrationBean    : Filter disableServletGuard was not registered (disabled)
+2026-11-09T01:01:12.927Z  INFO 180 --- [sistema-m01-m02] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-09T01:01:12.981Z  INFO 180 --- [sistema-m01-m02] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50f67119
+2026-11-09T01:01:12.982Z  INFO 180 --- [sistema-m01-m02] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-09T01:01:12.991Z  INFO 180 --- [sistema-m01-m02] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://host.docker.internal:62658/identity_test (MySQL 8.4)
+2026-11-09T01:01:13.059Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `identity_test`.`flyway_schema_history` does not exist yet
+2026-11-09T01:01:13.061Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.009s)
+2026-11-09T01:01:13.071Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `identity_test`.`flyway_schema_history` ...
+2026-11-09T01:01:13.109Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `identity_test`: << Empty Schema >>
+2026-11-09T01:01:13.114Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "1 - identity baseline"
+2026-11-09T01:01:13.162Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "2 - sessions and rbac"
+2026-11-09T01:01:13.196Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "3 - nexo conversations"
+2026-11-09T01:01:13.225Z  INFO 180 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema `identity_test`, now at version v3 (execution time 00:00.076s)
+2026-11-09T01:01:13.274Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-09T01:01:13.313Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-11-09T01:01:13.467Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-09T01:01:13.511Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://host.docker.internal:62658/identity_test]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.4.11
+	Default catalog/schema: identity_test/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-09T01:01:13.520Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.605Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.605Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.606Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.606Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.607Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.607Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.607Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.608Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.616Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.incubating             : HHH90006001: Setting 'hibernate.type.preferred_instant_jdbc_type' is still incubating (see Javadoc of corresponding member of 'org.hibernate.cfg.AvailableSettings')
+2026-11-09T01:01:13.902Z  INFO 180 --- [sistema-m01-m02] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-09T01:01:13.922Z  INFO 180 --- [sistema-m01-m02] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-09T01:01:13.961Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-09T01:01:14.635Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page: class path resource [static/index.html]
+2026-11-09T01:01:14.757Z  INFO 180 --- [sistema-m01-m02] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 40323 (http) with context path '/'
+2026-11-09T01:01:14.761Z  INFO 180 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : Started SystemIntegrationTest in 2.754 seconds (process running for 10.147)
+2026-11-09T01:01:14.795Z  INFO 180 --- [sistema-m01-m02] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-09T01:01:14.795Z  INFO 180 --- [sistema-m01-m02] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-09T01:01:14.795Z  INFO 180 --- [sistema-m01-m02] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-09T01:01:18.229Z  WARN 180 --- [sistema-m01-m02] [     recovery-0] c.s.identity.service.RecoveryRequests    : SMTP_RECOVERY_DELIVERY_FAILED type=MailSendException
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.51 s -- in com.sistemam01m02.SystemIntegrationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 54, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ backend ---
+[INFO] Building jar: /workspace/target/backend-0.1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ backend ---
+[INFO] Replacing main artifact /workspace/target/backend-0.1.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /workspace/target/backend-0.1.0-SNAPSHOT.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.843 s
+[INFO] Finished at: 2026-11-09T01:01:19Z
+[INFO] ------------------------------------------------------------------------

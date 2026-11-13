@@ -1,0 +1,120 @@
+{
+  "agent": "NEXO-Δ",
+  "project": "ExamenErik",
+  "mode": "simulation_only",
+  "input_sha256": "1c2e120ea6518c26cb5933ac1e78e455501436b859e74ed44d1eceadea418022",
+  "required_permissions": [
+    "profile:read"
+  ],
+  "requested": {
+    "at_minute": 5,
+    "affected": [
+      {
+        "user": "u-2",
+        "before_roles": [
+          "USER"
+        ],
+        "proposed_roles": [
+          "ADMIN"
+        ],
+        "gained": [
+          "users:read",
+          "users:write"
+        ],
+        "lost": [],
+        "sessions_valid_at_horizon_before": 2,
+        "sessions_invalidated_by_change": 2,
+        "sessions_still_valid": 0
+      }
+    ],
+    "remaining_active_writers": 2,
+    "risk": {
+      "score": 60,
+      "label": "alto",
+      "privilege_gain_points": 50,
+      "session_disruption_points": 10,
+      "no_writer_points": 0
+    },
+    "rollback_proposal_only": {
+      "assignments": {
+        "u-2": [
+          "USER"
+        ]
+      },
+      "permission_patch": {},
+      "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+    }
+  },
+  "least_privilege_candidates": [
+    {
+      "roles": [
+        "USER"
+      ],
+      "extra_permissions": [],
+      "extra_weight": 0
+    },
+    {
+      "roles": [
+        "ADMIN"
+      ],
+      "extra_permissions": [
+        "users:read",
+        "users:write"
+      ],
+      "extra_weight": 50
+    },
+    {
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
+      "extra_permissions": [
+        "users:read",
+        "users:write"
+      ],
+      "extra_weight": 50
+    }
+  ],
+  "alternative_evaluated": {
+    "change": {
+      "assignments": {},
+      "permission_patch": {}
+    },
+    "no_change_needed": true,
+    "simulation": {
+      "at_minute": 5,
+      "affected": [],
+      "remaining_active_writers": 1,
+      "risk": {
+        "score": 0,
+        "label": "bajo",
+        "privilege_gain_points": 0,
+        "session_disruption_points": 0,
+        "no_writer_points": 0
+      },
+      "rollback_proposal_only": {
+        "assignments": {},
+        "permission_patch": {},
+        "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+      }
+    }
+  },
+  "limitations": [
+    "Snapshot sintético; no predice ataques ni disponibilidad real.",
+    "permission_patch es una hipótesis de catálogo: no existe endpoint para editarlo en el IAM.",
+    "Estado LOCKED se trata como no activo; no se modela vencimiento del bloqueo.",
+    "No modela carreras de concurrencia ni reutilización de refresh consumido (que revoca todas las sesiones).",
+    "El puntaje es una rúbrica educativa, no una probabilidad ni certificación."
+  ],
+  "ai": {
+    "status": "executed",
+    "provider": "Ollama loopback",
+    "model": "qwen2.5-coder:7b",
+    "created_at": "2026-11-08T23:52:37.004821Z",
+    "eval_count": 273,
+    "advisory_untrusted": {
+      "explanation": "El contrafactual calculado por la herramienta local muestra una situación en la que el usuario 'u-2' se convierte en un administrador ('ADMIN') con permisos adicionales ('users:read' y 'users:write'). Esto aumenta significativamente el riesgo del sistema, ya que el usuario adquiere privilegios adicionales que no son necesarios para la tarea solicitada ('profile:read'). El cambio propuesto no es necesario, ya que el usuario ya tiene los permisos necesarios para la tarea solicitada. Por lo tanto, se recomienda conservar el estado actual sin realizar cambios adicionales.",
+      "human_review": "Revisar la necesidad de conceder privilegios adicionales al usuario 'u-2' y considerar si es posible asignar un rol de menor privilegio que cubra la necesidad de la tarea. Si no existe una opción de menor privilegio que cubra la necesidad en el catálogo V2, se recomienda posponer el cambio y diseñar un rol de lectura futuro. En caso de que se decida mantener el estado actual, asegurarse de que la autenticación sea nueva y que se realice una revisión humana antes de restaurar los roles."
+    }
+  }
+}

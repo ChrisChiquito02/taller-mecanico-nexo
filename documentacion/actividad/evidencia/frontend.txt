@@ -1,0 +1,43 @@
+
+> examenerik-frontend@0.1.0 check
+> npm run test && npm run build
+
+
+> examenerik-frontend@0.1.0 test
+> node --test tests/unit/*.test.js
+
+✔ envía Bearer solo a operaciones protegidas y mantiene cookie entre orígenes autorizados (15.512ms)
+✔ contraseña actual incorrecta no renueva ni borra la sesión (0.393875ms)
+✔ renovación concurrente se realiza una sola vez y reintenta con acceso nuevo (12.563291ms)
+✔ 401 Bearer después de renovar cierra sesión sin bucle (0.375959ms)
+✔ 403 conserva sesión y no intenta renovar permisos (0.120917ms)
+✔ timeout informa resultado incierto y no repite una mutación (5.028333ms)
+✔ respuesta HTML no revela su contenido como error al usuario (0.165541ms)
+✔ rechaza contratos de acceso y perfil inválidos (0.126208ms)
+✔ rechaza HTTP externo y no reintenta fallos de red (0.130417ms)
+✔ usa exclusión mutua configurada para renovar entre pestañas (0.112791ms)
+✔ API HTTPS fija permite CORS con credenciales y rechaza destinos ambiguos (0.172917ms)
+✔ rutas de cuenta y administración requieren sesión y permisos (0.294792ms)
+✔ permiso de lectura administrativa no muestra formularios de escritura (36.763875ms)
+✔ logout oculta controles privilegiados y restaura navegación pública (7.540208ms)
+✔ perfil trata contenido malicioso como texto, sin ejecutar HTML (9.151834ms)
+✔ confirmación de contraseña bloquea diferencias y acepta igualdad (5.885916ms)
+✔ formularios declaran restricciones, etiquetas y regiones accesibles (6.56175ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 383.337167
+
+> examenerik-frontend@0.1.0 build
+> node scripts/build.mjs
+
+Frontend compilado: dist (publicación independiente)
+
+> examenerik-frontend@0.1.0 build:integrated
+> node scripts/build.mjs --integrated
+
+Frontend compilado: integrado (desarrollo)

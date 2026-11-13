@@ -1,0 +1,93 @@
+{
+  "synthetic": true,
+  "roles": {
+    "USER": [
+      "profile:read"
+    ],
+    "ADMIN": [
+      "profile:read",
+      "users:read",
+      "users:write"
+    ]
+  },
+  "users": [
+    {
+      "id": "u-1",
+      "roles": [
+        "ADMIN"
+      ],
+      "status": "ACTIVE",
+      "session_version": 3,
+      "sessions": [
+        {
+          "kind": "access",
+          "sv": 3,
+          "expires_minute": 15,
+          "consumed": false
+        },
+        {
+          "kind": "refresh",
+          "sv": 3,
+          "expires_minute": 10080,
+          "consumed": false
+        }
+      ]
+    },
+    {
+      "id": "u-2",
+      "roles": [
+        "USER"
+      ],
+      "status": "ACTIVE",
+      "session_version": 3,
+      "sessions": [
+        {
+          "kind": "access",
+          "sv": 3,
+          "expires_minute": 15,
+          "consumed": false
+        },
+        {
+          "kind": "refresh",
+          "sv": 3,
+          "expires_minute": 10080,
+          "consumed": false
+        }
+      ]
+    },
+    {
+      "id": "u-3",
+      "roles": [
+        "USER"
+      ],
+      "status": "ACTIVE",
+      "session_version": 3,
+      "sessions": [
+        {
+          "kind": "access",
+          "sv": 3,
+          "expires_minute": 15,
+          "consumed": false
+        },
+        {
+          "kind": "refresh",
+          "sv": 3,
+          "expires_minute": 10080,
+          "consumed": false
+        }
+      ]
+    }
+  ],
+  "change": {
+    "assignments": {
+      "u-2": [
+        "ADMIN"
+      ]
+    },
+    "permission_patch": {}
+  },
+  "required_permissions": [
+    "users:read"
+  ],
+  "at_minute": 5
+}

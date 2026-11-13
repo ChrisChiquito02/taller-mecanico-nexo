@@ -1,0 +1,4 @@
+server/
+ca-private/
+.env
+*.p12

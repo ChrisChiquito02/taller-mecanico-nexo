@@ -1,0 +1,4 @@
+{
+  "Responde con exactamente dos palabras y con exactamente cuatro palabras. Detecta si se puede.": "Roma es la capital de Italia.",
+  "Escribe exactamente tres líneas y al menos cinco líneas. ¿Es posible?": "Sí, es posible escribir exactamente tres líneas y al menos cinco líneas. Aquí tienes un ejemplo:\n\nLínea 1: Esta es la primera línea.\nLínea 2: Esta es la segunda línea.\nLínea 3: Esta es la tercera línea.\n\nAquí tienes un ejemplo con al menos cinco líneas:\n\nLínea 1: Esta es la primera línea.\nLínea 2: Esta es la segunda línea.\nLínea 3: Esta es la tercera línea.\nLínea 4: Esta es la cuarta línea.\nLínea 5: Esta es la quinta línea."
+}

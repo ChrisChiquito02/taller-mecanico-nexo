@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(received).toBeTruthy()
+
+Received: undefined
+    at captureRawStack (/Users/andrickeliasleonchavez/Downloads/ExamenErik/frontend/node_modules/playwright-core/lib/coreBundle.js:9282:17)
+    at callMatcherAsStep (/Users/andrickeliasleonchavez/Downloads/ExamenErik/frontend/node_modules/playwright/lib/matchers/expect.js:13316:57)
+    at Object.toBeTruthy (/Users/andrickeliasleonchavez/Downloads/ExamenErik/frontend/node_modules/playwright/lib/matchers/expect.js:13308:23)
+    at /Users/andrickeliasleonchavez/Downloads/ExamenErik/frontend/tests/separate-origins.mjs:48:19 {
+  matcherResult: {
+    message: 'expect(received).toBeTruthy()\n\nReceived: undefined',
+    pass: false,
+    name: 'toBeTruthy'
+  }
+}
+
+Node.js v24.16.0

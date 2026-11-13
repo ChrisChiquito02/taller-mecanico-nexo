@@ -1,0 +1,12 @@
+FROM eclipse-temurin:21-jdk AS build
+WORKDIR /src
+COPY sistema-m01-m02/ .
+RUN chmod +x mvnw && ./mvnw -B -ntp -Papi-only clean package -DskipTests
+FROM eclipse-temurin:21-jre
+RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+WORKDIR /app
+COPY --from=build --chown=app:app /src/target/backend-0.1.0-SNAPSHOT.jar app.jar
+COPY --chmod=755 deploy/start-api.sh /app/start-api.sh
+USER app
+EXPOSE 8080
+ENTRYPOINT ["/app/start-api.sh"]

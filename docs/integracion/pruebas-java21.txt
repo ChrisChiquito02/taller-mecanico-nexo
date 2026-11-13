@@ -1,0 +1,16 @@
+[INFO] Compiling 29 source files with javac [debug parameters release 21] to target/classes
+[INFO] Compiling 4 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.259 s -- in com.sistemam01m02.identity.security.GuardAndConfigurationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.sistemam01m02.identity.entity.AppUserTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in com.sistemam01m02.shared.persistence.UuidV7GeneratorTest
+2026-11-04T21:13:36.517Z  INFO 181 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : Starting SystemIntegrationTest using Java 21.0.12.1 with PID 181 (started by root in /workspace)
+2026-11-04T21:13:37.367Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "1 - identity baseline"
+2026-11-04T21:13:37.419Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `identity_test` to version "2 - sessions and rbac"
+2026-11-04T21:13:37.454Z  INFO 181 --- [sistema-m01-m02] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `identity_test`, now at version v2 (execution time 00:00.063s)
+2026-11-04T21:13:38.837Z  INFO 181 --- [sistema-m01-m02] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 34099 (http) with context path '/'
+2026-11-04T21:13:38.840Z  INFO 181 --- [sistema-m01-m02] [           main] c.sistemam01m02.SystemIntegrationTest    : Started SystemIntegrationTest in 2.468 seconds (process running for 8.172)
+[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.03 s -- in com.sistemam01m02.SystemIntegrationTest
+[INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  12.999 s
+[INFO] Finished at: 2026-11-04T21:13:42Z

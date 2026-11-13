@@ -1,0 +1,13 @@
+{
+  "started_at": "2026-11-09T00:54:35.464Z",
+  "synthetic_only": true,
+  "provider": "Ollama real",
+  "model": "qwen2.5-coder:7b",
+  "turns": [],
+  "checks": [
+    "Ollama disponible a través del backend autenticado"
+  ],
+  "errors": [],
+  "passed": false,
+  "finished_at": "2026-11-09T00:55:06.668Z"
+}

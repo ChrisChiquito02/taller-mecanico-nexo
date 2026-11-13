@@ -1,0 +1,11 @@
+{
+  "types": [
+    "status",
+    "context",
+    "delta",
+    "truncated"
+  ],
+  "progress": "Se alcanzó el límite de generación. Acota la pregunta para volver a intentarlo.",
+  "visible": "Aquí tienes una lista de 50 animales con una descripción de tres frases por cada uno, comenzando con el elefante:\n\n1. **Elefante**\n   - Es el animal más grande del mundo.\n   - Vive en hábitats tropicales y subtropicales.\n\n\n[Respuesta truncada: no se guardó este turno]",
+  "chat": "2c1ac4c4-3d0d-444b-8b49-613db86ceee5"
+}

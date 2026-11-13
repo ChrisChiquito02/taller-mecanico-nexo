@@ -1,0 +1,17 @@
+test_assignment_revokes_access_and_refresh_without_mutating_input (test_nexo.NexoTest.test_assignment_revokes_access_and_refresh_without_mutating_input) ... ok
+test_expired_sessions_are_not_counted_as_change_damage (test_nexo.NexoTest.test_expired_sessions_are_not_counted_as_change_damage) ... ok
+test_last_writer_loss_scores_lockout (test_nexo.NexoTest.test_last_writer_loss_scores_lockout) ... ok
+test_least_privilege_uses_real_catalog (test_nexo.NexoTest.test_least_privilege_uses_real_catalog) ... ok
+test_no_readonly_admin_role_is_invented (test_nexo.NexoTest.test_no_readonly_admin_role_is_invented) ... ok
+test_permission_patch_changes_authorities_without_revoking_sessions (test_nexo.NexoTest.test_permission_patch_changes_authorities_without_revoking_sessions) ... ok
+test_rejects_personal_fields_and_unknown_permissions (test_nexo.NexoTest.test_rejects_personal_fields_and_unknown_permissions) ... ok
+test_cross_site_and_rebound_host_cannot_invoke_model (test_servidor.PanelBoundaryTest.test_cross_site_and_rebound_host_cannot_invoke_model) ... ok
+test_model_failure_never_returns_fake_ai_success (test_servidor.PanelBoundaryTest.test_model_failure_never_returns_fake_ai_success) ... ok
+test_no_arbitrary_files_secrets_or_large_inputs_accepted (test_servidor.PanelBoundaryTest.test_no_arbitrary_files_secrets_or_large_inputs_accepted) ... ok
+test_second_request_does_not_start_another_inference (test_servidor.PanelBoundaryTest.test_second_request_does_not_start_another_inference) ... ok
+test_simulation_matches_engine_and_keeps_fixture_unchanged (test_servidor.PanelBoundaryTest.test_simulation_matches_engine_and_keeps_fixture_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.031s
+
+OK

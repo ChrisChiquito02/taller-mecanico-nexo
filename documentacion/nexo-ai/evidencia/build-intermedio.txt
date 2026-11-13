@@ -1,0 +1,5 @@
+
+> examenerik-frontend@0.1.0 build:integrated
+> node scripts/build.mjs --integrated
+
+Frontend compilado: integrado (desarrollo)

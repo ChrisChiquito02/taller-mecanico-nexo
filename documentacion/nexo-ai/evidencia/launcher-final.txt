@@ -1,0 +1,5 @@
+Preparando la interfaz y el backend Java 21. Puede tardar unos minutos.
+Iniciando únicamente los servicios locales de NEXO…
+ExamenErik + NEXO-Δ AI: http://localhost:8090/#nexo
+Acceso de demostración: agente-nexo/.local/Acceso local.txt
+Puedes cerrar Terminal: Docker mantiene los servicios. Para detenerlos abre Detener NEXO.command.

@@ -1,0 +1,25 @@
+mysql: [Warning] Using a password on the command line interface can be insecure.
+VERSION()
+8.4.11
+version	description	success
+1	identity baseline	1
+2	sessions and rbac	1
+3	nexo conversations	1
+chats
+11
+speaker	total
+user	48
+assistant	48
+event_code	total
+CHAT_CREATED	11
+TURN_STARTED	50
+TOOL_GENERAL	43
+TURN_COMPLETED	48
+TOOL_SEARCH_DOCS	2
+SIMULATION_READ_ONLY	4
+TOOL_SIMULATION	1
+TURN_FAILED	1
+TOOL_EXPLAIN_ERROR	1
+TOOL_INTERPRET_TESTS	1
+TOOL_REPORT	1
+TOOL_SIMULATE_SELF	1

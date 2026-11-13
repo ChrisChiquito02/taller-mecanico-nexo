@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "synthetic_only": true,
+  "agent_source_sha256": "ee6415ba67d147016215f1150b1e94b3d2054981c56bcfec8aa9ea95f6c7a838",
+  "ui_origin": "http://127.0.0.1:57046",
+  "reports": [
+    {
+      "scenario": "ascenso",
+      "score": 60,
+      "alternative": 0,
+      "model": "qwen2.5-coder:7b",
+      "created_at": "2026-11-08T23:54:51.133467Z"
+    },
+    {
+      "scenario": "consulta",
+      "score": 60,
+      "alternative": 60,
+      "model": "qwen2.5-coder:7b",
+      "created_at": "2026-11-08T23:54:55.184238Z"
+    },
+    {
+      "scenario": "compartido",
+      "score": 70,
+      "alternative": 0,
+      "model": "qwen2.5-coder:7b",
+      "created_at": "2026-11-08T23:55:00.619665Z"
+    }
+  ],
+  "download_matches_report": true,
+  "minute20_expired_access_not_counted": true,
+  "no_ai_explicit_status": true,
+  "mobile_no_horizontal_overflow": true,
+  "browser_errors": [],
+  "fixtures_unchanged": true,
+  "finished_utc": "2026-11-08T23:55:00.799Z"
+}

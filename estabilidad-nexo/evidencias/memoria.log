@@ -1,0 +1,17 @@
+DB-restart True
+MEM-restart True
+Traceback (most recent call last):
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/controles.py", line 136, in <module>
+    rows=sql(f"SELECT COUNT(*) FROM nexo_conversation WHERE id='{expired}'")
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/estabilidad-nexo/bin/controles.py", line 10, in sql
+    return subprocess.check_output(['docker','exec','examenerik-audit-mysql','mysql','-N','-B','-unexo_audit','-pOnlyTestMysql-91','nexo_audit','-e',statement],text=True,stderr=subprocess.DEVNULL).strip()
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['docker', 'exec', 'examenerik-audit-mysql', 'mysql', '-N', '-B', '-unexo_audit', '-pOnlyTestMysql-91', 'nexo_audit', '-e', "SELECT COUNT(*) FROM nexo_conversation WHERE id='f8aa1e7a-4f11-45ac-909e-87294bfa6680'"]' returned non-zero exit status 1.

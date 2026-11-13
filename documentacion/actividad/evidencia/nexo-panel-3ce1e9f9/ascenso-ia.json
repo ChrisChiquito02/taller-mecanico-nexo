@@ -1,0 +1,128 @@
+{
+  "agent": "NEXO-Δ",
+  "project": "ExamenErik",
+  "mode": "simulation_only",
+  "input_sha256": "1c2e120ea6518c26cb5933ac1e78e455501436b859e74ed44d1eceadea418022",
+  "required_permissions": [
+    "profile:read"
+  ],
+  "requested": {
+    "at_minute": 5,
+    "affected": [
+      {
+        "user": "u-2",
+        "before_roles": [
+          "USER"
+        ],
+        "proposed_roles": [
+          "ADMIN"
+        ],
+        "before_permissions": [
+          "profile:read"
+        ],
+        "proposed_permissions": [
+          "profile:read",
+          "users:read",
+          "users:write"
+        ],
+        "gained": [
+          "users:read",
+          "users:write"
+        ],
+        "lost": [],
+        "sessions_valid_at_horizon_before": 2,
+        "sessions_invalidated_by_change": 2,
+        "sessions_still_valid": 0
+      }
+    ],
+    "remaining_active_writers": 2,
+    "risk": {
+      "score": 60,
+      "label": "alto",
+      "privilege_gain_points": 50,
+      "session_disruption_points": 10,
+      "no_writer_points": 0
+    },
+    "rollback_proposal_only": {
+      "assignments": {
+        "u-2": [
+          "USER"
+        ]
+      },
+      "permission_patch": {},
+      "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+    }
+  },
+  "least_privilege_candidates": [
+    {
+      "roles": [
+        "USER"
+      ],
+      "extra_permissions": [],
+      "extra_weight": 0
+    },
+    {
+      "roles": [
+        "ADMIN"
+      ],
+      "extra_permissions": [
+        "users:read",
+        "users:write"
+      ],
+      "extra_weight": 50
+    },
+    {
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
+      "extra_permissions": [
+        "users:read",
+        "users:write"
+      ],
+      "extra_weight": 50
+    }
+  ],
+  "alternative_evaluated": {
+    "change": {
+      "assignments": {},
+      "permission_patch": {}
+    },
+    "no_change_needed": true,
+    "simulation": {
+      "at_minute": 5,
+      "affected": [],
+      "remaining_active_writers": 1,
+      "risk": {
+        "score": 0,
+        "label": "bajo",
+        "privilege_gain_points": 0,
+        "session_disruption_points": 0,
+        "no_writer_points": 0
+      },
+      "rollback_proposal_only": {
+        "assignments": {},
+        "permission_patch": {},
+        "warning": "Restaurar roles requiere revisión humana y autenticación nueva; nunca restaurar session_version ni tokens consumidos."
+      }
+    }
+  },
+  "limitations": [
+    "Snapshot sintético; no predice ataques ni disponibilidad real.",
+    "permission_patch es una hipótesis de catálogo: no existe endpoint para editarlo en el IAM.",
+    "Estado LOCKED se trata como no activo; no se modela vencimiento del bloqueo.",
+    "No modela carreras de concurrencia ni reutilización de refresh consumido (que revoca todas las sesiones).",
+    "El puntaje es una rúbrica educativa, no una probabilidad ni certificación."
+  ],
+  "ai": {
+    "status": "executed",
+    "provider": "Ollama loopback",
+    "model": "qwen2.5-coder:7b",
+    "created_at": "2026-11-08T23:54:51.133467Z",
+    "eval_count": 235,
+    "advisory_untrusted": {
+      "explanation": "El cambio solicitado implica que el usuario u-2 ganaría nuevos permisos ('users:read' y 'users:write') que no tenía antes. Esto podría aumentar el riesgo porque los nuevos permisos permitirían acciones adicionales que podrían ser peligrosas si no se manejan adecuadamente. El riesgo se debe a la posibilidad de abuso de estos nuevos privilegios y la necesidad de validar la sesión del usuario después del cambio. Además, el cambio podría desconectar al usuario, lo que sería un impacto negativo en la experiencia del usuario.",
+      "human_review": "El cambio solicitado implica un aumento significativo en los permisos del usuario u-2, lo que podría aumentar el riesgo de abuso. Es importante revisar cuidadosamente cualquier cambio que aumente los privilegios de un usuario. Además, es necesario validar la sesión del usuario después del cambio para asegurar que no se desconecte accidentalmente. Se recomienda considerar la alternativa de conservar el estado original para evitar estos riesgos."
+    }
+  }
+}

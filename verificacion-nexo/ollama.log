@@ -1,0 +1,208 @@
+127.0.0.1 - - [12/Nov/2026 18:27:28] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "7af56576b7e9f551901a57747c5ef745e41e81499f0f45756b704ae1f06dc2ae", "answer_sha256": "ed28bf4edb3f3898f16d9ad9eb687922c417a36dbae53ab3b886f39f8d886b5f", "eval_count": 10, "done_reason": "stop", "seconds": 0.291}
+127.0.0.1 - - [12/Nov/2026 18:27:28] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user"], "request_sha256": "3b1fb3395faa309f4e4c9dd1940a87f80908dc0a6d8fa56b52cfcf6ab9df2b2c", "answer_sha256": "3c9512406a7c17a4b1049279b8015c9bed91d3f112159348dd0c8941862c4e4e", "eval_count": 9, "done_reason": "stop", "seconds": 0.244}
+127.0.0.1 - - [12/Nov/2026 18:27:29] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user"], "request_sha256": "2bfa39b15e3e8971e472e5306252d8c4e148201d86b01be258fa138c48794e86", "answer_sha256": "a023ddb1df1965e047e0bde9516c2b013dd563cbfb5a51a94bab4d232244e4c4", "eval_count": 12, "done_reason": "stop", "seconds": 0.299}
+127.0.0.1 - - [12/Nov/2026 18:27:29] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "fd2f589094cff740393740c996cb78b60e9d74d4286fb6a44816548706749ca8", "answer_sha256": "368011946796082bf97bd0caceb8e745d65f9339c9c54ffa8cf608ac58715fb2", "eval_count": 11, "done_reason": "stop", "seconds": 0.273}
+127.0.0.1 - - [12/Nov/2026 18:27:29] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "2ba48433f3d3dc2267035806d3e0f590951a51dc2eba0466a072135ef6048c37", "answer_sha256": "b4f2178706036076aeba73480fa76819c456487ab0cbc638036c64bebf3b733c", "eval_count": 34, "done_reason": "stop", "seconds": 0.687}
+127.0.0.1 - - [12/Nov/2026 18:27:30] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "9aec2a56f9a3e2e6044fe1e7d193e21216bcec863be3064ead576a449d50d21e", "answer_sha256": "6e43a0236419770c22df0bce358343520ab7d6f94013aeb590cbe4b02769a51f", "eval_count": 87, "done_reason": "stop", "seconds": 1.649}
+127.0.0.1 - - [12/Nov/2026 18:27:32] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "0768749cf1cfeee085a4d64985e610d11ebea297ab94274d69d96d8578849df0", "answer_sha256": "ce5251dd2808db567fa45d87433b263c00064b0c8751dd6193646f4f10d1dcde", "eval_count": 23, "done_reason": "stop", "seconds": 0.506}
+127.0.0.1 - - [12/Nov/2026 18:27:32] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "6e141c353f6057eb5960f417c30305b61bfc4f6abfa1ff0778aa486c39c62382", "answer_sha256": "a934c244755c66aebb0d6f9f5687038ffae8f00b00b28b4e17521016393f38b9", "eval_count": 4, "done_reason": "stop", "seconds": 0.492}
+127.0.0.1 - - [12/Nov/2026 18:27:33] "POST /api/chat HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:27:33] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:27:33] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:27:33] "GET /api/tags HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "5b9933e610e137db5c78bc63d3099791e7f0c522e44b4dc709505974cc257f2f", "answer_sha256": "7d75abc8542395b748526a371737f6f23794cc26350ee8ac1aa9bd2fa8a03e04", "eval_count": 42, "done_reason": "stop", "seconds": 1.097}
+127.0.0.1 - - [12/Nov/2026 18:27:34] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user"], "request_sha256": "aaf5c21931404ce595d853d1efcaa6f838b54cb0aaee26eb35c6986a9c87cb2f", "answer_sha256": "eb92e74f91a787f0fdfa764ae908c17398f827619a4f9c9f0f25d9db899ed7e5", "eval_count": 19, "done_reason": "stop", "seconds": 1.038}
+127.0.0.1 - - [12/Nov/2026 18:27:35] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:27:35] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:27:35] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "c5d7b4b5a5ed60e2be3137d4c6b27d29471a9a58af71db10f872a1cc545b9819", "answer_sha256": "f22c357438211560e541bc61f25f4a25b46133f93d3fdf1a66f2a541f9d2d3b7", "eval_count": 170, "done_reason": "stop", "seconds": 4.198}
+127.0.0.1 - - [12/Nov/2026 18:27:38] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "system", "user"], "request_sha256": "cd6ad3259aef63924027cf4895d92c93bf4b417e81fbeee8cbd11e013fe16ddd", "answer_sha256": "ed131eaaa57e700ebf649135dd1195f3425e1d662644bdfbda3659b7c10bfeb4", "eval_count": 491, "done_reason": "stop", "seconds": 12.336}
+127.0.0.1 - - [12/Nov/2026 18:27:48] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "54f7f829d12f61aff50171177ae8920611057b2301bca124863b2f4f89aa22c4", "answer_sha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049", "eval_count": 3, "done_reason": "stop", "seconds": 10.032}
+127.0.0.1 - - [12/Nov/2026 18:27:48] "POST /api/chat HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55176)
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 500, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 488, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/verificacion-nexo/traza.py", line 13, in relay
+    self.wfile.write(line); self.wfile.flush()
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [12/Nov/2026 18:27:49] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "277817936bef8e8dbe0f4cb3772a73195faf27dae2b7065c206eacc40bf594ec", "answer_sha256": "4c4332f08009d392f2f2ebe844fdcd01c92dba3c425a58f48c5a093898e239c8", "eval_count": 33, "done_reason": "stop", "seconds": 1.238}
+127.0.0.1 - - [12/Nov/2026 18:27:50] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "5495d24ed78018243c0f65992eae2f6221c6147185f46377db3a422f39f6a59f", "answer_sha256": "fd1a210bdd9e531c368d54a4c5d357f61063fa0857657b868193f124255c510f", "eval_count": 7, "done_reason": "stop", "seconds": 0.557}
+127.0.0.1 - - [12/Nov/2026 18:27:50] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "bbba56a89d9689073edeaaccc6976d1528f422bb746425ba3e7a7017a554432a", "answer_sha256": "c996a49b18d34faea7a01aaf0a232457822da8a525b1513e37dad1928d86ab0e", "eval_count": 32, "done_reason": "stop", "seconds": 0.99}
+127.0.0.1 - - [12/Nov/2026 18:27:51] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "160c152492a410167480551796cd56c1134a8e02d958592c0dc25701f89c5c1a", "answer_sha256": "8ccbf70aa63258617df374b0e6a03fd301d5495a955e857d008f224f978d4ef6", "eval_count": 4, "done_reason": "stop", "seconds": 0.591}
+127.0.0.1 - - [12/Nov/2026 18:27:52] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "3848de622938eab80ca718640a2890020cd4da4bc8b4d5041e9c35894836a893", "answer_sha256": "35853023b6dbe1793b5303b4dc0ddd5cd3c0c297586304023649a7d2c643982c", "eval_count": 11, "done_reason": "stop", "seconds": 0.623}
+127.0.0.1 - - [12/Nov/2026 18:27:52] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "beb503223724cec5cac162cc3b7bcb5ad154775ba594cd3683c29e75e396d06a", "answer_sha256": "976354f0a72d6c4124932f42291dd779c58aee070a52b9e3de2ddfa6bcbff7f4", "eval_count": 36, "done_reason": "stop", "seconds": 0.996}
+127.0.0.1 - - [12/Nov/2026 18:27:53] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "fd4b569e0d59a707134a620658a54f929192c9168a6958fc07758a7fd78ebd72", "answer_sha256": "1fa60e60855f866bb0e89c0d63ac7221141bb49f746be6cb5ae32a9c6629b8f5", "eval_count": 30, "done_reason": "stop", "seconds": 0.859}
+127.0.0.1 - - [12/Nov/2026 18:27:54] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "76b65a231d8bf8f17afa22930517b7b7c64d7de23db3bf404a1cb7ea9ccfa8c6", "answer_sha256": "033cb6ae47a542ca6c7189452eb0d5d93ebe3a6d18d03b2c33943efe84eb4e7f", "eval_count": 7, "done_reason": "stop", "seconds": 0.446}
+127.0.0.1 - - [12/Nov/2026 18:27:55] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "cd996c80168b275abbe028f5e576828fcedad62505049f6496c0f1af61f01ac9", "answer_sha256": "4a783edb7e02fb6388f3591c867f8f1c943792b17b26fdc9eef25891d9203bbd", "eval_count": 11, "done_reason": "stop", "seconds": 0.497}
+127.0.0.1 - - [12/Nov/2026 18:27:55] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "f64538c386a597a4b0b82881e453b87951c105efd48793ce8da98df97c5ba3b5", "answer_sha256": "ee04ef0f92f3123284d9b8ad76eebea9014dfd06b1cae9ccdab81ba0055e6147", "eval_count": 15, "done_reason": "stop", "seconds": 0.566}
+127.0.0.1 - - [12/Nov/2026 18:27:56] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "86aac502a2e6341a2b46e2ca647a9339f205823ae53fc398f4cd5c1c847b3a94", "answer_sha256": "fb1955ffa86e0c6f52348bb6bf09fb45fcc0dbf826df4c14b7e2113750b3e233", "eval_count": 21, "done_reason": "stop", "seconds": 0.676}
+127.0.0.1 - - [12/Nov/2026 18:27:56] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "c18f68ac8a35af7b86eda85282c1962001f29f4b5cfa8ab6a8977bc7a85b3dbe", "answer_sha256": "106b2fabb2a146ef06a500aa9f6e5f2f100eeeaa51f50138ac66052657465631", "eval_count": 24, "done_reason": "stop", "seconds": 0.517}
+127.0.0.1 - - [12/Nov/2026 18:27:57] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "system", "user"], "request_sha256": "c31fa13ae6d32e0cdb4ae7673925877a74b5828f60011e502ac90018929445d0", "answer_sha256": "ae0964ce9545e1d170b5b984af2e08e9968f15c8cbb6ed1891b67253429366e3", "eval_count": 532, "done_reason": "stop", "seconds": 9.684}
+127.0.0.1 - - [12/Nov/2026 18:28:07] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user"], "request_sha256": "00243e8bc537ebea8b83078d1ae0d43392007290ce796cc6f974feb3c7bac913", "answer_sha256": "80e9b9e8f9fb211cbebf94f9fe34d1d503b2179f99645fdbb2e74049d9d5a134", "eval_count": 14, "done_reason": "stop", "seconds": 10.006}
+127.0.0.1 - - [12/Nov/2026 18:28:07] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "system", "user"], "request_sha256": "6e8fa8587ffa9e77d00daf440d36fdc7276da2c7bb29afc6159323486bb9dc10", "answer_sha256": "cfd07fb71a7974e2f77b4daaae83a35c6459c4c7c7ef984335b2c809b53ccaef", "eval_count": 122, "done_reason": "stop", "seconds": 2.573}
+127.0.0.1 - - [12/Nov/2026 18:28:09] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user"], "request_sha256": "e8a27579bab7f09b5a7136582551997ac6e612393991de4e5ffd4432efb20ff8", "answer_sha256": "76d50d93cd06dc8686c64af1b2d8230e1f0444220de03e7558fa6047520c250d", "eval_count": 17, "done_reason": "stop", "seconds": 2.668}
+127.0.0.1 - - [12/Nov/2026 18:28:10] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "system", "user"], "request_sha256": "0e61dd8ef493f9a935093bf65db7447b609e26d1f08a72d9ad894f44cee064d4", "answer_sha256": "1459004221fbd713d1bd37ae491b82bbf21d9fdf07067de7ca59004e2f231038", "eval_count": 296, "done_reason": "stop", "seconds": 5.877}
+127.0.0.1 - - [12/Nov/2026 18:28:15] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "27135bd0a27964354a4f60b8acd2af08b6ebe80c0750d731362c7e5008084ff9", "answer_sha256": "69d3d18df80ed6ddc55e3b8be45e93bd795caf67fc65a3ceae4986a78d03efa5", "eval_count": 30, "done_reason": "stop", "seconds": 6.223}
+127.0.0.1 - - [12/Nov/2026 18:28:16] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "system", "user"], "request_sha256": "c7d3a1ebf07c32bf3398eee69fab1aa6c597e22f1e35d1a40daf56567e07f96a", "answer_sha256": "255383a8edb98b89771bd3cf655527a8c9bb7960f646f03778a3e392cfae0a4e", "eval_count": 217, "done_reason": "stop", "seconds": 5.298}
+127.0.0.1 - - [12/Nov/2026 18:28:21] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "ccedb62e0dd4e4b339845647c71ba0ca4410305315323081971154797f5858fb", "answer_sha256": "6b6ef565bb5e80a1c1dadb8630469f4c66bdf5925399ae05198c583864627009", "eval_count": 18, "done_reason": "stop", "seconds": 5.289}
+127.0.0.1 - - [12/Nov/2026 18:28:21] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": true, "roles": ["system", "user"], "request_sha256": "9fe61d5f5c60df1cf3bc52a32f209a301ce9d0cbb927a291c00fb87a4c3dd7be", "answer_sha256": "59bd2cb47c8be795360480e628e57c5120af95272f9b18ee56a6b1945dbc7f99", "eval_count": 6, "done_reason": "stop", "seconds": 0.861}
+127.0.0.1 - - [12/Nov/2026 18:28:22] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "05f6967b270c415ff0f3044a67eb4287aa53d8aa7eaaf275e54c494793db6e9e", "answer_sha256": "651fd63c7520f35c8c074acdf917c5ffa9d9291a6bc130823af3df5e1892f47a", "eval_count": 632, "done_reason": "stop", "seconds": 12.251}
+127.0.0.1 - - [12/Nov/2026 18:28:34] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "18d1c04cae93917353ddd97d6b8c64b732a72b6d8adfb9b77ea041dc68bea713", "answer_sha256": "3ec949577ac372202a8610cc59457d84dee7ba0b874fa3014d0013bcb0e656ba", "eval_count": 17, "done_reason": "stop", "seconds": 12.496}
+127.0.0.1 - - [12/Nov/2026 18:28:35] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "28108a61ddc15ab3664e6181a09342304a7c5151ac6f99354d20453382302e90", "answer_sha256": "ac771ca3adbfaf1b03d261767908ca7a6a3b227aafa2e93be5d88ba5788038a8", "eval_count": 27, "done_reason": "stop", "seconds": 1.823}
+127.0.0.1 - - [12/Nov/2026 18:28:35] "POST /api/chat HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55387)
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 500, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 488, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/verificacion-nexo/traza.py", line 13, in relay
+    self.wfile.write(line); self.wfile.flush()
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [12/Nov/2026 18:28:35] "POST /api/chat HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55396)
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 500, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/server.py", line 488, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/Users/andrickeliasleonchavez/Downloads/ExamenErik/verificacion-nexo/traza.py", line 13, in relay
+    self.wfile.write(line); self.wfile.flush()
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+    ~~~~~~~~~~~~~~~~~~^^^
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [12/Nov/2026 18:28:36] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "e84b1762c481dc92f0a6a3122637c769dbe5fd4928622168e061ac5cc8c629d7", "answer_sha256": "dc811be73a0f361c941449da846442d9a735d5bc5e3d17e6933ed718a6e6ee1a", "eval_count": 66, "done_reason": "stop", "seconds": 1.529}
+127.0.0.1 - - [12/Nov/2026 18:28:38] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "e8b3c0e946bb3e4bea03ee77315b2bce07c93e84b86ac6feeb5f427a9a669848", "answer_sha256": "19269790fd9d24764ef5a0c7a6e45968e7035fe3715a265b1ae7e0ec03bc67ce", "eval_count": 21, "done_reason": "stop", "seconds": 2.974}
+127.0.0.1 - - [12/Nov/2026 18:28:38] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "9bcb2d86ad99ed4f7ea602d5e3f95d02e32aa5ac2694f6532a40c1ddece70922", "answer_sha256": "8793ac6ed2ddc8bbcbe8048ca0e272bc4609a7a8a6926bc21e8abcc5b3672c3e", "eval_count": 34, "done_reason": "stop", "seconds": 1.9}
+127.0.0.1 - - [12/Nov/2026 18:28:40] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "645724c5ece372aa991d864788e1bb973d646ed406b43965d644312d93a4a108", "answer_sha256": "962ebd8d2c8494fb0a54718dce12a2af73fc09e7e4caf9a1ab0b7c85b856f902", "eval_count": 28, "done_reason": "stop", "seconds": 2.235}
+127.0.0.1 - - [12/Nov/2026 18:28:41] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user"], "request_sha256": "3a9d8878fe6bdbb614a083d298f601cc26d121dcac7af95e77f6f49c17735fe2", "answer_sha256": "535fa30d7e25dd8a49f1536779734ec8286108d115da5045d77f3b4185d8f790", "eval_count": 3, "done_reason": "stop", "seconds": 1.698}
+127.0.0.1 - - [12/Nov/2026 18:28:42] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "5f53268cdacf779f8a37b8b2e39313cb9bedd0da225d3c7b703bfb3cf44ed252", "answer_sha256": "38f37277c240e0341a97df57d78051de95565ce26e24ab84fbe51f96ac7e5ac7", "eval_count": 35, "done_reason": "stop", "seconds": 1.838}
+127.0.0.1 - - [12/Nov/2026 18:28:43] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user"], "request_sha256": "21d25e3715ce29843bd1b5978cfb0fc4484e60922341aab380589964dd038e3a", "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db", "eval_count": 3, "done_reason": "stop", "seconds": 1.855}
+127.0.0.1 - - [12/Nov/2026 18:28:44] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "64e0b60b2940f403205f7bb72379f0b26c38182ebc60b26d836ffa25789826ec", "answer_sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d", "eval_count": 2, "done_reason": "stop", "seconds": 1.227}
+127.0.0.1 - - [12/Nov/2026 18:28:44] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "bc1678efbda22cb603d115e6c925837a03439b24cea86db4765d2f500f0501ad", "answer_sha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569", "eval_count": 3, "done_reason": "stop", "seconds": 1.333}
+127.0.0.1 - - [12/Nov/2026 18:28:45] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "e83d512ca30dc8483b1735d0f213780618facf7b0cc1b42f77f996fe16f2fa4c", "answer_sha256": "8079adda9d2a0839339a38d67bff446447e30f6f737884cbd465c48542be6e6e", "eval_count": 37, "done_reason": "stop", "seconds": 1.97}
+127.0.0.1 - - [12/Nov/2026 18:28:46] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "b8df15f5429329633e2b11bae1291c4f545beabafe3574b67f2a795a7f972665", "answer_sha256": "5f9c4ab08cac7457e9111a30e4664920607ea2c115a1433d7be98e97e64244ca", "eval_count": 3, "done_reason": "stop", "seconds": 1.98}
+127.0.0.1 - - [12/Nov/2026 18:28:46] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "d48d46aad8493b0efbbc28c47dab3255e26a5dfd01a236a42d5be7f9631824eb", "answer_sha256": "d568b4e71375ea0ec83352c3e222d2300a9e7c78a6698a1416859a048c255983", "eval_count": 46, "done_reason": "stop", "seconds": 1.488}
+127.0.0.1 - - [12/Nov/2026 18:28:47] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "dcf73ef0390914f82395078c3bc90e2ddf9a132281b312538e0defd4e24c782f", "answer_sha256": "670671cd97404156226e507973f2ab8330d3022ca96e0c93bdbdb320c41adcaf", "eval_count": 3, "done_reason": "stop", "seconds": 1.503}
+127.0.0.1 - - [12/Nov/2026 18:28:48] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "e1ad442bd7ea683e37afbc55f1c35593343b920a3033cc0f793b06f992f410f4", "answer_sha256": "e357be824e9e85ce20ab7827e338ba4082613619aff6d3d938d818105ca97661", "eval_count": 58, "done_reason": "stop", "seconds": 1.727}
+127.0.0.1 - - [12/Nov/2026 18:28:49] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "7416d5f6ad9bbae358d08d1b625b35bb97c2f4fdf26e25c6a52ed87127d89b34", "answer_sha256": "59e19706d51d39f66711c2653cd7eb1291c94d9b55eb14bda74ce4dc636d015a", "eval_count": 3, "done_reason": "stop", "seconds": 1.741}
+127.0.0.1 - - [12/Nov/2026 18:28:50] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "c97b0d25840ee7d4dcc2b2bd0de574c998da98a56313741ab74dce4f15813e3f", "answer_sha256": "cd9847a00d5e73ee8a420175978c11fd1689290eac7fe0874b11f04e1172f9dc", "eval_count": 13, "done_reason": "stop", "seconds": 0.987}
+127.0.0.1 - - [12/Nov/2026 18:28:50] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "256fb051bcb1d16ef9351ec9e4be9be7f61977f3b541a3eee1a582cbcb222934", "answer_sha256": "35135aaa6cc23891b40cb3f378c53a17a1127210ce60e125ccf03efcfdaec458", "eval_count": 3, "done_reason": "stop", "seconds": 0.993}
+127.0.0.1 - - [12/Nov/2026 18:28:51] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "4c879e274c1ddf487bba0a16ae4c02557e3994c93d4546c85690a3b7f044cc13", "answer_sha256": "e69e2420129911972b619beda2c56c6feb860dd73a4c61b5ebf279f4ffe4709c", "eval_count": 50, "done_reason": "stop", "seconds": 1.729}
+127.0.0.1 - - [12/Nov/2026 18:28:52] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "dc0eec3332243f9945e30432928fc706ea515d3fcffc58c15019c1ad260520c5", "answer_sha256": "624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4", "eval_count": 3, "done_reason": "stop", "seconds": 1.777}
+127.0.0.1 - - [12/Nov/2026 18:28:53] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "c26d7fb4f41ef6915845e7c46e1ea9e58ccd566636c948f29480ae166beb2b46", "answer_sha256": "6b8f0c04f42f04e277bbd6275f7aa0a1c522dadb13fc8df54dc8301d13f6ad13", "eval_count": 50, "done_reason": "stop", "seconds": 1.812}
+127.0.0.1 - - [12/Nov/2026 18:28:54] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "32827b603b094eb0128d4f5c497fbec230087bd6e278612826700898b3232a35", "answer_sha256": "6a66a31a8e32ca72e048dea1541221c664d412733af25bed52a521a02fc1c43f", "eval_count": 28, "done_reason": "stop", "seconds": 0.637}
+127.0.0.1 - - [12/Nov/2026 18:29:28] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user", "assistant", "user"], "request_sha256": "ad245d873e81eefbe591ee328ec15f13c40a452c557b59c6e154d5976b7b9a93", "answer_sha256": "5f8c818a540523862e7284f81697901f7bf34e1729082387640adeab1e2275b9", "eval_count": 15, "done_reason": "stop", "seconds": 0.556}
+127.0.0.1 - - [12/Nov/2026 18:29:45] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:29:45] "GET /api/tags HTTP/1.1" 200 -
+127.0.0.1 - - [12/Nov/2026 18:29:45] "POST /api/chat HTTP/1.1" 200 -
+{"path": "/api/chat", "model": "qwen2.5-coder:7b", "plan": false, "roles": ["system", "user"], "request_sha256": "c4c4ca00559bba299195fd3e1e5786b0f4ac955293f48685c1be7095bab0fc01", "answer_sha256": "8e3b2fb8def2da4fb8dbcd4fe186c2606b3103f41f2210053188896a9f12dd2f", "eval_count": 64, "done_reason": "length", "seconds": 1.254}

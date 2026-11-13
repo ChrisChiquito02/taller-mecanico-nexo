@@ -1,0 +1,1 @@
+Documentación: 27 archivos, 196 referencias locales y 19 rutas HTTP comprobados. No es un validador completo OpenAPI.

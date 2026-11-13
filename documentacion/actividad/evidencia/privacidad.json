@@ -1,0 +1,7 @@
+{
+  "files_scanned": 50,
+  "jwt_or_private_key_in_public_evidence": false,
+  "exact_existing_local_secret_match": false,
+  "local_secrets_modified": false,
+  "limitation": "Targeted pattern/exact-match checks; not a complete secret scanner"
+}

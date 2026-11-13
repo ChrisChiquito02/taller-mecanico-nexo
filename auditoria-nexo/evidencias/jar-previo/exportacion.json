@@ -1,0 +1,163 @@
+{
+  "project": "ExamenErik",
+  "agent": "NEXO-Δ AI",
+  "exported_at": "2026-11-13T00:10:04.511Z",
+  "messages": [
+    {
+      "speaker": "user",
+      "content": "Explica este cambio hipotético, sus riesgos, la alternativa y el plan de reversión. Distingue hechos e incertidumbres."
+    },
+    {
+      "speaker": "assistant",
+      "content": "### Cambio Hipotético Explícito\n\nEl cambio hipotético consiste en reemplazar el rol \"ADMIN\" del usuario \"objetivo\" por el rol \"USER\". Esto implica que el usuario perderá los permisos \"users:read\" y \"users:write\" y solo mantendrá el permiso \"profile:read\".\n\n### Riesgos del Cambio\n\n1. **Privilegios Reducidos**: El usuario pierde los permisos \"users:read\" y \"users:write\", lo que significa que no podrá leer ni modificar información de otros usuarios. Esto puede limitar su capacidad de administración y gestión del sistema.\n   \n2. **Reversión Humana**: El cambio no puede ser revertido automáticamente. Requiere una revisión humana para restaurar los roles y permisos anteriores.\n\n3. **Sesiones Inválidad**: El cambio inválida una sesión, lo que significa que el usuario tendrá que iniciar sesión nuevamente para mantener su acceso.\n\n### Alternativa\n\nLa alternativa de menor privilegio calculada usa EXACTAMENTE estos roles: [\"USER\"]. Su puntaje es 45, frente al solicitado 45. No ofrece reducción cuando ambos puntajes coinciden. Conservar otros roles no es la alternativa calculada; toda decisión requiere revisión humana.\n\n### Plan de Reversión\n\n1. **Revisión Humana**: Antes de realizar cualquier cambio, es necesario una revisión humana para asegurar que el cambio es necesario y seguro.\n\n2. **Restauración de Roles y Permisos**: Si el cambio es revertido, se restaurarán los roles y permisos anteriores del usuario \"objetivo\". Esto implicará que el usuario \"objetivo\" regresarán a los roles [\"ADMIN\"] y los permisos [\"profile:read\", \"users:read\", \"users:write\"].\n\n3. **No Revivir Tokens**: No se revivirán tokens. Esto asegura que el cambio no tenga efectos secundarios indeseados.\n\n4. **Ningún Cambio Ejecutado**: Ningún cambio ha sido ejecutado en el sistema. El informe y la auditoría NEXO sí pueden persistirse.\n\n### Hechos e Incertidumbres\n\n**Hechos**:\n- El cambio hipotético implica que el usuario \"objetivo\" pierde los permisos \"users:read\" y \"users:write\".\n- El cambio inválida una sesión.\n- La alternativa de menor privilegio es [\"USER\"].\n- El cambio no puede ser revertido automáticamente y requiere revisión humana.\n\n**Incertidumbres**:\n- El número real de JWT (JSON Web Tokens) es desconocido; solo se consideran los refresh vigentes conocidos.\n- El riesgo es parcial debido a la concurrencia posterior y la naturaleza hipotética de los permisos del catálogo.\n- No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.",
+      "metadata": "{\"tool\":\"simulation\",\"model\":\"qwen2.5-coder:7b\",\"provider\":\"ollama\",\"generated\":true,\"advisory\":true,\"references\":[{\"source\":\"agente-nexo/nexo.py; nexo/service/AccessLab.java\",\"title\":\"Predictive Access Lab: método y límites\",\"id\":\"laboratorio\"},{\"source\":\"pom.xml; frontend/package.json; src/main/resources/application.yml\",\"title\":\"Arquitectura de ExamenErik\",\"id\":\"arquitectura\"},{\"source\":\"documentacion/actividad/PUBLICACION_GRATUITA.md; deploy/Dockerfile.api\",\"title\":\"Operación y publicación distribuida\",\"id\":\"operacion\"}],\"simulation\":{\"agent\":\"NEXO-Δ Predictive Access Lab\",\"mode\":\"simulation_only\",\"source\":\"authorized_live_read\",\"at_minute\":5,\"snapshot_complete\":true,\"required_permissions\":[\"profile:read\"],\"requested\":{\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}],\"rollback_proposal_only\":{\"permission_patch\":{},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"assignments\":{\"objetivo\":[\"ADMIN\"]}},\"risk\":{\"score\":45,\"privilege_gain_points\":0,\"label\":\"medio\",\"no_writer_points\":40,\"session_disruption_points\":5},\"remaining_active_writers\":0},\"least_privilege_candidates\":[{\"roles\":[\"USER\"],\"extra_permissions\":[],\"extra_weight\":0},{\"roles\":[\"ADMIN\"],\"extra_permissions\":[\"users:read\",\"users:write\"],\"extra_weight\":50},{\"roles\":[\"ADMIN\",\"USER\"],\"extra_permissions\":[\"users:read\",\"users:write\"],\"extra_weight\":50}],\"alternative_evaluated\":{\"change\":{\"objetivo\":[\"USER\"]},\"no_change_needed\":false,\"simulation\":{\"affected\":[{\"user\":\"objetivo\",\"before_roles\":[\"ADMIN\"],\"proposed_roles\":[\"USER\"],\"before_permissions\":[\"profile:read\",\"users:read\",\"users:write\"],\"proposed_permissions\":[\"profile:read\"],\"gained\":[],\"lost\":[\"users:read\",\"users:write\"],\"resources_exposed\":[],\"sessions_invalidated_by_change\":1,\"sessions_still_valid\":0}],\"rollback_proposal_only\":{\"permission_patch\":{},\"warning\":\"Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.\",\"assignments\":{\"objetivo\":[\"ADMIN\"]}},\"risk\":{\"score\":45,\"privilege_gain_points\":0,\"label\":\"medio\",\"no_writer_points\":40,\"session_disruption_points\":5},\"remaining_active_writers\":0}},\"limitations\":[\"Rúbrica educativa, no probabilidad ni certificación.\",\"Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.\",\"Snapshot completo al instante de lectura, sujeto a concurrencia posterior.\",\"Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.\",\"No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse.\"]},\"review\":\"Explicación de IA no verificada semánticamente. Los puntajes, cambios y alternativas válidos son los del informe determinista.\",\"consistency_check\":\"heuristic_only_not_proof\"}"
+    }
+  ],
+  "simulation": {
+    "agent": "NEXO-Δ Predictive Access Lab",
+    "mode": "simulation_only",
+    "source": "authorized_live_read",
+    "at_minute": 5,
+    "snapshot_complete": true,
+    "required_permissions": [
+      "profile:read"
+    ],
+    "requested": {
+      "affected": [
+        {
+          "user": "objetivo",
+          "before_roles": [
+            "ADMIN"
+          ],
+          "proposed_roles": [
+            "USER"
+          ],
+          "before_permissions": [
+            "profile:read",
+            "users:read",
+            "users:write"
+          ],
+          "proposed_permissions": [
+            "profile:read"
+          ],
+          "gained": [],
+          "lost": [
+            "users:read",
+            "users:write"
+          ],
+          "resources_exposed": [],
+          "sessions_invalidated_by_change": 1,
+          "sessions_still_valid": 0
+        }
+      ],
+      "rollback_proposal_only": {
+        "permission_patch": {},
+        "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+        "assignments": {
+          "objetivo": [
+            "ADMIN"
+          ]
+        }
+      },
+      "risk": {
+        "score": 45,
+        "privilege_gain_points": 0,
+        "label": "medio",
+        "no_writer_points": 40,
+        "session_disruption_points": 5
+      },
+      "remaining_active_writers": 0
+    },
+    "least_privilege_candidates": [
+      {
+        "roles": [
+          "USER"
+        ],
+        "extra_permissions": [],
+        "extra_weight": 0
+      },
+      {
+        "roles": [
+          "ADMIN"
+        ],
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "extra_weight": 50
+      },
+      {
+        "roles": [
+          "ADMIN",
+          "USER"
+        ],
+        "extra_permissions": [
+          "users:read",
+          "users:write"
+        ],
+        "extra_weight": 50
+      }
+    ],
+    "alternative_evaluated": {
+      "change": {
+        "objetivo": [
+          "USER"
+        ]
+      },
+      "no_change_needed": false,
+      "simulation": {
+        "affected": [
+          {
+            "user": "objetivo",
+            "before_roles": [
+              "ADMIN"
+            ],
+            "proposed_roles": [
+              "USER"
+            ],
+            "before_permissions": [
+              "profile:read",
+              "users:read",
+              "users:write"
+            ],
+            "proposed_permissions": [
+              "profile:read"
+            ],
+            "gained": [],
+            "lost": [
+              "users:read",
+              "users:write"
+            ],
+            "resources_exposed": [],
+            "sessions_invalidated_by_change": 1,
+            "sessions_still_valid": 0
+          }
+        ],
+        "rollback_proposal_only": {
+          "permission_patch": {},
+          "warning": "Revisión humana y nuevo inicio de sesión. Nunca restaurar session_version ni tokens consumidos.",
+          "assignments": {
+            "objetivo": [
+              "ADMIN"
+            ]
+          }
+        },
+        "risk": {
+          "score": 45,
+          "privilege_gain_points": 0,
+          "label": "medio",
+          "no_writer_points": 40,
+          "session_disruption_points": 5
+        },
+        "remaining_active_writers": 0
+      }
+    },
+    "limitations": [
+      "Rúbrica educativa, no probabilidad ni certificación.",
+      "Número de JWT reales desconocido; solo refresh vigentes conocidos. Riesgo parcial.",
+      "Snapshot completo al instante de lectura, sujeto a concurrencia posterior.",
+      "Los permisos del catálogo son hipotéticos: no existe endpoint IAM para editarlos.",
+      "No se modifican cuentas, roles, permisos ni tokens. El informe y la auditoría NEXO sí pueden persistirse."
+    ]
+  }
+}

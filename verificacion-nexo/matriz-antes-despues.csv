@@ -1,0 +1,42 @@
+﻿category,feature,baseline,state,i0,i1,evidence
+LLM,Modelo local instalado y estado,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; UI03, modelos.json"
+LLM,Inferencia y transmisión Ollama a navegador,FUNCIONAL,FUNCIONAL,1.0,1,UI18; huellas.txt
+LLM,Planificación automática y ejecución permitida,FUNCIONAL,FUNCIONAL,1.0,1,AUTO; ollama.log
+LLM,Fallo del proveedor sin reemplazo,FUNCIONAL,FUNCIONAL,1.0,1,MODEL-OFFLINE
+Coherencia,Conversación y referencias recientes,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; A 1–7
+Coherencia,Razonamiento lógico básico,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; B 8–14
+Coherencia,Comprensión español e inglés,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; C 15–22
+Coherencia,Detección de premisas falsas e incompatibilidades,PARCIAL,PARCIAL,1.0,1,Caso 29 aprobado; caso 30 falló
+Coherencia,Fidelidad y citas del proyecto,NO FUNCIONAL,FUNCIONAL,0.5,1,"UI05, UI06 y DOC-falso"
+Memoria,Contexto reciente por conversación,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; 23–25
+Memoria,Historial después de recarga y reinicio,FUNCIONAL,FUNCIONAL,1.0,1,UI08 y DB-restart
+Memoria,Recuperación de contexto antiguo,NO FUNCIONAL,FUNCIONAL,0.5,1,MEM-restart: DIAMANTE-742 después de ocho turnos y reinicio
+Memoria,Aislamiento por chat y cuenta,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; 41, 46, SEC-lista-aislada"
+Memoria,Expiración y limpieza programada,NO VERIFICADA,FUNCIONAL,1.0,1,TTL-visibility y TTL-purge
+Agente,Laboratorio sintético identificado,SIMULADA,SIMULADA,1.0,1.0,Criterio conservado; UI10
+Agente,Simulación IAM en lectura autorizada,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; UI11, SIM-lectura-propia"
+Agente,Explicación IA de simulación,PARCIAL,PARCIAL,1.0,1,UI12 y simulate_self; prosa no siempre distingue refresh de todas las sesiones
+Agente,Abrir referencias recuperadas,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; UI06
+Agente,Validar adjuntos de texto,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; FILE-tipo, FILE-tamano, 45"
+Agente,Analizar contenido de un TXT,NO FUNCIONAL,FUNCIONAL,0.5,1,"UI07, ATT-1 a ATT-4; extracción literal acotada"
+Agente,Analizar error o código,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; explain_error
+Agente,Interpretar pruebas,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; interpret_tests
+Agente,Redactar informe fiel a datos,PARCIAL,PARCIAL,1.0,0.5,"informe-verificado.json; plantilla fiel, síntesis flexible pendiente"
+Agente,Exportar conversación e informe,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; UI13
+Agente,Resistencia de salida a instrucciones de adjuntos,NO FUNCIONAL,FUNCIONAL,0.5,1,"Caso 40, ATT-0 a ATT-4 y ATT-context"
+Frontend/backend,"Raíz, enlace NEXO y navegación autenticada",FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; UI01–03
+Frontend/backend,Atajos de sugerencias,FUNCIONAL,FUNCIONAL,1.0,1.0,Criterio conservado; UI04
+Frontend/backend,"Nuevo chat, restaurar y eliminar",PARCIAL,FUNCIONAL,1.0,1,"UI08, UI09, UI16; DELETE 204"
+Frontend/backend,"Esperar, enviar y mostrar error",FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; UI05, UI-offline"
+Frontend/backend,Detener turno y liberar backend,PARCIAL,FUNCIONAL,0.5,1,"UI15, UI16 y REPLICAS; MySQL sin mensajes"
+Frontend/backend,Móvil 375 px,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; UI14, nexo-movil.png"
+Persistencia/seguridad,"Login, refresh de recarga y logout",FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; UI02, UI08, UI17"
+Persistencia/seguridad,Bloqueo de acceso horizontal y acciones no autorizadas,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; 41–45, SEC-*"
+Persistencia/seguridad,Protección por cambio de autoridad durante stream,NO VERIFICADA,FUNCIONAL,1.0,1,REVOKE; versión de sesión revocada durante inferencia
+Persistencia/seguridad,SMTP y recuperación,PARCIAL,PARCIAL,1.0,1.0,Criterio conservado; SMTP-MAILPIT
+Persistencia/seguridad,Despliegue TLS/secretos/cookies entre hosts,NO VERIFICADA,NO VERIFICADA,0.5,0.5,"Criterio conservado; deploy/, OPERACION.md"
+Estabilidad,Arranque reproducible y migraciones reales,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; build-fuente.log, mysql-fuente.log"
+Estabilidad,Reinicio de backend y MySQL,FUNCIONAL,FUNCIONAL,1.0,1.0,"Criterio conservado; DB-despues, backend-fuente-reinicio.log"
+Estabilidad,Finalización íntegra o señal de truncamiento,NO FUNCIONAL,FUNCIONAL,0.5,1,Ollama length 64; truncamiento.json; SQL 0 mensajes
+Estabilidad,Concurrencia de varias réplicas y carga sostenida,NO VERIFICADA,PARCIAL,0.5,0.5,REPLICAS pasó; falta carga sostenida y cuota minuto sigue local
+Estabilidad,Recuperación desde backup de producción,NO VERIFICADA,PARCIAL,0.0,0.5,restauracion.log: copia sintética comprobada; producción pendiente

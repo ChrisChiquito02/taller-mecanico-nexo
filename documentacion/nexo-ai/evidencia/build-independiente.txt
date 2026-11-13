@@ -1,0 +1,5 @@
+
+> examenerik-frontend@0.1.0 build
+> node scripts/build.mjs
+
+Frontend compilado: dist (publicación independiente)

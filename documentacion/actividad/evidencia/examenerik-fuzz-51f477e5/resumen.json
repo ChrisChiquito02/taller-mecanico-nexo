@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-11-08T20:25:25.393794+00:00",
+  "run_id": "examenerik-fuzz-51f477e5",
+  "restler_source_commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+  "restler_binary_sha256": "131bf27e4a05fe41ae2a4e94021e7e1e301cc3a50dc308206c72cdd20df1656c",
+  "scope": "MySQL 8.4 + API Java21 + Mailpit, red Docker interna, datos sintéticos, loopback",
+  "spec_source_sha256": "84da02b9e109c690611054c785d927078bcf37d67e9db2d4403cde6f3cad8abb",
+  "commands_exit_codes": {
+    "compile": 0,
+    "test": 0,
+    "fuzz": 0
+  },
+  "completed": true,
+  "preflight": {
+    "profile_admin": 200,
+    "refresh_bad_origin": 403,
+    "refresh_missing_origin": 403,
+    "refresh_allowed_origin": 200,
+    "preflight_allowed_origin": 200
+  },
+  "grammar_sha256": "5e8ee29b8c2b1cac7f959385e188c6517858fde14bacd8c01734c245a493a16a",
+  "dependency_files": [
+    "Compile/dependencies.json",
+    "Compile/dependencies_debug.json",
+    "Compile/unresolved_dependencies.json"
+  ],
+  "cleanup_success": true,
+  "finished_utc": "2026-11-08T20:27:09.761114+00:00"
+}

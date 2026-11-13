@@ -1,0 +1,32 @@
+
+> examenerik-frontend@0.1.0 test
+> node --test tests/unit/*.test.js
+
+✔ envía Bearer solo a operaciones protegidas y mantiene cookie entre orígenes autorizados (13.254708ms)
+✔ contraseña actual incorrecta no renueva ni borra la sesión (0.548ms)
+✔ renovación concurrente se realiza una sola vez y reintenta con acceso nuevo (11.985ms)
+✔ 401 Bearer después de renovar cierra sesión sin bucle (0.4255ms)
+✔ 403 conserva sesión y no intenta renovar permisos (0.1535ms)
+✔ timeout informa resultado incierto y no repite una mutación (4.820709ms)
+✔ respuesta HTML no revela su contenido como error al usuario (0.219084ms)
+✔ rechaza contratos de acceso y perfil inválidos (0.141125ms)
+✔ rechaza HTTP externo y no reintenta fallos de red (0.137792ms)
+✔ usa exclusión mutua configurada para renovar entre pestañas (0.120625ms)
+✔ API HTTPS fija permite CORS con credenciales y rechaza destinos ambiguos (0.184125ms)
+✔ model HTML and code are inert text; unauthenticated route is denied (32.193416ms)
+✔ stream requires authenticated headers and a completion event, never retries partial output (4.759333ms)
+✔ stream accepts truncation as its own terminal event (0.671375ms)
+✔ rutas de cuenta y administración requieren sesión y permisos (0.300709ms)
+✔ permiso de lectura administrativa no muestra formularios de escritura (43.47825ms)
+✔ logout oculta controles privilegiados y restaura navegación pública (11.001458ms)
+✔ perfil trata contenido malicioso como texto, sin ejecutar HTML (11.152458ms)
+✔ confirmación de contraseña bloquea diferencias y acepta igualdad (7.320917ms)
+✔ formularios declaran restricciones, etiquetas y regiones accesibles (8.141333ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 453.873834

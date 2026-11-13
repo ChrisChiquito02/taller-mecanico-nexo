@@ -1,0 +1,1950 @@
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.984 (2026-11-12)
+  message = "com.nimbusds.jwt.JWTParser"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.985 (2026-11-12)
+  message = "com.nimbusds.jose.util.JSONObjectUtils"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.985 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberStrategy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.985 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.GsonBuilder"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.986 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingStrategy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.986 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.Excluder"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.987 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.TypeAdapterFactory"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.987 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.TypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.987 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.Excluder$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.987 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.LongSerializationPolicy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.988 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.LongSerializationPolicy$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.988 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.LongSerializationPolicy$2"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.988 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonElement"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.988 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonNull"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.988 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonPrimitive"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$2"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$3"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$4"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$5"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$6"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FieldNamingPolicy$7"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.989 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.Gson"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.990 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonIOException"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.990 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonParseException"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.990 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.JsonSyntaxException"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.991 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.stream.JsonReader"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.991 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.JsonTreeReader"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.992 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.stream.MalformedJsonException"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.992 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.stream.JsonWriter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.992 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.JsonTreeWriter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.992 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.Gson$3"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.992 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.Gson$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.Gson$2"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.FormattingStyle"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberPolicy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberPolicy$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberPolicy$2"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberPolicy$3"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.ToNumberPolicy$4"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.993 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.LazilyParsedNumber"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.994 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.Strictness"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.994 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTypesSupport"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.994 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.DefaultDateTypeAdapter$DateType"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.994 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTypesSupport$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.994 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTypesSupport$2"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.DefaultDateTypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.DefaultDateTypeAdapter$DateType$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlDateTypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.TypeAdapter$NullSafeTypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlDateTypeAdapter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.995 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTimeTypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.996 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTimeTypeAdapter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.996 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTimestampTypeAdapter"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.996 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.sql.SqlTimestampTypeAdapter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.996 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.ConstructorConstructor"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.997 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.TypeAdapters"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.997 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.TypeAdapters$3"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:39.998 (2026-11-12)
+  message = "com.nimbusds.jose.shaded.gson.internal.bind.TypeAdapters$4"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-3" (javaThreadId = 59)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.150 (2026-11-12)
+  message = "URI is not absolute"
+  thrownClass = java.lang.IllegalArgumentException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-2" (javaThreadId = 58)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    java.net.URL.of(URI, URLStreamHandler) line: 821
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.153 (2026-11-12)
+  message = "No EntityGraph with given name 'AppUser.findById'"
+  thrownClass = java.lang.IllegalArgumentException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-2" (javaThreadId = 58)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    org.hibernate.internal.AbstractSharedSessionContract.getEntityGraph(String) line: 1754
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.153 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.reflect.InvocationTargetException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-2" (javaThreadId = 58)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.ReflectiveOperationException.<init>(Throwable) line: 90
+    java.lang.reflect.InvocationTargetException.<init>(Throwable) line: 68
+    jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Object, Object[]) line: 119
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = "com.sistemam01m02.identity.security.JsonBodyLimitFilter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.EOFException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    java.lang.Exception.<init>() line: 55
+    java.io.IOException.<init>() line: 46
+    java.io.EOFException.<init>() line: 50
+    org.springframework.boot.loader.zip.DataBlock.readFully(ByteBuffer, long) line: 66
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.UncheckedIOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.RuntimeException.<init>(Throwable) line: 97
+    java.io.UncheckedIOException.<init>(IOException) line: 63
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 265
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = "com.sistemam01m02.identity.security.JsonBodyLimitFilter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    java.net.URLClassLoader.findClass(String) line: 377
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = "com/sistemam01m02/identity/security/JsonBodyLimitFilter$1"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    com.sistemam01m02.identity.security.JsonBodyLimitFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 31
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.168 (2026-11-12)
+  message = "com/sistemam01m02/identity/security/JsonBodyLimitFilter$1"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    com.sistemam01m02.identity.security.JsonBodyLimitFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 31
+    org.springframework.web.filter.OncePerRequestFilter.doFilter(ServletRequest, ServletResponse, FilterChain) line: 116
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.169 (2026-11-12)
+  message = "Filter execution threw an exception"
+  thrownClass = jakarta.servlet.ServletException (classLoader = org.springframework.boot.loader.launch.LaunchedClassLoader)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    jakarta.servlet.ServletException.<init>(String, Throwable) line: 55
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ServletRequest, ServletResponse) line: 116
+    org.springframework.web.filter.RequestContextFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 100
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.169 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.catalina.core.StandardWrapperValve.invoke(Request, Response) line: 199
+    org.apache.catalina.core.StandardContextValve.invoke(Request, Response) line: 77
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.169 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.169 (2026-11-12)
+  message = "Zip 'Central Directory File Header Record' not found at position 283786"
+  thrownClass = java.io.IOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.io.IOException.<init>(String) line: 57
+    org.springframework.boot.loader.zip.ZipCentralDirectoryFileHeaderRecord.load(DataBlock, long) line: 203
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 259
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.169 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.UncheckedIOException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.RuntimeException.<init>(Throwable) line: 97
+    java.io.UncheckedIOException.<init>(IOException) line: 63
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 265
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    java.net.URLClassLoader.findClass(String) line: 377
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.catalina.core.StandardHostValve.invoke(Request, Response) line: 119
+    org.apache.catalina.valves.ErrorReportValve.invoke(Request, Response) line: 86
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.coyote.http11.Http11Processor.service(SocketWrapperBase) line: 432
+    org.apache.coyote.AbstractProcessorLight.process(SocketWrapperBase, SocketEvent) line: 71
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.coyote.AbstractProtocol$ConnectionHandler.process(SocketWrapperBase, SocketEvent) line: 1451
+    org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun() line: 2036
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun() line: 2054
+    org.apache.tomcat.util.net.SocketProcessorBase.run() line: 74
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:07:40.170 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-4" (javaThreadId = 60)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.183 (2026-11-12)
+  message = "org.springframework.scheduling.support.ScheduledTaskObservationContext"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    jdk.internal.loader.BuiltinClassLoader.loadClass(String, boolean) line: 580
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.185 (2026-11-12)
+  message = "Zip 'Central Directory File Header Record' not found at position 1377398"
+  thrownClass = java.io.IOException (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.io.IOException.<init>(String) line: 57
+    org.springframework.boot.loader.zip.ZipCentralDirectoryFileHeaderRecord.load(DataBlock, long) line: 203
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 259
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.186 (2026-11-12)
+  message = N/A
+  thrownClass = java.io.UncheckedIOException (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.RuntimeException.<init>(Throwable) line: 97
+    java.io.UncheckedIOException.<init>(IOException) line: 63
+    org.springframework.boot.loader.zip.ZipContent.loadZipCentralDirectoryFileHeaderRecord(long) line: 265
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.186 (2026-11-12)
+  message = "org.springframework.scheduling.support.ScheduledTaskObservationContext"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    java.net.URLClassLoader.findClass(String) line: 377
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.186 (2026-11-12)
+  message = "org/springframework/scheduling/support/ScheduledTaskObservationContext"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    org.springframework.scheduling.support.ScheduledMethodRunnable.run() line: 118
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.186 (2026-11-12)
+  message = "org/springframework/scheduling/support/ScheduledTaskObservationContext"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    org.springframework.scheduling.support.ScheduledMethodRunnable.run() line: 118
+    org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run() line: 88
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.187 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.187 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:28.187 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "scheduling-1" (javaThreadId = 69)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.179 (2026-11-12)
+  message = "URI is not absolute"
+  thrownClass = java.lang.IllegalArgumentException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-5" (javaThreadId = 61)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    java.net.URL.of(URI, URLStreamHandler) line: 821
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.185 (2026-11-12)
+  message = "No EntityGraph with given name 'AppUser.findById'"
+  thrownClass = java.lang.IllegalArgumentException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-5" (javaThreadId = 61)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    org.hibernate.internal.AbstractSharedSessionContract.getEntityGraph(String) line: 1754
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.186 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.reflect.InvocationTargetException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-5" (javaThreadId = 61)
+  stackTrace = [
+    java.lang.Throwable.<init>(Throwable) line: 340
+    java.lang.Exception.<init>(Throwable) line: 103
+    java.lang.ReflectiveOperationException.<init>(Throwable) line: 90
+    java.lang.reflect.InvocationTargetException.<init>(Throwable) line: 68
+    jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Object, Object[]) line: 119
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "com.sistemam01m02.identity.security.JsonBodyLimitFilter$1"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    com.sistemam01m02.identity.security.JsonBodyLimitFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 31
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "com/sistemam01m02/identity/security/JsonBodyLimitFilter$1"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    com.sistemam01m02.identity.security.JsonBodyLimitFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 31
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "com/sistemam01m02/identity/security/JsonBodyLimitFilter$1"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    com.sistemam01m02.identity.security.JsonBodyLimitFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 31
+    org.springframework.web.filter.OncePerRequestFilter.doFilter(ServletRequest, ServletResponse, FilterChain) line: 116
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "Filter execution threw an exception"
+  thrownClass = jakarta.servlet.ServletException (classLoader = org.springframework.boot.loader.launch.LaunchedClassLoader)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    jakarta.servlet.ServletException.<init>(String, Throwable) line: 55
+    org.apache.catalina.core.ApplicationFilterChain.doFilter(ServletRequest, ServletResponse) line: 116
+    org.springframework.web.filter.RequestContextFilter.doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain) line: 100
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.catalina.core.StandardWrapperValve.invoke(Request, Response) line: 199
+    org.apache.catalina.core.StandardContextValve.invoke(Request, Response) line: 77
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.catalina.core.StandardHostValve.invoke(Request, Response) line: 119
+    org.apache.catalina.valves.ErrorReportValve.invoke(Request, Response) line: 86
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.coyote.http11.Http11Processor.service(SocketWrapperBase) line: 432
+    org.apache.coyote.AbstractProcessorLight.process(SocketWrapperBase, SocketEvent) line: 71
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.coyote.AbstractProtocol$ConnectionHandler.process(SocketWrapperBase, SocketEvent) line: 1451
+    org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun() line: 2036
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = N/A
+  thrownClass = java.lang.Throwable (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>() line: 266
+    org.apache.juli.logging.DirectJDKLog.log(Level, String, Throwable) line: 157
+    org.apache.juli.logging.DirectJDKLog.error(Object, Throwable) line: 141
+    org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun() line: 2054
+    org.apache.tomcat.util.net.SocketProcessorBase.run() line: 74
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch.qos.logback.classic.spi.ThrowableProxy"
+  thrownClass = java.lang.ClassNotFoundException (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String, Throwable) line: 313
+    java.lang.Exception.<init>(String, Throwable) line: 85
+    java.lang.ReflectiveOperationException.<init>(String, Throwable) line: 76
+    java.lang.ClassNotFoundException.<init>(String) line: 71
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Error.<init>(String) line: 72
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:08:30.203 (2026-11-12)
+  message = "ch/qos/logback/classic/spi/ThrowableProxy"
+  thrownClass = java.lang.NoClassDefFoundError (classLoader = bootstrap)
+  eventThread = "http-nio-127.0.0.1-8092-exec-6" (javaThreadId = 62)
+  stackTrace = [
+    java.lang.Error.<init>(String) line: 74
+    java.lang.LinkageError.<init>(String) line: 55
+    java.lang.NoClassDefFoundError.<init>(String) line: 58
+    ch.qos.logback.classic.spi.LoggingEvent.<init>(String, Logger, Level, String, Throwable, Object[]) line: 145
+    ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(String, Marker, Level, String, Object[], Throwable) line: 429
+    ...
+  ]
+}
+
+jdk.JavaExceptionThrow {
+  startTime = 19:09:07.359 (2026-11-12)
+  message = "For input string: "warm""
+  thrownClass = java.lang.NumberFormatException (classLoader = bootstrap)
+  eventThread = "Attach Listener" (javaThreadId = 72)
+  stackTrace = [
+    java.lang.Throwable.<init>(String) line: 286
+    java.lang.Exception.<init>(String) line: 67
+    java.lang.RuntimeException.<init>(String) line: 63
+    java.lang.IllegalArgumentException.<init>(String) line: 50
+    java.lang.NumberFormatException.<init>(String) line: 54
+    ...
+  ]
+}
+

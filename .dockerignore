@@ -1,0 +1,17 @@
+**/node_modules
+**/target
+**/.env*
+**/.git
+work
+outputs
+documentacion
+docs
+agente-nexo
+seguridad
+**/*.pem
+**/*.key
+**/*.p12
+deploy/mysql/server
+deploy/mysql/ca-private
+
+agente-nexo/.local/

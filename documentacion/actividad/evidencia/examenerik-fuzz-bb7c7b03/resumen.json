@@ -1,0 +1,35 @@
+{
+  "started_utc": "2026-11-09T01:02:40.489257+00:00",
+  "run_id": "examenerik-fuzz-bb7c7b03",
+  "restler_source_commit": "6d984deedbc54aad957fa3da0c7e9e5df23a2aee",
+  "restler_binary_sha256": "131bf27e4a05fe41ae2a4e94021e7e1e301cc3a50dc308206c72cdd20df1656c",
+  "scope": "MySQL 8.4 + API Java21 + Mailpit, red Docker interna, datos sintéticos, loopback",
+  "spec_source_sha256": "7320f1ecf4e13b57fb6cd1b43ca0a9018415f5e855006352e891f500d004e1e2",
+  "commands_exit_codes": {
+    "compile": 0,
+    "test": 0,
+    "fuzz": 0
+  },
+  "completed": true,
+  "preflight": {
+    "profile_admin": 200,
+    "refresh_bad_origin": 403,
+    "refresh_missing_origin": 403,
+    "refresh_allowed_origin": 200,
+    "preflight_allowed_origin": 200
+  },
+  "model_mode": "disabled: 503 MODEL_UNAVAILABLE is expected; no inference fuzzed",
+  "spec_paths": 19,
+  "grammar_sha256": "fcb63fe84a42e77d5b6b1d2a7bac897000c043c975f152af44ab9ff0d4067fe9",
+  "dependency_files": [
+    "Compile/dependencies.json",
+    "Compile/dependencies_debug.json",
+    "Compile/unresolved_dependencies.json"
+  ],
+  "analyzer_errors": [],
+  "analysis_complete": false,
+  "analyzer_disabled": true,
+  "analysis_note": "ResultsAnalyzer deshabilitado explícitamente tras fallo/timeout en macOS. Resúmenes del motor y conteo HTTP independiente disponibles; revisión incompleta.",
+  "cleanup_success": true,
+  "finished_utc": "2026-11-09T01:05:02.063899+00:00"
+}

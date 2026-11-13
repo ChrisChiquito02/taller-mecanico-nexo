@@ -1,0 +1,65 @@
+{
+  "verified_at": "2026-11-04T15:15:49.379632-06:00",
+  "java": "21.0.12.1 Temurin (Docker)",
+  "spring_boot": "4.1.1",
+  "maven": "3.9.11 (Wrapper)",
+  "command": "./scripts/verify-java21.sh",
+  "build": "SUCCESS",
+  "test_suites": [
+    {
+      "name": "com.sistemam01m02.SystemIntegrationTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sistemam01m02.identity.entity.AppUserTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sistemam01m02.identity.security.GuardAndConfigurationTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.sistemam01m02.shared.persistence.UuidV7GeneratorTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totals": {
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "jar_sha256": "39fcfa33a5104166e74d8e7329241767b33740d99cf218ea71ffc4bb7abef407",
+  "deployed_jar_sha256": "39fcfa33a5104166e74d8e7329241767b33740d99cf218ea71ffc4bb7abef407",
+  "container_user": "app",
+  "health": {
+    "status": "UP"
+  },
+  "http_url": "http://localhost:8090",
+  "mailpit_url": "http://localhost:8026",
+  "local_smtp_messages_captured": 1,
+  "smoke_isolated": "PASS: bootstrap repetido rechazado; JAR Java 21, MySQL vacío, Flyway, bootstrap ADMIN, interfaz HTTP, registro, login, RBAC, refresh y logout.",
+  "browser_checks": [
+    "registration",
+    "login",
+    "USER profile",
+    "recovery request",
+    "logout"
+  ],
+  "real_databases_used": false,
+  "external_email_sent": false,
+  "remote_ci_executed": false,
+  "browser_synthetic_fixture_removed": true
+}

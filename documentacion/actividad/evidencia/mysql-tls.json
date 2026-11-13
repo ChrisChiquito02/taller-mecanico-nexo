@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "image": "examenerik-actividad-api",
+  "memory_limit_mb": 512,
+  "health": {
+    "status": "UP"
+  },
+  "mysql_tls": "8.4.11\nSsl_cipher\tTLS_AES_128_GCM_SHA256\n1\t1\n2\t1",
+  "wrong_hostname_rejected": true,
+  "wrong_hostname_error": "ERROR 2026 (HY000): SSL connection error: error:0A000086:SSL routines::certificate verify failed",
+  "untrusted_ca_rejected": true,
+  "plaintext_rejected": true,
+  "frontend_root_status": 404,
+  "smtp_tested": false,
+  "passed": true
+}

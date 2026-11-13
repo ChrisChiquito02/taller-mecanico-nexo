@@ -1,0 +1,24 @@
+name: examenerik-cloud-db
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Configura secreto local en VM}
+      MYSQL_DATABASE: identity
+      MYSQL_USER: identity_app
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Configura secreto local en VM}
+    ports:
+      - "${MYSQL_BIND_ADDRESS:-127.0.0.1}:3306:3306"
+    volumes:
+      - identity-data:/var/lib/mysql
+      - ./server:/etc/mysql/tls:ro
+      - ./tls.cnf:/etc/mysql/conf.d/tls.cnf:ro
+    mem_limit: 2g
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$MYSQL_ROOT_PASSWORD mysqladmin ping -h 127.0.0.1 -u root --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+volumes:
+  identity-data:

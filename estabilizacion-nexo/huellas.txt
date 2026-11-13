@@ -1,0 +1,7 @@
+documentation 272ca9daefdbad1ef966419dc8dfbdf787aeab4bf8ceadae56846a984ad957ed DOM idéntico: True Coincide con respuesta Ollama: False
+ollama 6da1b93d3f54f04101b551cd6b5087c99b010e2b1d01f65d402b766423562f6a DOM idéntico: True Coincide con respuesta Ollama: True
+attachment 410b7fe8d145e754ff2cd10f1b06a0742cb61a010bdb522ef43c0d4fc669ffa0 DOM idéntico: True Coincide con respuesta Ollama: False
+simulation 58dbf1d9817dfde342d671e0a0dd09c8e0b59ef16242accb31a34b2ac8462dc0 DOM idéntico: True Coincide con respuesta Ollama: False
+Llamadas estructuradas: 7
+Truncamientos con 64 tokens: 1
+Planes posteriores con esquema se reconocen por su ejecución y metadatos, el relé histórico solo etiquetaba format=json.

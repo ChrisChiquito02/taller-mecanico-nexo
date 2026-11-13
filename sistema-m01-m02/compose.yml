@@ -1,0 +1,52 @@
+name: examenerik-integrado
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: identity_local
+      MYSQL_USER: identity_app
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Genera .env.local con scripts/init-local.sh}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Genera .env.local con scripts/init-local.sh}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$MYSQL_ROOT_PASSWORD mysqladmin ping -h 127.0.0.1 -u root --silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+  mailpit:
+    image: axllent/mailpit:v1.27
+    ports:
+      - "127.0.0.1:8026:8025"
+  backend:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-8090}:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      DB_URL: jdbc:mysql://mysql:3306/identity_local?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
+      DB_USERNAME: identity_app
+      DB_PASSWORD: ${DB_PASSWORD:?}
+      JWT_SIGNING_KEY: ${JWT_SIGNING_KEY:?}
+      APP_ALLOWED_ORIGINS: http://localhost:${APP_PORT:-8090}
+      APP_COOKIE_SECURE: "false"
+      APP_RECOVERY_MODE: development
+      APP_RECOVERY_BASE_URL: http://localhost:${APP_PORT:-8090}/reset-password.html
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      SMTP_AUTH: "false"
+      SMTP_STARTTLS: "false"
+      SMTP_FROM: noreply@examenerik.test
+      APP_BOOTSTRAP_ENABLED: ${APP_BOOTSTRAP_ENABLED:-false}
+      APP_BOOTSTRAP_EMAIL: ${APP_BOOTSTRAP_EMAIL:-}
+      APP_BOOTSTRAP_PASSWORD: ${APP_BOOTSTRAP_PASSWORD:-}
+    read_only: true
+    tmpfs:
+      - /tmp
+volumes:
+  mysql-data:
