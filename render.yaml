@@ -20,7 +20,7 @@ services:
       - key: APP_COOKIE_SECURE
         value: "true"
       - key: APP_COOKIE_SAME_SITE
-        value: Strict
+        value: None
       - key: APP_RECOVERY_MODE
         value: disabled
       - key: APP_RECOVERY_BASE_URL
