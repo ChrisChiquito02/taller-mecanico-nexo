@@ -73,6 +73,12 @@ class GuardAndConfigurationTest {
     assertNotNull(
         config.signingKey(
             props(key, Duration.ofMinutes(15), 2, true), recovery, new MockEnvironment()));
+    assertNotNull(
+        config.signingKey(
+            props(key, Duration.ofMinutes(15), 2, true),
+            new RecoveryProperties(
+                "disabled", "https://example.test/reset", "noreply@example.test"),
+            new MockEnvironment()));
   }
 
   @Test

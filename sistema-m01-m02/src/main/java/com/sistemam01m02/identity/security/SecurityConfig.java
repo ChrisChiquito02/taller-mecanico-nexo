@@ -69,11 +69,11 @@ public class SecurityConfig {
     }
     if (!local
         && (!p.refreshCookieSecure()
-            || !"smtp".equals(recovery.mode())
+            || !("smtp".equals(recovery.mode()) || "disabled".equals(recovery.mode()))
             || !env.getProperty(
                 "spring.mail.properties.mail.smtp.starttls.required", Boolean.class, true)))
       throw new IllegalStateException(
-          "Producción requiere cookie Secure y SMTP con STARTTLS obligatorio");
+          "Producción requiere cookie Secure y recuperación SMTP segura o desactivada");
     return new SecretKeySpec(key, "HmacSHA256");
   }
 

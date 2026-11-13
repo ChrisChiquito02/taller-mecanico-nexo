@@ -7,6 +7,6 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @ConfigurationProperties("app.recovery")
 public record RecoveryProperties(
-    @Pattern(regexp = "smtp|development") String mode,
+    @Pattern(regexp = "smtp|development|disabled") String mode,
     @NotBlank String baseUrl,
     @NotBlank @Email String from) {}
